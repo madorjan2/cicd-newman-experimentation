@@ -12,6 +12,7 @@ jobs:
     name: Run project tests
 
     steps:
+    - uses: actions/checkout@v3
     - name: Setup Node.js ("latest" Version)
       uses: actions/setup-node@v4
       with:
