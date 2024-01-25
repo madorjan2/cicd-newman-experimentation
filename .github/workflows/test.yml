@@ -24,22 +24,22 @@ jobs:
     - name: Install Newman Allure
       run: npm install -g newman-reporter-allure
 
-    #- name: Generate Newman Allure Report
-    #  working-directory: test/Postman_collection
-    #  run: newman run TC1_Registration.postman_collection.json -e Moovsmart.postman_environment.json -r cli --disable-unicode
+    # - name: Generate Newman Allure Report
+    #    working-directory: test/Postman_collection
+    #    run: newman run TC1_Registration.postman_collection.json -e Moovsmart.postman_environment.json -r cli --disable-unicode
 
-    #- name: Generate Newman Allure Report
-    #  run: newman run ./test/Postman_collection/TC1_Registration.postman_cllection.json -e ./test/Postman_collection/Moovsmart.postman_environment.json -r cli
+    - name: Generate Newman Allure Report
+      run: newman run ./test/Postman_collection/TC1_Registration.postman_cllection.json -e ./test/Postman_collection/Moovsmart.postman_environment.json -r cli
 
-    - name: Navigate to folder
-      run: |
-          cd test/Postman_collection
-          dir
+    # - name: Navigate to folder
+    #   run: |
+    #       cd test/Postman_collection
+    #       dir
 
-    - name: Run Newman
-      uses: matt-ball/newman-action@master
-      with:
-        collection: TC1_Registration.postman_collection.json
-        environment: Moovsmart.postman_environment.json
+    # - name: Run Newman
+    #   uses: matt-ball/newman-action@master
+    #   with:
+    #     collection: TC1_Registration.postman_collection.json
+    #     environment: Moovsmart.postman_environment.json
       
 
