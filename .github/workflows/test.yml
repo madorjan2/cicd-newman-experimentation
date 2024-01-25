@@ -32,15 +32,19 @@ jobs:
       continue-on-error: true
       run: newman run ./test/Postman_collection/TC1_Registration.postman_collection.json -e ./test/Postman_collection/Moovsmart.postman_environment.json -r allure --reporter-allure-export ./test/allure-results
 
-    # - name: Navigate to folder
-    #   run: |
-    #       cd test/Postman_collection
-    #       dir
+    - name: Allure Report action from marketplace 
+      uses: simple-elf/allure-report-action@master 
+      with: 
+        allure_results: ./test/allure-results 
+        allure_history: ./test/allure-history 
+        keep_reports: 20
 
-    # - name: Run Newman
-    #   uses: matt-ball/newman-action@master
-    #   with:
-    #     collection: TC1_Registration.postman_collection.json
-    #     environment: Moovsmart.postman_environment.json
+    - name: Deploy report to Github Pages 
+      if: always() 
+      uses: peaceiris/actions-gh-pages@v2 
+      env: 
+        PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        PUBLISH_BRANCH: gh-pages 
+        PUBLISH_DIR: ./test/allure-history
       
 
