@@ -24,5 +24,6 @@ jobs:
       run: npm install -g newman-reporter-allure
 
     - name: Generate Newman Allure Report
-      run: newman run .\test\Postman_collection\TC1_Registration.postman_collection.json -e .\test\Postman_collection\Moovsmart.postman_environment.json -r allure --reporter-allure-export .\test/allure-results
+      working-directory: ./test/Postman_collection
+      run: newman run TC1_Registration.postman_collection.json -e .Moovsmart.postman_environment.json -r allure --reporter-allure-export .\test/allure-results
 
