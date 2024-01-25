@@ -1,0 +1,8 @@
+{
+    "email": "Kylie.Hintz77@yahoo.com",
+    "password": "Asdf1234",
+    "firstName": "Eli",
+    "lastName": "Heaney",
+    "phoneNumber": "+36303630363",
+    "usageType": "BUSINESS"
+}

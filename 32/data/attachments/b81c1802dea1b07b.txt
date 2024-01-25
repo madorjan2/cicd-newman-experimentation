@@ -1,8 +1,0 @@
-{
-    "email": "Caroline33@gmail.com",
-    "password": "Asdf1234",
-    "firstName": "Else",
-    "lastName": "Nolan",
-    "phoneNumber": "+36303630363",
-    "usageType": "BUSINESS"
-}
