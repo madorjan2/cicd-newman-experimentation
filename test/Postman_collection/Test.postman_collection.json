@@ -903,6 +903,7 @@
 									"listen": "test",
 									"script": {
 										"exec": [
+											"// @allure.id=100\r",
 											"let jsonData = JSON.parse(responseBody);\r",
 											"pm.environment.set(\"access_token\", jsonData.accessToken);\r",
 											"pm.environment.set(\"refresh_token\", jsonData.refreshToken);"
@@ -955,6 +956,7 @@
 									"listen": "test",
 									"script": {
 										"exec": [
+											"// @allure.id=100\r",
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
 											"});"
@@ -996,6 +998,7 @@
 									"listen": "test",
 									"script": {
 										"exec": [
+											"// @allure.id=100\r",
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
 											"});"
@@ -1038,6 +1041,7 @@
 									"listen": "test",
 									"script": {
 										"exec": [
+											"// @allure.id=100\r",
 											"pm.test(\"Status code is 403\", function () {\r",
 											"    pm.response.to.have.status(403);\r",
 											"});"
@@ -1071,6 +1075,26 @@
 								}
 							},
 							"response": []
+						}
+					],
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": [
+									""
+								]
+							}
 						}
 					]
 				}
