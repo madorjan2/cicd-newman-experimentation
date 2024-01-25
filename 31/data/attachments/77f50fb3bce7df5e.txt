@@ -1,8 +1,0 @@
-{
-    "email": "Paolo_Kuhn52@hotmail.com",
-    "password": "Asdf1234",
-    "firstName": "Annamarie",
-    "lastName": "Monahan",
-    "phoneNumber": "+36303630363",
-    "usageType": "BUSINESS"
-}

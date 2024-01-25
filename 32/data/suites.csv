@@ -1,0 +1,4 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Thu Jan 25 15:27:48 GMT 2024","Thu Jan 25 15:27:49 GMT 2024","309","TestCase_2_InvalidVerificationToken","","","","","Verify",""
+"failed","Thu Jan 25 15:27:49 GMT 2024","Thu Jan 25 15:27:49 GMT 2024","215","TestCase_3_MissingUsername","","","","","Register User",""
+"passed","Thu Jan 25 15:27:49 GMT 2024","Thu Jan 25 15:27:49 GMT 2024","205","TestCase_4_ExcessDataInRequestBody","","","","","Register User",""

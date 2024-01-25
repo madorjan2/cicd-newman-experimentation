@@ -1,0 +1,15 @@
+{
+    "id": 2,
+    "username" : yIcEh3vCB5qnv,
+    "email": "Alvera70@yahoo.com",
+    "password": "Asdf1234",
+    "firstName": "Jacynthe",
+    "lastName": "Johns",
+    "phoneNumber": "+36303630363",
+    "usageType": "BUSINESS",
+    "roles": [
+        "ROLE_GENERAL"
+    ],
+    "active": true,
+    "whatever": "whatever"
+}
