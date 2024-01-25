@@ -1,7 +1,0 @@
-// @allure.label.tag=API
-// @allure.label.tag=login
-// @allure.label.tag=negative
-// @allure.label.tag=missing
-pm.test("Status code is 403", function () {
-    pm.response.to.have.status(403);
-});

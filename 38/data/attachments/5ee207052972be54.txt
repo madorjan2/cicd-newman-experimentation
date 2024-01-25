@@ -1,0 +1,8 @@
+{
+    "email": "Jordyn2@gmail.com",
+    "password": "Asdf1234",
+    "firstName": "Chauncey",
+    "lastName": "Mueller",
+    "phoneNumber": "+36303630363",
+    "usageType": "BUSINESS"
+}

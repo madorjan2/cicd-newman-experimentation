@@ -1,0 +1,7 @@
+{
+    "username" : "madorjan",
+    "password" : "Asdf1234",
+    "id" : 23,
+    "accessToken" : false,
+    "whatever" : "whatever"
+}
