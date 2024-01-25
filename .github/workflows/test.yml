@@ -31,10 +31,13 @@ jobs:
     #- name: Generate Newman Allure Report
     #  run: newman run ./test/Postman_collection/TC1_Registration.postman_cllection.json -e ./test/Postman_collection/Moovsmart.postman_environment.json -r cli
 
-    - uses: actions/checkout@master
-    - uses: matt-ball/newman-action@master
+    - name: Navigate to folder
+      run: cd test/Postman_collection
+
+    - name: Run Newman
+      uses: matt-ball/newman-action@master
       with:
-        collection: ./test/Postman_collection/TC1_Registration.postman_cllection.json
-        environment: ./test/Postman_collection/Moovsmart.postman_environment.json
+        collection: TC1_Registration.postman_collection.json
+        environment: Moovsmart.postman_environment.json
       
 
