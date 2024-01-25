@@ -33,6 +33,7 @@ jobs:
 
     - name: Navigate to folder
       run: cd test/Postman_collection
+            dir
 
     - name: Run Newman
       uses: matt-ball/newman-action@master
