@@ -1,0 +1,15 @@
+{
+    "id": 2,
+    "username" : 0aWJPRhB3,
+    "email": "Trinity.Denesik@yahoo.com",
+    "password": "Asdf1234",
+    "firstName": "Caroline",
+    "lastName": "Bednar",
+    "phoneNumber": "+36303630363",
+    "usageType": "BUSINESS",
+    "roles": [
+        "ROLE_GENERAL"
+    ],
+    "active": true,
+    "whatever": "whatever"
+}
