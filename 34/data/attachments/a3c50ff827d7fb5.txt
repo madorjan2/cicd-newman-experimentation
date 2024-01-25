@@ -1,7 +1,0 @@
-let jsonData = JSON.parse(responseBody);
-pm.environment.set("access_token", jsonData.accessToken);
-pm.environment.set("refresh_token", jsonData.refreshToken);
-
-pm.test("Status code is 200", function () {
-    pm.response.to.have.status(200);
-});

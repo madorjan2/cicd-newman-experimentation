@@ -1,8 +1,0 @@
-{
-    "email": "Melba67@yahoo.com",
-    "password": "Asdf1234",
-    "firstName": "Porter",
-    "lastName": "Lindgren",
-    "phoneNumber": "+36303630363",
-    "usageType": "BUSINESS"
-}
