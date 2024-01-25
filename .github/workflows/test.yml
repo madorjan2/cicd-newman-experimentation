@@ -1,0 +1,31 @@
+name: Generate Newman test report
+
+on: push
+
+permissions:
+  contents: write
+
+jobs:  
+  test:
+    runs-on: ubuntu-latest
+
+    name: Run project tests
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Setup Node.js ("latest" Version)
+      uses: actions/setup-node@v4
+      with:
+        node-version: latest   # <-- use "latest" for the most recent Node.js version
+
+    - name: Install Newman
+      run: npm install -g newman
+
+    - name: Install Newman Allure
+      run: npm install -g newman-reporter-allure
+
+    - name: Generate Newman Allure Report
+      working-directory: test/Postman_collection
+      run: newman run TC1_Registration.postman_collection.json -e .Moovsmart.postman_environment.json -r allure --reporter-allure-export .\test/allure-results
+      
+
