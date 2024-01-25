@@ -219,7 +219,7 @@
 			"name": "Test Cycle 2 - Login",
 			"item": [
 				{
-					"name": "TestCase_1_ValidLoginDetails Copy",
+					"name": "Test Case 1 - Valid Login Details",
 					"item": [
 						{
 							"name": "Login",
@@ -301,7 +301,7 @@
 					]
 				},
 				{
-					"name": "TestCase_2_MissingUsername Copy",
+					"name": "Test Case 2 - Missing Username",
 					"item": [
 						{
 							"name": "Login",
@@ -314,6 +314,7 @@
 											"// @allure.label.tag=login\r",
 											"// @allure.label.tag=negative\r",
 											"// @allure.label.tag=missing\r",
+											"// @allure.label.severity=Normal\r",
 											"pm.test(\"Status code is 400\", function () {\r",
 											"    pm.response.to.have.status(400);\r",
 											"});"
@@ -362,7 +363,7 @@
 					]
 				},
 				{
-					"name": "TestCase_3_MissingPassword Copy",
+					"name": "Test Case 3 - Missing Password",
 					"item": [
 						{
 							"name": "Login",
@@ -375,6 +376,7 @@
 											"// @allure.label.tag=login\r",
 											"// @allure.label.tag=negative\r",
 											"// @allure.label.tag=missing\r",
+											"// @allure.label.severity=Normal\r",
 											"pm.test(\"Status code is 403\", function () {\r",
 											"    pm.response.to.have.status(403);\r",
 											"});"
@@ -424,7 +426,7 @@
 					]
 				},
 				{
-					"name": "TestCase_4_EmptyUsername Copy",
+					"name": "Test Case 4 - Empty Username",
 					"item": [
 						{
 							"name": "Login",
@@ -437,6 +439,7 @@
 											"// @allure.label.tag=login\r",
 											"// @allure.label.tag=negative\r",
 											"// @allure.label.tag=empty\r",
+											"// @allure.label.severity=Normal\r",
 											"pm.test(\"Status code is 400\", function () {\r",
 											"    pm.response.to.have.status(400);\r",
 											"});"
@@ -485,7 +488,7 @@
 					]
 				},
 				{
-					"name": "TestCase_5_EmptyPassword Copy",
+					"name": "Test Case 5 - Empty Password",
 					"item": [
 						{
 							"name": "Login",
@@ -498,6 +501,7 @@
 											"// @allure.label.tag=login\r",
 											"// @allure.label.tag=negative\r",
 											"// @allure.label.tag=empty\r",
+											"// @allure.label.severity=Normal\r",
 											"pm.test(\"Status code is 403\", function () {\r",
 											"    pm.response.to.have.status(403);\r",
 											"});"
@@ -547,7 +551,7 @@
 					]
 				},
 				{
-					"name": "TestCase_6_InvalidUsername Copy",
+					"name": "Test Case 6 - Invalid Username",
 					"item": [
 						{
 							"name": "Login",
@@ -560,6 +564,7 @@
 											"// @allure.label.tag=login\r",
 											"// @allure.label.tag=negative\r",
 											"// @allure.label.tag=invalid\r",
+											"// @allure.label.severity=Normal\r",
 											"pm.test(\"Status code is 400\", function () {\r",
 											"    pm.response.to.have.status(400);\r",
 											"});"
@@ -624,7 +629,7 @@
 					]
 				},
 				{
-					"name": "TestCase_7_InvalidPassword Copy",
+					"name": "Test Case 7 - Invalid Password",
 					"item": [
 						{
 							"name": "Login",
@@ -637,6 +642,7 @@
 											"// @allure.label.tag=login\r",
 											"// @allure.label.tag=negative\r",
 											"// @allure.label.tag=invalid\r",
+											"// @allure.label.severity=Normal\r",
 											"pm.test(\"Status code is 403\", function () {\r",
 											"    pm.response.to.have.status(403);\r",
 											"});"
@@ -699,6 +705,68 @@
 							"response": []
 						}
 					]
+				},
+				{
+					"name": "TestCase 8 - Excess Data in Request Body",
+					"item": [
+						{
+							"name": "Login",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// @allure.label.tag=API\r",
+											"// @allure.label.tag=login\r",
+											"// @allure.label.tag=negative\r",
+											"// @allure.label.tag=invalid\r",
+											"// @allure.label.severity=Normal\r",
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"auth": {
+									"type": "noauth"
+								},
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\" : \"{{baseline_username}}\",\r\n    \"password\" : \"{{baseline_password}}\",\r\n    \"id\" : 23,\r\n    \"accessToken\" : false,\r\n    \"whatever\" : \"whatever\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users/login",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										"login"
+									]
+								}
+							},
+							"response": []
+						}
+					]
 				}
 			]
 		},
@@ -706,7 +774,7 @@
 			"name": "Test Cycle 3 - Profile",
 			"item": [
 				{
-					"name": "TestCase_1_ValidLogin Copy",
+					"name": "Test Case 1 - Accessing Profile",
 					"item": [
 						{
 							"name": "Login",
@@ -719,6 +787,10 @@
 											"pm.environment.set(\"access_token\", jsonData.accessToken);\r",
 											"pm.environment.set(\"refresh_token\", jsonData.refreshToken);\r",
 											"\r",
+											"// @allure.label.tag=API\r",
+											"// @allure.label.tag=login\r",
+											"// @allure.label.tag=positive\r",
+											"// @allure.label.severity=Critical\r",
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
 											"});"
@@ -767,6 +839,27 @@
 						},
 						{
 							"name": "User Profile",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"let jsonData = JSON.parse(responseBody);\r",
+											"\r",
+											"// @allure.label.tag=API\r",
+											"// @allure.label.tag=login\r",
+											"// @allure.label.tag=positive\r",
+											"// @allure.label.severity=Critical\r",
+											"pm.test(\"Status code is 200\", function () {\r",
+											"    pm.response.to.have.status(200);\r",
+											"});\r",
+											"\r",
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
 							"request": {
 								"auth": {
 									"type": "bearer",
@@ -801,7 +894,7 @@
 			"name": "Test Cycle 4 - Logout",
 			"item": [
 				{
-					"name": "Test Case 1  - Login then Logout",
+					"name": "Test Case 1  - Logout After Login",
 					"item": [
 						{
 							"name": "Login",
