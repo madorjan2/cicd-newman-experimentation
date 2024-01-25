@@ -30,7 +30,10 @@ jobs:
 
     - name: Generate Newman Allure Report
       continue-on-error: true
-      run: newman run ./test/Postman_collection/TC1_Registration.postman_collection.json -e ./test/Postman_collection/Moovsmart.postman_environment.json -r allure --reporter-allure-export ./test/allure-results
+      run: |
+        newman run ./test/Postman_collection/TC1_Registration.postman_collection.json -e ./test/Postman_collection/Moovsmart.postman_environment.json -r allure --reporter-allure-export ./test/allure-results
+        newman run ./test/Postman_collection/TC2_Login.postman_collection.json -e ./test/Postman_collection/Moovsmart.postman_environment.json -r allure --reporter-allure-export ./test/allure-results
+        newman run ./test/Postman_collection/TC3_Profile.postman_collection.json -e ./test/Postman_collection/Moovsmart.postman_environment.json -r allure --reporter-allure-export ./test/allure-results
 
     - name: Allure Report action from marketplace 
       uses: simple-elf/allure-report-action@master 
