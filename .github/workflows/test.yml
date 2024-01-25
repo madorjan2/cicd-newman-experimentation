@@ -24,13 +24,17 @@ jobs:
     - name: Install Newman Allure
       run: npm install -g newman-reporter-allure
 
-    # - name: Generate Newman Allure Report
-    #    working-directory: test/Postman_collection
-    #    run: newman run TC1_Registration.postman_collection.json -e Moovsmart.postman_environment.json -r cli --disable-unicode
-
-    - name: Generate Newman Allure Report
+    - name: Generate Newman Allure Report 1
       continue-on-error: true
       run: newman run ./test/Postman_collection/TC1_Registration.postman_collection.json -e ./test/Postman_collection/Moovsmart.postman_environment.json -r allure --reporter-allure-export ./test/allure-results
+      
+    - name: Generate Newman Allure Report 2
+      continue-on-error: true
+      run: newman run ./test/Postman_collection/TC2_Login.postman_collection.json -e ./test/Postman_collection/Moovsmart.postman_environment.json -r allure --reporter-allure-export ./test/allure-results
+      
+    - name: Generate Newman Allure Report 3
+      continue-on-error: true
+      run: newman run ./test/Postman_collection/TC3_Profile.postman_collection.json -e ./test/Postman_collection/Moovsmart.postman_environment.json -r allure --reporter-allure-export ./test/allure-results
 
     - name: Allure Report action from marketplace 
       uses: simple-elf/allure-report-action@master 
