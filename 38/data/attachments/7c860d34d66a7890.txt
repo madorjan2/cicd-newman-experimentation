@@ -1,3 +1,0 @@
-let jsonData = JSON.parse(responseBody);
-pm.environment.set("access_token", jsonData.accessToken);
-pm.environment.set("refresh_token", jsonData.refreshToken);
