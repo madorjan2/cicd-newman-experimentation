@@ -1,8 +1,0 @@
-{
-    "email": "Evan.Goyette@hotmail.com",
-    "password": "Asdf1234",
-    "firstName": "Ladarius",
-    "lastName": "Howell",
-    "phoneNumber": "+36303630363",
-    "usageType": "BUSINESS"
-}

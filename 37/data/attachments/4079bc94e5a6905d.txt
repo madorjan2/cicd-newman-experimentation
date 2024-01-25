@@ -1,0 +1,15 @@
+{
+    "id": 2,
+    "username" : "8FEhoU",
+    "email": "Elisabeth_Mills55@hotmail.com",
+    "password": "Asdf1234",
+    "firstName": "Adelbert",
+    "lastName": "Hane",
+    "phoneNumber": "+36303630363",
+    "usageType": "BUSINESS",
+    "roles": [
+        "ROLE_GENERAL"
+    ],
+    "active": true,
+    "whatever": "whatever"
+}

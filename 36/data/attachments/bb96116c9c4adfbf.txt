@@ -1,1 +1,0 @@
-{"id":63,"username":"HZX6jWHoj60","email":"Zelda.Wehner54@hotmail.com","firstName":"Audrey","lastName":"Hintz","phoneNumber":"+36303630363","usageType":"BUSINESS","roles":["ROLE_GENERAL"],"active":false}
