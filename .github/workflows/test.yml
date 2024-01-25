@@ -14,4 +14,9 @@ jobs:
       with:
         node-version: latest   # <-- use "latest" for the most recent Node.js version
 
-    # - name: Other steps …
+    - name: Install Newman
+      run: npm install -g newman
+
+    - name: Install Newman Allure
+      run: npm install -g newman-reporter-allure
+
