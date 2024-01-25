@@ -32,8 +32,9 @@ jobs:
     #  run: newman run ./test/Postman_collection/TC1_Registration.postman_cllection.json -e ./test/Postman_collection/Moovsmart.postman_environment.json -r cli
 
     - name: Navigate to folder
-      run: cd test/Postman_collection
-            dir
+      run: |
+          cd test/Postman_collection
+          dir
 
     - name: Run Newman
       uses: matt-ball/newman-action@master
