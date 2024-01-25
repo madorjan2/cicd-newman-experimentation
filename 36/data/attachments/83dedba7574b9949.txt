@@ -1,0 +1,27 @@
+let jsonData = JSON.parse(responseBody);
+pm.environment.set("access_token", jsonData.accessToken);
+pm.environment.set("refresh_token", jsonData.refreshToken);
+
+// @allure.label.tag=API
+// @allure.label.tag=login
+// @allure.label.tag=positive
+// @allure.label.severity=CRITICAL
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+});
+
+pm.test("Received access token and is of type string", function () {   
+    pm.expect(jsonData).to.have.property("accessToken");
+    pm.expect(typeof jsonData.accessToken).to.eql("string");
+});
+
+pm.test("Received refresh token and is of type string", function () {   
+    pm.expect(jsonData).to.have.property("refreshToken");
+    pm.expect(typeof jsonData.refreshToken).to.eql("string");
+});
+
+pm.test("Valid username in app user details", function () {   
+    pm.expect(jsonData.appUserDetails).to.have.property("username");
+    pm.expect(typeof jsonData.appUserDetails.username).to.eql("string");
+    pm.expect(jsonData.appUserDetails.username).to.eql(pm.environment.get("username"));
+});
