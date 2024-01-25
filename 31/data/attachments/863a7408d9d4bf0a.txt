@@ -1,0 +1,15 @@
+{
+    "id": 2,
+    "username" : Udesj0Ra4P8VZ,
+    "email": "Annabell_Kilback@gmail.com",
+    "password": "Asdf1234",
+    "firstName": "Clay",
+    "lastName": "Trantow",
+    "phoneNumber": "+36303630363",
+    "usageType": "BUSINESS",
+    "roles": [
+        "ROLE_GENERAL"
+    ],
+    "active": true,
+    "whatever": "whatever"
+}
