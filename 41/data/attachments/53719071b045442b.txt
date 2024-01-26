@@ -1,4 +1,0 @@
-{
-    "username" : "g3ScvLccyFq",
-    "password" : "Asdf1234"
-}

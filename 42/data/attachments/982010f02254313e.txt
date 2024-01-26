@@ -1,0 +1,15 @@
+{
+    "id": 2,
+    "username" : "GIFLZhRodsxPmcW",
+    "email": "Alysa.Berge@hotmail.com",
+    "password": "Asdf1234",
+    "firstName": "Frederick",
+    "lastName": "Bashirian",
+    "phoneNumber": "+36303630363",
+    "usageType": "BUSINESS",
+    "roles": [
+        "ROLE_GENERAL"
+    ],
+    "active": true,
+    "whatever": "whatever"
+}
