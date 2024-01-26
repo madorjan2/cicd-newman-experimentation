@@ -3,7 +3,7 @@ import os
 TAG = 'setup'
 
 def get_file_list():
-	parent_dir = os.path.dirname(os.getcwd())
+	parent_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 	path = os.path.join(parent_dir, 'allure-results')
 	return [os.path.join(path, f) for f in os.listdir(path) if os.path.isfile(os.path.join(path, f)) and f[-5:] == ".json"]
 
