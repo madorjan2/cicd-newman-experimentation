@@ -1,1 +1,0 @@
-{"id":77,"username":"XqVjYP46","email":"Glennie_Leannon@gmail.com","firstName":"Travon","lastName":"Lakin","phoneNumber":"+36303630363","usageType":"BUSINESS","roles":["ROLE_GENERAL"],"active":false}

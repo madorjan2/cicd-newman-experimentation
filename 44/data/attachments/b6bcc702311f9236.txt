@@ -1,0 +1,1 @@
+{"id":78,"username":"GbKmOS2gC4Xb","email":"Tressie_Ledner@gmail.com","firstName":"Lowell","lastName":"Cruickshank","phoneNumber":"+36303630363","usageType":"BUSINESS","roles":["ROLE_GENERAL"],"active":false}
