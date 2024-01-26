@@ -1,1 +1,0 @@
-{"id":46,"username":"madorjan","email":"halib75567@grassdev.com","firstName":"Bela","lastName":"Kiss","phoneNumber":"+36303630363","usageType":"BUSINESS","roles":["ROLE_GENERAL"],"active":true}

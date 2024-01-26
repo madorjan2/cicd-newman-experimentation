@@ -1,0 +1,8 @@
+{
+    "email": "Sarah_Wuckert39@yahoo.com",
+    "password": "Asdf1234",
+    "firstName": "Bernhard",
+    "lastName": "Wehner",
+    "phoneNumber": "+36303630363",
+    "usageType": "BUSINESS"
+}

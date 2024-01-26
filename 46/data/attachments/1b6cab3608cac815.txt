@@ -1,0 +1,1 @@
+{"id":80,"username":"kx4gBa3YQSD9L","email":"Katrina23@yahoo.com","firstName":"Hildegard","lastName":"Hagenes","phoneNumber":"+36303630363","usageType":"BUSINESS","roles":["ROLE_GENERAL"],"active":false}
