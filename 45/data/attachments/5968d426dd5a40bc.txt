@@ -1,0 +1,1 @@
+{"id":79,"username":"wa6ltT9vy","email":"Simone36@hotmail.com","firstName":"Nina","lastName":"Conn","phoneNumber":"+36303630363","usageType":"BUSINESS","roles":["ROLE_GENERAL"],"active":false}
