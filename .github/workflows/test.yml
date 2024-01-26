@@ -18,6 +18,11 @@ jobs:
       with:
         node-version: latest   # <-- use "latest" for the most recent Node.js version
 
+    - name: Set up Python 3.12
+      uses: actions/setup-python@v3
+      with:
+        python-version: "3.12"
+
     - name: Install Newman
       run: npm install -g newman
 
@@ -33,6 +38,9 @@ jobs:
         allure_results: ./test/allure-results 
         allure_history: ./test/allure-history 
         keep_reports: 20
+
+    - name: Delete setup requests
+      run: python ./test/post_process_allure/remove_by_tag.py
 
     - name: Deploy report to Github Pages 
       if: always() 
