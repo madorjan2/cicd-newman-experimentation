@@ -1,0 +1,15 @@
+{
+    "id": 2,
+    "username" : "XqVjYP46",
+    "email": "Glennie_Leannon@gmail.com",
+    "password": "Asdf1234",
+    "firstName": "Travon",
+    "lastName": "Lakin",
+    "phoneNumber": "+36303630363",
+    "usageType": "BUSINESS",
+    "roles": [
+        "ROLE_GENERAL"
+    ],
+    "active": true,
+    "whatever": "whatever"
+}

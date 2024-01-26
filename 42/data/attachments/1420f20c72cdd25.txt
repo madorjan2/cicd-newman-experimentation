@@ -1,1 +1,0 @@
-{"id":76,"username":"GIFLZhRodsxPmcW","email":"Alysa.Berge@hotmail.com","firstName":"Frederick","lastName":"Bashirian","phoneNumber":"+36303630363","usageType":"BUSINESS","roles":["ROLE_GENERAL"],"active":false}
