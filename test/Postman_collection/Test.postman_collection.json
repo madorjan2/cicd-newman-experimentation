@@ -11,7 +11,7 @@
 			"name": "Test Cycle 1 - Registration",
 			"item": [
 				{
-					"name": "TestCase_2_InvalidVerificationToken Copy",
+					"name": "Test Case 2 - Invalid Verification Token",
 					"item": [
 						{
 							"name": "Verify",
@@ -29,6 +29,11 @@
 									"listen": "test",
 									"script": {
 										"exec": [
+											"// @allure.label.tag=API\r",
+											"// @allure.label.tag=token\r",
+											"// @allure.label.tag=registration\r",
+											"// @allure.label.tag=negative\r",
+											"// @allure.label.severity=NORMAL\r",
 											"let jsonData = JSON.parse(responseBody);\r",
 											"\r",
 											"pm.test(\"Status code is 400\", function () {\r",
@@ -86,7 +91,7 @@
 					]
 				},
 				{
-					"name": "TestCase_3_MissingUsername Copy",
+					"name": "Test Case 3 - Missing Username",
 					"item": [
 						{
 							"name": "Register User",
@@ -95,6 +100,10 @@
 									"listen": "test",
 									"script": {
 										"exec": [
+											"// @allure.label.tag=API\r",
+											"// @allure.label.tag=registration\r",
+											"// @allure.label.tag=negative\r",
+											"// @allure.label.severity=NORMAL\r",
 											"let jsonData = JSON.parse(responseBody);\r",
 											"\r",
 											"pm.test(\"Status code is 400\", function () {\r",
@@ -144,7 +153,7 @@
 					]
 				},
 				{
-					"name": "TestCase_4_ExcessDataInRequestBody Copy",
+					"name": "Test Case 4 - Excess Data In Request Body",
 					"item": [
 						{
 							"name": "Register User",
@@ -153,8 +162,12 @@
 									"listen": "test",
 									"script": {
 										"exec": [
-											"pm.test(\"Status code is 201\", function () {\r",
-											"    pm.response.to.have.status(201);\r",
+											"// @allure.label.tag=API\r",
+											"// @allure.label.tag=registration\r",
+											"// @allure.label.tag=negative\r",
+											"// @allure.label.severity=NORMAL\r",
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
 											"});"
 										],
 										"type": "text/javascript"
@@ -191,7 +204,3175 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"id\": 2,\r\n    \"username\" : \"{{username}}\",\r\n    \"email\": \"{{$randomEmail}}\",\r\n    \"password\": \"Asdf1234\",\r\n    \"firstName\": \"{{$randomFirstName}}\",\r\n    \"lastName\": \"{{$randomLastName}}\",\r\n    \"phoneNumber\": \"+36303630363\",\r\n    \"usageType\": \"BUSINESS\",\r\n    \"roles\": [\r\n        \"ROLE_GENERAL\"\r\n    ],\r\n    \"active\": true,\r\n    \"whatever\": \"whatever\"\r\n}",
+									"raw": "{\r\n    \"id\": 2,\r\n    \"username\" : {{username}},\r\n    \"email\": \"{{$randomEmail}}\",\r\n    \"password\": \"Asdf1234\",\r\n    \"firstName\": \"{{$randomFirstName}}\",\r\n    \"lastName\": \"{{$randomLastName}}\",\r\n    \"phoneNumber\": \"+36303630363\",\r\n    \"usageType\": \"BUSINESS\",\r\n    \"roles\": [\r\n        \"ROLE_GENERAL\"\r\n    ],\r\n    \"active\": true,\r\n    \"whatever\": \"whatever\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users/registration",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										"registration"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Test Case 5 - Empty Username",
+					"item": [
+						{
+							"name": "Register User",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// @allure.label.tag=API\r",
+											"// @allure.label.tag=registration\r",
+											"// @allure.label.tag=negative\r",
+											"// @allure.label.severity=NORMAL\r",
+											"let jsonData = JSON.parse(responseBody);\r",
+											"\r",
+											"pm.test(\"Received correct error message\", function () {\r",
+											"    pm.expect(jsonData).to.have.lengthOf(1);   \r",
+											"    pm.expect(jsonData[0]).to.have.property(\"field\");\r",
+											"    pm.expect(jsonData[0]).to.have.property(\"errorMessage\");\r",
+											"    pm.expect(typeof jsonData[0].field).to.eql(\"string\");\r",
+											"    pm.expect(typeof jsonData[0].errorMessage).to.eql(\"string\");\r",
+											"    pm.expect(jsonData[0].field).to.eql(\"username\");\r",
+											"    pm.expect(jsonData[0].errorMessage).to.eql(\"Username must be between 6 and 15 characters long\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\" : \"\",\r\n    \"email\": \"{{$randomEmail}}\",\r\n    \"password\": \"Asdf1234\",\r\n    \"firstName\": \"{{$randomFirstName}}\",\r\n    \"lastName\": \"{{$randomLastName}}\",\r\n    \"phoneNumber\": \"+36303630363\",\r\n    \"usageType\": \"BUSINESS\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users/registration",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										"registration"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Test Case 6 - Empty Password",
+					"item": [
+						{
+							"name": "Register User",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// @allure.label.tag=API\r",
+											"// @allure.label.tag=registration\r",
+											"// @allure.label.tag=negative\r",
+											"// @allure.label.severity=NORMAL\r",
+											"let jsonData = JSON.parse(responseBody);\r",
+											"\r",
+											"pm.test(\"Received correct error message\", function () {\r",
+											"    pm.expect(jsonData).to.have.lengthOf(1);   \r",
+											"    pm.expect(jsonData[0]).to.have.property(\"field\");\r",
+											"    pm.expect(jsonData[0]).to.have.property(\"errorMessage\");\r",
+											"    pm.expect(typeof jsonData[0].field).to.eql(\"string\");\r",
+											"    pm.expect(typeof jsonData[0].errorMessage).to.eql(\"string\");\r",
+											"    pm.expect(jsonData[0].field).to.eql(\"password\");\r",
+											"    pm.expect(jsonData[0].errorMessage).to.eql(\"Password must contains lower and uppercase characters, numbers and must be at least 8 characters long.\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"function randomString(minValue, maxValue, dataSet = 'abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ') {\r",
+											"    if (!minValue) {\r",
+											"        minValue = 6;\r",
+											"    }\r",
+											"    if (!maxValue) {\r",
+											"        maxValue = 15;\r",
+											"    }\r",
+											"\r",
+											"    let length = _.random(minValue, maxValue)\r",
+											"    let randomString = \"\";\r",
+											"\r",
+											"    for (let i = 0; i < length; i++)\r",
+											"        randomString += dataSet.charAt(Math.floor(Math.random() * dataSet.length));\r",
+											"    return randomString;\r",
+											"}\r",
+											"\r",
+											"pm.environment.set(\"username\", randomString(6, 15));"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\" : \"{{username}}\",\r\n    \"email\": \"{{$randomEmail}}\",\r\n    \"password\": \"\",\r\n    \"firstName\": \"{{$randomFirstName}}\",\r\n    \"lastName\": \"{{$randomLastName}}\",\r\n    \"phoneNumber\": \"+36303630363\",\r\n    \"usageType\": \"BUSINESS\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users/registration",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										"registration"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Test Case 7 - Empty Email",
+					"item": [
+						{
+							"name": "Register User",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// @allure.label.tag=API\r",
+											"// @allure.label.tag=registration\r",
+											"// @allure.label.tag=negative\r",
+											"// @allure.label.severity=NORMAL\r",
+											"let jsonData = JSON.parse(responseBody);\r",
+											"// TODO error message változhat\r",
+											"pm.test(\"Received correct error message\", function () {\r",
+											"    pm.expect(jsonData).to.have.lengthOf(1);   \r",
+											"    pm.expect(jsonData[0]).to.have.property(\"field\");\r",
+											"    pm.expect(jsonData[0]).to.have.property(\"errorMessage\");\r",
+											"    pm.expect(typeof jsonData[0].field).to.eql(\"string\");\r",
+											"    pm.expect(typeof jsonData[0].errorMessage).to.eql(\"string\");\r",
+											"    pm.expect(jsonData[0].field).to.eql(\"email\");\r",
+											"    pm.expect(jsonData[0].errorMessage).to.eql(\"must not be blank\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"function randomString(minValue, maxValue, dataSet = 'abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ') {\r",
+											"    if (!minValue) {\r",
+											"        minValue = 6;\r",
+											"    }\r",
+											"    if (!maxValue) {\r",
+											"        maxValue = 15;\r",
+											"    }\r",
+											"\r",
+											"    let length = _.random(minValue, maxValue)\r",
+											"    let randomString = \"\";\r",
+											"\r",
+											"    for (let i = 0; i < length; i++)\r",
+											"        randomString += dataSet.charAt(Math.floor(Math.random() * dataSet.length));\r",
+											"    return randomString;\r",
+											"}\r",
+											"\r",
+											"pm.environment.set(\"username\", randomString(6, 15));"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\" : \"{{username}}\",\r\n    \"email\": \"\",\r\n    \"password\": \"Asdf1234\",\r\n    \"firstName\": \"{{$randomFirstName}}\",\r\n    \"lastName\": \"{{$randomLastName}}\",\r\n    \"phoneNumber\": \"+36303630363\",\r\n    \"usageType\": \"BUSINESS\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users/registration",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										"registration"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Test Case 8 - Empty First Name",
+					"item": [
+						{
+							"name": "Register User",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// @allure.label.tag=API\r",
+											"// @allure.label.tag=registration\r",
+											"// @allure.label.tag=negative\r",
+											"// @allure.label.severity=NORMAL\r",
+											"let jsonData = JSON.parse(responseBody);\r",
+											"\r",
+											"pm.test(\"Received correct error message\", function () {\r",
+											"    pm.expect(jsonData).to.have.lengthOf(1);   \r",
+											"    pm.expect(jsonData[0]).to.have.property(\"field\");\r",
+											"    pm.expect(jsonData[0]).to.have.property(\"errorMessage\");\r",
+											"    pm.expect(typeof jsonData[0].field).to.eql(\"string\");\r",
+											"    pm.expect(typeof jsonData[0].errorMessage).to.eql(\"string\");\r",
+											"    pm.expect(jsonData[0].field).to.eql(\"firstName\");\r",
+											"    pm.expect(jsonData[0].errorMessage).to.eql(\"Must not be blank.\");\r",
+											"});\r",
+											"// TODO error message-t átírni a korrektre majd\r",
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"function randomString(minValue, maxValue, dataSet = 'abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ') {\r",
+											"    if (!minValue) {\r",
+											"        minValue = 6;\r",
+											"    }\r",
+											"    if (!maxValue) {\r",
+											"        maxValue = 15;\r",
+											"    }\r",
+											"\r",
+											"    let length = _.random(minValue, maxValue)\r",
+											"    let randomString = \"\";\r",
+											"\r",
+											"    for (let i = 0; i < length; i++)\r",
+											"        randomString += dataSet.charAt(Math.floor(Math.random() * dataSet.length));\r",
+											"    return randomString;\r",
+											"}\r",
+											"\r",
+											"pm.environment.set(\"username\", randomString(6, 15));"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\" : \"{{username}}\",\r\n    \"email\": \"{{$randomEmail}}\",\r\n    \"password\": \"Asdf1234\",\r\n    \"firstName\": \"\",\r\n    \"lastName\": \"{{$randomLastName}}\",\r\n    \"phoneNumber\": \"+36303630363\",\r\n    \"usageType\": \"BUSINESS\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users/registration",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										"registration"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Test Case 9 - Empty Last Name",
+					"item": [
+						{
+							"name": "Register User",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// @allure.label.tag=API\r",
+											"// @allure.label.tag=registration\r",
+											"// @allure.label.tag=negative\r",
+											"// @allure.label.severity=NORMAL\r",
+											"let jsonData = JSON.parse(responseBody);\r",
+											"\r",
+											"pm.test(\"Received correct error message\", function () {\r",
+											"    pm.expect(jsonData).to.have.lengthOf(1);   \r",
+											"    pm.expect(jsonData[0]).to.have.property(\"field\");\r",
+											"    pm.expect(jsonData[0]).to.have.property(\"errorMessage\");\r",
+											"    pm.expect(typeof jsonData[0].field).to.eql(\"string\");\r",
+											"    pm.expect(typeof jsonData[0].errorMessage).to.eql(\"string\");\r",
+											"    pm.expect(jsonData[0].field).to.eql(\"lastName\");\r",
+											"    pm.expect(jsonData[0].errorMessage).to.eql(\"Must not be blank.\");\r",
+											"});\r",
+											"// TODO error message-t átírni a korrektre majd\r",
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"function randomString(minValue, maxValue, dataSet = 'abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ') {\r",
+											"    if (!minValue) {\r",
+											"        minValue = 6;\r",
+											"    }\r",
+											"    if (!maxValue) {\r",
+											"        maxValue = 15;\r",
+											"    }\r",
+											"\r",
+											"    let length = _.random(minValue, maxValue)\r",
+											"    let randomString = \"\";\r",
+											"\r",
+											"    for (let i = 0; i < length; i++)\r",
+											"        randomString += dataSet.charAt(Math.floor(Math.random() * dataSet.length));\r",
+											"    return randomString;\r",
+											"}\r",
+											"\r",
+											"pm.environment.set(\"username\", randomString(6, 15));"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\" : \"{{username}}\",\r\n    \"email\": \"{{$randomEmail}}\",\r\n    \"password\": \"Asdf1234\",\r\n    \"firstName\": \"{{$randomFirstName}}\",\r\n    \"lastName\": \"\",\r\n    \"phoneNumber\": \"+36303630363\",\r\n    \"usageType\": \"BUSINESS\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users/registration",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										"registration"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Test Case 10 - Empty Phone Number",
+					"item": [
+						{
+							"name": "Register User",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// @allure.label.tag=API\r",
+											"// @allure.label.tag=registration\r",
+											"// @allure.label.tag=negative\r",
+											"// @allure.label.severity=NORMAL\r",
+											"let jsonData = JSON.parse(responseBody);\r",
+											"\r",
+											"pm.test(\"Received correct error message\", function () {\r",
+											"    pm.expect(jsonData).to.have.lengthOf(1);   \r",
+											"    pm.expect(jsonData[0]).to.have.property(\"field\");\r",
+											"    pm.expect(jsonData[0]).to.have.property(\"errorMessage\");\r",
+											"    pm.expect(typeof jsonData[0].field).to.eql(\"string\");\r",
+											"    pm.expect(typeof jsonData[0].errorMessage).to.eql(\"string\");\r",
+											"    pm.expect(jsonData[0].field).to.eql(\"phoneNumber\");\r",
+											"    pm.expect(jsonData[0].errorMessage).to.eql(\"Wrong phone number format!\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"function randomString(minValue, maxValue, dataSet = 'abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ') {\r",
+											"    if (!minValue) {\r",
+											"        minValue = 6;\r",
+											"    }\r",
+											"    if (!maxValue) {\r",
+											"        maxValue = 15;\r",
+											"    }\r",
+											"\r",
+											"    let length = _.random(minValue, maxValue)\r",
+											"    let randomString = \"\";\r",
+											"\r",
+											"    for (let i = 0; i < length; i++)\r",
+											"        randomString += dataSet.charAt(Math.floor(Math.random() * dataSet.length));\r",
+											"    return randomString;\r",
+											"}\r",
+											"\r",
+											"pm.environment.set(\"username\", randomString(6, 15));"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\" : \"{{username}}\",\r\n    \"email\": \"{{$randomEmail}}\",\r\n    \"password\": \"Asdf1234\",\r\n    \"firstName\": \"{{$randomFirstName}}\",\r\n    \"lastName\": \"{{$randomLastName}}\",\r\n    \"phoneNumber\": \"\",\r\n    \"usageType\": \"BUSINESS\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users/registration",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										"registration"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Test Case 11 - Empty Usage Type",
+					"item": [
+						{
+							"name": "Register User",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// @allure.label.tag=API\r",
+											"// @allure.label.tag=registration\r",
+											"// @allure.label.tag=negative\r",
+											"// @allure.label.severity=NORMAL\r",
+											"let jsonData = JSON.parse(responseBody);\r",
+											"\r",
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"function randomString(minValue, maxValue, dataSet = 'abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ') {\r",
+											"    if (!minValue) {\r",
+											"        minValue = 6;\r",
+											"    }\r",
+											"    if (!maxValue) {\r",
+											"        maxValue = 15;\r",
+											"    }\r",
+											"\r",
+											"    let length = _.random(minValue, maxValue)\r",
+											"    let randomString = \"\";\r",
+											"\r",
+											"    for (let i = 0; i < length; i++)\r",
+											"        randomString += dataSet.charAt(Math.floor(Math.random() * dataSet.length));\r",
+											"    return randomString;\r",
+											"}\r",
+											"\r",
+											"pm.environment.set(\"username\", randomString(6, 15));"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\" : \"{{username}}\",\r\n    \"email\": \"{{$randomEmail}}\",\r\n    \"password\": \"Asdf1234\",\r\n    \"firstName\": \"{{$randomFirstName}}\",\r\n    \"lastName\": \"{{$randomLastName}}\",\r\n    \"phoneNumber\": \"+36303630363\",\r\n    \"usageType\": \"\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users/registration",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										"registration"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Test Case 12 - Too Short Username",
+					"item": [
+						{
+							"name": "Register User",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// @allure.label.tag=API\r",
+											"// @allure.label.tag=registration\r",
+											"// @allure.label.tag=negative\r",
+											"// @allure.label.severity=NORMAL\r",
+											"let jsonData = JSON.parse(responseBody);\r",
+											"\r",
+											"pm.test(\"Received correct error message\", function () {\r",
+											"    pm.expect(jsonData).to.have.lengthOf(1);   \r",
+											"    pm.expect(jsonData[0]).to.have.property(\"field\");\r",
+											"    pm.expect(jsonData[0]).to.have.property(\"errorMessage\");\r",
+											"    pm.expect(typeof jsonData[0].field).to.eql(\"string\");\r",
+											"    pm.expect(typeof jsonData[0].errorMessage).to.eql(\"string\");\r",
+											"    pm.expect(jsonData[0].field).to.eql(\"username\");\r",
+											"    pm.expect(jsonData[0].errorMessage).to.eql(\"Username must be between 6 and 15 characters long\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"function randomString(minValue, maxValue, dataSet = 'abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ') {\r",
+											"    if (!minValue) {\r",
+											"        minValue = 3;\r",
+											"    }\r",
+											"    if (!maxValue) {\r",
+											"        maxValue = 5;\r",
+											"    }\r",
+											"\r",
+											"    let length = _.random(minValue, maxValue)\r",
+											"    let randomString = \"\";\r",
+											"\r",
+											"    for (let i = 0; i < length; i++)\r",
+											"        randomString += dataSet.charAt(Math.floor(Math.random() * dataSet.length));\r",
+											"    return randomString;\r",
+											"}\r",
+											"\r",
+											"pm.environment.set(\"username\", randomString(3, 5));"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\" : \"{{username}}\",\r\n    \"email\": \"{{$randomEmail}}\",\r\n    \"password\": \"Asdf1234\",\r\n    \"firstName\": \"{{$randomFirstName}}\",\r\n    \"lastName\": \"{{$randomLastName}}\",\r\n    \"phoneNumber\": \"+36303630363\",\r\n    \"usageType\": \"BUSINESS\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users/registration",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										"registration"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Test Case 13 - Too Long Username",
+					"item": [
+						{
+							"name": "Register User",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// @allure.label.tag=API\r",
+											"// @allure.label.tag=login\r",
+											"// @allure.label.tag=negative\r",
+											"// @allure.label.severity=NORMAL\r",
+											"let jsonData = JSON.parse(responseBody);\r",
+											"\r",
+											"pm.test(\"Received correct error message\", function () {\r",
+											"    pm.expect(jsonData).to.have.lengthOf(1);   \r",
+											"    pm.expect(jsonData[0]).to.have.property(\"field\");\r",
+											"    pm.expect(jsonData[0]).to.have.property(\"errorMessage\");\r",
+											"    pm.expect(typeof jsonData[0].field).to.eql(\"string\");\r",
+											"    pm.expect(typeof jsonData[0].errorMessage).to.eql(\"string\");\r",
+											"    pm.expect(jsonData[0].field).to.eql(\"username\");\r",
+											"    pm.expect(jsonData[0].errorMessage).to.eql(\"Username must be between 6 and 15 characters long\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"function randomString(minValue, maxValue, dataSet = 'abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ') {\r",
+											"    if (!minValue) {\r",
+											"        minValue = 16;\r",
+											"    }\r",
+											"    if (!maxValue) {\r",
+											"        maxValue = 17;\r",
+											"    }\r",
+											"\r",
+											"    let length = _.random(minValue, maxValue)\r",
+											"    let randomString = \"\";\r",
+											"\r",
+											"    for (let i = 0; i < length; i++)\r",
+											"        randomString += dataSet.charAt(Math.floor(Math.random() * dataSet.length));\r",
+											"    return randomString;\r",
+											"}\r",
+											"\r",
+											"pm.environment.set(\"username\", randomString(16, 17));"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\" : \"{{username}}\",\r\n    \"email\": \"{{$randomEmail}}\",\r\n    \"password\": \"Asdf1234\",\r\n    \"firstName\": \"{{$randomFirstName}}\",\r\n    \"lastName\": \"{{$randomLastName}}\",\r\n    \"phoneNumber\": \"+36303630363\",\r\n    \"usageType\": \"BUSINESS\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users/registration",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										"registration"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Test Case 14 - Spec Char in Username",
+					"item": [
+						{
+							"name": "Register User",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// @allure.label.tag=API\r",
+											"// @allure.label.tag=registration\r",
+											"// @allure.label.tag=negative\r",
+											"// @allure.label.severity=NORMAL\r",
+											"let jsonData = JSON.parse(responseBody);\r",
+											"\r",
+											"pm.test(\"Received correct error message\", function () {\r",
+											"    pm.expect(jsonData).to.have.lengthOf(1);   \r",
+											"    pm.expect(jsonData[0]).to.have.property(\"field\");\r",
+											"    pm.expect(jsonData[0]).to.have.property(\"errorMessage\");\r",
+											"    pm.expect(typeof jsonData[0].field).to.eql(\"string\");\r",
+											"    pm.expect(typeof jsonData[0].errorMessage).to.eql(\"string\");\r",
+											"    pm.expect(jsonData[0].field).to.eql(\"username\");\r",
+											"    pm.expect(jsonData[0].errorMessage).to.eql(\"Username can not contain special characters\");\r",
+											"});\r",
+											"// TODO átírni korrekt error message-re\r",
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});\r",
+											"// TODO status code-ot is majd ellenőrizni"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"function randomString(minValue, maxValue, dataSet = '@$#&*{}[],=-().+;/') {\r",
+											"    if (!minValue) {\r",
+											"        minValue = 6;\r",
+											"    }\r",
+											"    if (!maxValue) {\r",
+											"        maxValue = 15;\r",
+											"    }\r",
+											"\r",
+											"    let length = _.random(minValue, maxValue)\r",
+											"    let randomString = \"\";\r",
+											"\r",
+											"    for (let i = 0; i < length; i++)\r",
+											"        randomString += dataSet.charAt(Math.floor(Math.random() * dataSet.length));\r",
+											"    return randomString;\r",
+											"}\r",
+											"\r",
+											"pm.environment.set(\"username\", randomString(6, 15));"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\" : \"{{username}}\",\r\n    \"email\": \"{{$randomEmail}}\",\r\n    \"password\": \"Asdf1234\",\r\n    \"firstName\": \"{{$randomFirstName}}\",\r\n    \"lastName\": \"{{$randomLastName}}\",\r\n    \"phoneNumber\": \"+36303630363\",\r\n    \"usageType\": \"BUSINESS\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users/registration",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										"registration"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Test Case 15 - Only Whitespace Username",
+					"item": [
+						{
+							"name": "Register User",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// @allure.label.tag=API\r",
+											"// @allure.label.tag=registration\r",
+											"// @allure.label.tag=negative\r",
+											"// @allure.label.severity=NORMAL\r",
+											"let jsonData = JSON.parse(responseBody);\r",
+											"\r",
+											"pm.test(\"Received correct error message\", function () {\r",
+											"    pm.expect(jsonData).to.have.lengthOf(1);   \r",
+											"    pm.expect(jsonData[0]).to.have.property(\"field\");\r",
+											"    pm.expect(jsonData[0]).to.have.property(\"errorMessage\");\r",
+											"    pm.expect(typeof jsonData[0].field).to.eql(\"string\");\r",
+											"    pm.expect(typeof jsonData[0].errorMessage).to.eql(\"string\");\r",
+											"    pm.expect(jsonData[0].field).to.eql(\"username\");\r",
+											"    pm.expect(jsonData[0].errorMessage).to.eql(\"Username can not contain whitespaces.\");\r",
+											"});\r",
+											"// TODO error message-et majd ellenőrizni\r",
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\" : \"      \",\r\n    \"email\": \"{{$randomEmail}}\",\r\n    \"password\": \"Asdf1234\",\r\n    \"firstName\": \"{{$randomFirstName}}\",\r\n    \"lastName\": \"{{$randomLastName}}\",\r\n    \"phoneNumber\": \"+36303630363\",\r\n    \"usageType\": \"BUSINESS\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users/registration",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										"registration"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Test Case 16 - Whitespace in Username",
+					"item": [
+						{
+							"name": "Register User",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// @allure.label.tag=API\r",
+											"// @allure.label.tag=registration\r",
+											"// @allure.label.tag=negative\r",
+											"// @allure.label.severity=NORMAL\r",
+											"let jsonData = JSON.parse(responseBody);\r",
+											"\r",
+											"pm.test(\"Received correct error message\", function () {\r",
+											"    pm.expect(jsonData).to.have.lengthOf(1);   \r",
+											"    pm.expect(jsonData[0]).to.have.property(\"field\");\r",
+											"    pm.expect(jsonData[0]).to.have.property(\"errorMessage\");\r",
+											"    pm.expect(typeof jsonData[0].field).to.eql(\"string\");\r",
+											"    pm.expect(typeof jsonData[0].errorMessage).to.eql(\"string\");\r",
+											"    pm.expect(jsonData[0].field).to.eql(\"username\");\r",
+											"    pm.expect(jsonData[0].errorMessage).to.eql(\"Username can not contain whitespaces.\");\r",
+											"});\r",
+											"// TODO error message-et majd ellenőrizni\r",
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"function randomString(minValue, maxValue, dataSet = 'abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ') {\r",
+											"    if (!minValue) {\r",
+											"        minValue = 6;\r",
+											"    }\r",
+											"    if (!maxValue) {\r",
+											"        maxValue = 15;\r",
+											"    }\r",
+											"\r",
+											"    let length = _.random(minValue, maxValue)\r",
+											"    let randomString = \"\";\r",
+											"\r",
+											"    for (let i = 0; i < length; i++)\r",
+											"        randomString += dataSet.charAt(Math.floor(Math.random() * dataSet.length));\r",
+											"    return randomString;\r",
+											"}\r",
+											"\r",
+											"pm.environment.set(\"username\", randomString(4, 4) + ' ' + randomString(1, 10))"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\" : \"{{username}}\",\r\n    \"email\": \"{{$randomEmail}}\",\r\n    \"password\": \"Asdf1234\",\r\n    \"firstName\": \"{{$randomFirstName}}\",\r\n    \"lastName\": \"{{$randomLastName}}\",\r\n    \"phoneNumber\": \"+36303630363\",\r\n    \"usageType\": \"BUSINESS\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users/registration",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										"registration"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Test Case 17 - Non-ascii Username",
+					"item": [
+						{
+							"name": "Register User",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// @allure.label.tag=API\r",
+											"// @allure.label.tag=registration\r",
+											"// @allure.label.tag=negative\r",
+											"// @allure.label.severity=NORMAL\r",
+											"let jsonData = JSON.parse(responseBody);\r",
+											"\r",
+											"pm.test(\"Received correct error message\", function () {\r",
+											"    pm.expect(jsonData).to.have.lengthOf(1);   \r",
+											"    pm.expect(jsonData[0]).to.have.property(\"field\");\r",
+											"    pm.expect(jsonData[0]).to.have.property(\"errorMessage\");\r",
+											"    pm.expect(typeof jsonData[0].field).to.eql(\"string\");\r",
+											"    pm.expect(typeof jsonData[0].errorMessage).to.eql(\"string\");\r",
+											"    pm.expect(jsonData[0].field).to.eql(\"username\");\r",
+											"    pm.expect(jsonData[0].errorMessage).to.eql(\"Username can not contain non-ascii characters nor emojis.\");\r",
+											"});\r",
+											"// TODO error message-et majd ellenőrizni\r",
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"function randomString(minValue, maxValue, dataSet = '😀🌍🎉👋éàöñこんにちは©®€£µ¥') {\r",
+											"    if (!minValue) {\r",
+											"        minValue = 6;\r",
+											"    }\r",
+											"    if (!maxValue) {\r",
+											"        maxValue = 15;\r",
+											"    }\r",
+											"\r",
+											"    let length = _.random(minValue, maxValue)\r",
+											"    let randomString = \"\";\r",
+											"\r",
+											"    for (let i = 0; i < length; i++)\r",
+											"        randomString += dataSet.charAt(Math.floor(Math.random() * dataSet.length));\r",
+											"    return randomString;\r",
+											"}\r",
+											"\r",
+											"pm.environment.set(\"username\", randomString(6, 15));"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\" : \"{{username}}\",\r\n    \"email\": \"{{$randomEmail}}\",\r\n    \"password\": \"Asdf1234\",\r\n    \"firstName\": \"{{$randomFirstName}}\",\r\n    \"lastName\": \"{{$randomLastName}}\",\r\n    \"phoneNumber\": \"+36303630363\",\r\n    \"usageType\": \"BUSINESS\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users/registration",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										"registration"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Test Case 18 - Non-ascii Password",
+					"item": [
+						{
+							"name": "Register User",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// @allure.label.tag=API\r",
+											"// @allure.label.tag=registration\r",
+											"// @allure.label.tag=negative\r",
+											"// @allure.label.severity=NORMAL\r",
+											"let jsonData = JSON.parse(responseBody);\r",
+											"\r",
+											"pm.test(\"Received correct error message\", function () {\r",
+											"    pm.expect(jsonData).to.have.lengthOf(1);   \r",
+											"    pm.expect(jsonData[0]).to.have.property(\"field\");\r",
+											"    pm.expect(jsonData[0]).to.have.property(\"errorMessage\");\r",
+											"    pm.expect(typeof jsonData[0].field).to.eql(\"string\");\r",
+											"    pm.expect(typeof jsonData[0].errorMessage).to.eql(\"string\");\r",
+											"    pm.expect(jsonData[0].field).to.eql(\"password\");\r",
+											"    pm.expect(jsonData[0].errorMessage).to.eql(\"Password can not contain non-ascii characters nor emojis.\");\r",
+											"});\r",
+											"// TODO error message-et majd ellenőrizni\r",
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"function randomString(minValue, maxValue, dataSet = 'abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ') {\r",
+											"    if (!minValue) {\r",
+											"        minValue = 6;\r",
+											"    }\r",
+											"    if (!maxValue) {\r",
+											"        maxValue = 15;\r",
+											"    }\r",
+											"\r",
+											"    let length = _.random(minValue, maxValue)\r",
+											"    let randomString = \"\";\r",
+											"\r",
+											"    for (let i = 0; i < length; i++)\r",
+											"        randomString += dataSet.charAt(Math.floor(Math.random() * dataSet.length));\r",
+											"    return randomString;\r",
+											"}\r",
+											"\r",
+											"pm.environment.set(\"username\", randomString(6, 15))\r",
+											"pm.environment.set(\"password\", randomString(5, 12, dataSet = '😀🌍🎉👋éàöñこんにちは©®€£µ¥')+\"Aa1\");"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\" : \"{{username}}\",\r\n    \"email\": \"{{$randomEmail}}\",\r\n    \"password\": \"{{password}}\",\r\n    \"firstName\": \"{{$randomFirstName}}\",\r\n    \"lastName\": \"{{$randomLastName}}\",\r\n    \"phoneNumber\": \"+36303630363\",\r\n    \"usageType\": \"BUSINESS\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users/registration",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										"registration"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Test Case 19 - Too Short Password",
+					"item": [
+						{
+							"name": "Register User",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// @allure.label.tag=API\r",
+											"// @allure.label.tag=registration\r",
+											"// @allure.label.tag=negative\r",
+											"// @allure.label.severity=NORMAL\r",
+											"let jsonData = JSON.parse(responseBody);\r",
+											"\r",
+											"pm.test(\"Received correct error message\", function () {\r",
+											"    pm.expect(jsonData).to.have.lengthOf(1);   \r",
+											"    pm.expect(jsonData[0]).to.have.property(\"field\");\r",
+											"    pm.expect(jsonData[0]).to.have.property(\"errorMessage\");\r",
+											"    pm.expect(typeof jsonData[0].field).to.eql(\"string\");\r",
+											"    pm.expect(typeof jsonData[0].errorMessage).to.eql(\"string\");\r",
+											"    pm.expect(jsonData[0].field).to.eql(\"password\");\r",
+											"    pm.expect(jsonData[0].errorMessage).to.eql(\"Password must contains lower and uppercase characters, numbers and must be at least 8 characters long.\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"function randomString(minValue, maxValue, dataSet = 'abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ') {\r",
+											"    if (!minValue) {\r",
+											"        minValue = 6;\r",
+											"    }\r",
+											"    if (!maxValue) {\r",
+											"        maxValue = 15;\r",
+											"    }\r",
+											"\r",
+											"    let length = _.random(minValue, maxValue)\r",
+											"    let randomString = \"\";\r",
+											"\r",
+											"    for (let i = 0; i < length; i++)\r",
+											"        randomString += dataSet.charAt(Math.floor(Math.random() * dataSet.length));\r",
+											"    return randomString;\r",
+											"}\r",
+											"\r",
+											"pm.environment.set(\"username\", randomString(6, 15));"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\" : \"{{username}}\",\r\n    \"email\": \"{{$randomEmail}}\",\r\n    \"password\": \"asd123\",\r\n    \"firstName\": \"{{$randomFirstName}}\",\r\n    \"lastName\": \"{{$randomLastName}}\",\r\n    \"phoneNumber\": \"+36303630363\",\r\n    \"usageType\": \"BUSINESS\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users/registration",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										"registration"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Test Case 20 - Too Long Password",
+					"item": [
+						{
+							"name": "Register User",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// @allure.label.tag=API\r",
+											"// @allure.label.tag=registration\r",
+											"// @allure.label.tag=negative\r",
+											"// @allure.label.severity=NORMAL\r",
+											"let jsonData = JSON.parse(responseBody);\r",
+											"\r",
+											"pm.test(\"Received correct error message\", function () {\r",
+											"    pm.expect(jsonData).to.have.lengthOf(1);   \r",
+											"    pm.expect(jsonData[0]).to.have.property(\"field\");\r",
+											"    pm.expect(jsonData[0]).to.have.property(\"errorMessage\");\r",
+											"    pm.expect(typeof jsonData[0].field).to.eql(\"string\");\r",
+											"    pm.expect(typeof jsonData[0].errorMessage).to.eql(\"string\");\r",
+											"    pm.expect(jsonData[0].field).to.eql(\"password\");\r",
+											"    pm.expect(jsonData[0].errorMessage).to.eql(\"Password must contains lower and uppercase characters, numbers and must be between 8 to 255 characters.\");\r",
+											"});\r",
+											"// TODO korrekt error message\r",
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"function randomString(minValue, maxValue, dataSet = 'abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ') {\r",
+											"    if (!minValue) {\r",
+											"        minValue = 256;\r",
+											"    }\r",
+											"    if (!maxValue) {\r",
+											"        maxValue = 257;\r",
+											"    }\r",
+											"\r",
+											"    let length = _.random(minValue, maxValue)\r",
+											"    let randomString = \"\";\r",
+											"\r",
+											"    for (let i = 0; i < length; i++)\r",
+											"        randomString += dataSet.charAt(Math.floor(Math.random() * dataSet.length));\r",
+											"    return randomString;\r",
+											"}\r",
+											"\r",
+											"pm.environment.set(\"password\", randomString(256, 257)+\"Aa1\");\r",
+											"pm.environment.set(\"username\", randomString(6, 15));"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\" : \"{{username}}\",\r\n    \"email\": \"{{$randomEmail}}\",\r\n    \"password\": \"{{password}}\",\r\n    \"firstName\": \"{{$randomFirstName}}\",\r\n    \"lastName\": \"{{$randomLastName}}\",\r\n    \"phoneNumber\": \"+36303630363\",\r\n    \"usageType\": \"BUSINESS\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users/registration",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										"registration"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Test Case 21 - No Lowercase Password",
+					"item": [
+						{
+							"name": "Register User",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"function randomString(minValue, maxValue, dataSet = 'abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ') {\r",
+											"    if (!minValue) {\r",
+											"        minValue = 256;\r",
+											"    }\r",
+											"    if (!maxValue) {\r",
+											"        maxValue = 257;\r",
+											"    }\r",
+											"\r",
+											"    let length = _.random(minValue, maxValue)\r",
+											"    let randomString = \"\";\r",
+											"\r",
+											"    for (let i = 0; i < length; i++)\r",
+											"        randomString += dataSet.charAt(Math.floor(Math.random() * dataSet.length));\r",
+											"    return randomString;\r",
+											"}\r",
+											"\r",
+											"pm.environment.set(\"password\", randomString(8, 10, dataSet='0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'));\r",
+											"pm.environment.set(\"username\", randomString(6, 15));"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// @allure.label.tag=API\r",
+											"// @allure.label.tag=registration\r",
+											"// @allure.label.tag=negative\r",
+											"// @allure.label.severity=NORMAL\r",
+											"let jsonData = JSON.parse(responseBody);\r",
+											"\r",
+											"pm.test(\"Received correct error message\", function () {\r",
+											"    pm.expect(jsonData).to.have.lengthOf(1);   \r",
+											"    pm.expect(jsonData[0]).to.have.property(\"field\");\r",
+											"    pm.expect(jsonData[0]).to.have.property(\"errorMessage\");\r",
+											"    pm.expect(typeof jsonData[0].field).to.eql(\"string\");\r",
+											"    pm.expect(typeof jsonData[0].errorMessage).to.eql(\"string\");\r",
+											"    pm.expect(jsonData[0].field).to.eql(\"password\");\r",
+											"    pm.expect(jsonData[0].errorMessage).to.eql(\"Password must contains lower and uppercase characters, numbers and must be at least 8 characters long.\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\" : \"{{username}}\",\r\n    \"email\": \"{{$randomEmail}}\",\r\n    \"password\": \"{{password}}\",\r\n    \"firstName\": \"{{$randomFirstName}}\",\r\n    \"lastName\": \"{{$randomLastName}}\",\r\n    \"phoneNumber\": \"+36303630363\",\r\n    \"usageType\": \"BUSINESS\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users/registration",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										"registration"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Test Case 22 - No Uppercase Password",
+					"item": [
+						{
+							"name": "Register User",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"function randomString(minValue, maxValue, dataSet = 'abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ') {\r",
+											"    if (!minValue) {\r",
+											"        minValue = 256;\r",
+											"    }\r",
+											"    if (!maxValue) {\r",
+											"        maxValue = 257;\r",
+											"    }\r",
+											"\r",
+											"    let length = _.random(minValue, maxValue)\r",
+											"    let randomString = \"\";\r",
+											"\r",
+											"    for (let i = 0; i < length; i++)\r",
+											"        randomString += dataSet.charAt(Math.floor(Math.random() * dataSet.length));\r",
+											"    return randomString;\r",
+											"}\r",
+											"\r",
+											"pm.environment.set(\"password\", randomString(8, 10, dataSet='abcdefghijklmnopqrstuvwxyz0123456789'));\r",
+											"pm.environment.set(\"username\", randomString(6, 15));"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// @allure.label.tag=API\r",
+											"// @allure.label.tag=registration\r",
+											"// @allure.label.tag=negative\r",
+											"// @allure.label.severity=NORMAL\r",
+											"let jsonData = JSON.parse(responseBody);\r",
+											"\r",
+											"pm.test(\"Received correct error message\", function () {\r",
+											"    pm.expect(jsonData).to.have.lengthOf(1);   \r",
+											"    pm.expect(jsonData[0]).to.have.property(\"field\");\r",
+											"    pm.expect(jsonData[0]).to.have.property(\"errorMessage\");\r",
+											"    pm.expect(typeof jsonData[0].field).to.eql(\"string\");\r",
+											"    pm.expect(typeof jsonData[0].errorMessage).to.eql(\"string\");\r",
+											"    pm.expect(jsonData[0].field).to.eql(\"password\");\r",
+											"    pm.expect(jsonData[0].errorMessage).to.eql(\"Password must contains lower and uppercase characters, numbers and must be at least 8 characters long.\");\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\" : \"{{username}}\",\r\n    \"email\": \"{{$randomEmail}}\",\r\n    \"password\": \"{{password}}\",\r\n    \"firstName\": \"{{$randomFirstName}}\",\r\n    \"lastName\": \"{{$randomLastName}}\",\r\n    \"phoneNumber\": \"+36303630363\",\r\n    \"usageType\": \"BUSINESS\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users/registration",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										"registration"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Test Case 23 - Invalid Email",
+					"item": [
+						{
+							"name": "Register User",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"function randomString(minValue, maxValue, dataSet = 'abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ') {\r",
+											"    if (!minValue) {\r",
+											"        minValue = 256;\r",
+											"    }\r",
+											"    if (!maxValue) {\r",
+											"        maxValue = 257;\r",
+											"    }\r",
+											"\r",
+											"    let length = _.random(minValue, maxValue)\r",
+											"    let randomString = \"\";\r",
+											"\r",
+											"    for (let i = 0; i < length; i++)\r",
+											"        randomString += dataSet.charAt(Math.floor(Math.random() * dataSet.length));\r",
+											"    return randomString;\r",
+											"}\r",
+											"\r",
+											"pm.environment.set(\"username\", randomString(6, 15));\r",
+											"pm.environment.set(\"email\", randomString(5,8) + \"@\" + randomString(4-6) + \".c\")"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// @allure.label.tag=API\r",
+											"// @allure.label.tag=registration\r",
+											"// @allure.label.tag=negative\r",
+											"// @allure.label.severity=NORMAL\r",
+											"let jsonData = JSON.parse(responseBody);\r",
+											"\r",
+											"pm.test(\"Received correct error message\", function () {\r",
+											"    pm.expect(jsonData).to.have.lengthOf(1);   \r",
+											"    pm.expect(jsonData[0]).to.have.property(\"field\");\r",
+											"    pm.expect(jsonData[0]).to.have.property(\"errorMessage\");\r",
+											"    pm.expect(typeof jsonData[0].field).to.eql(\"string\");\r",
+											"    pm.expect(typeof jsonData[0].errorMessage).to.eql(\"string\");\r",
+											"    pm.expect(jsonData[0].field).to.eql(\"email\");\r",
+											"    pm.expect(jsonData[0].errorMessage).to.eql(\"Please provide a valid email address.\");\r",
+											"});\r",
+											"// TODO korrekt error message\r",
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\" : \"{{username}}\",\r\n    \"email\": \"{{email}}\",\r\n    \"password\": \"Asdf1234\",\r\n    \"firstName\": \"{{$randomFirstName}}\",\r\n    \"lastName\": \"{{$randomLastName}}\",\r\n    \"phoneNumber\": \"+36303630363\",\r\n    \"usageType\": \"BUSINESS\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users/registration",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										"registration"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Test Case 24 - Too Long First Name",
+					"item": [
+						{
+							"name": "Register User",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"function randomString(minValue, maxValue, dataSet = 'abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ') {\r",
+											"    if (!minValue) {\r",
+											"        minValue = 256;\r",
+											"    }\r",
+											"    if (!maxValue) {\r",
+											"        maxValue = 257;\r",
+											"    }\r",
+											"\r",
+											"    let length = _.random(minValue, maxValue)\r",
+											"    let randomString = \"\";\r",
+											"\r",
+											"    for (let i = 0; i < length; i++)\r",
+											"        randomString += dataSet.charAt(Math.floor(Math.random() * dataSet.length));\r",
+											"    return randomString;\r",
+											"}\r",
+											"\r",
+											"pm.environment.set(\"username\", randomString(6, 15));\r",
+											"pm.environment.set(\"firstName\", randomString(256, 257));\r",
+											"// Érdekes, mert itt 255, 256 még működik, szóval tényleg a var 255-ig van használva. Innentől csak 500-as error."
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// @allure.label.tag=API\r",
+											"// @allure.label.tag=registration\r",
+											"// @allure.label.tag=negative\r",
+											"// @allure.label.severity=NORMAL\r",
+											"let jsonData = JSON.parse(responseBody);\r",
+											"\r",
+											"pm.test(\"Received correct error message\", function () {\r",
+											"    pm.expect(jsonData).to.have.lengthOf(1);   \r",
+											"    pm.expect(jsonData[0]).to.have.property(\"field\");\r",
+											"    pm.expect(jsonData[0]).to.have.property(\"errorMessage\");\r",
+											"    pm.expect(typeof jsonData[0].field).to.eql(\"string\");\r",
+											"    pm.expect(typeof jsonData[0].errorMessage).to.eql(\"string\");\r",
+											"    pm.expect(jsonData[0].field).to.eql(\"firstName\");\r",
+											"    pm.expect(jsonData[0].errorMessage).to.eql(\"First name cannot be longer than ... .\");\r",
+											"});\r",
+											"// TODO korrekt error message\r",
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\" : \"{{username}}\",\r\n    \"email\": \"{{$randomEmail}}\",\r\n    \"password\": \"Asdf1234\",\r\n    \"firstName\": \"{{firstName}}\",\r\n    \"lastName\": \"{{$randomLastName}}\",\r\n    \"phoneNumber\": \"+36303630363\",\r\n    \"usageType\": \"BUSINESS\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users/registration",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										"registration"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Test Case 25 - Only Whitespace First Name",
+					"item": [
+						{
+							"name": "Register User",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"function randomString(minValue, maxValue, dataSet = 'abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ') {\r",
+											"    if (!minValue) {\r",
+											"        minValue = 256;\r",
+											"    }\r",
+											"    if (!maxValue) {\r",
+											"        maxValue = 257;\r",
+											"    }\r",
+											"\r",
+											"    let length = _.random(minValue, maxValue)\r",
+											"    let randomString = \"\";\r",
+											"\r",
+											"    for (let i = 0; i < length; i++)\r",
+											"        randomString += dataSet.charAt(Math.floor(Math.random() * dataSet.length));\r",
+											"    return randomString;\r",
+											"}\r",
+											"\r",
+											"pm.environment.set(\"username\", randomString(6, 15));"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// @allure.label.tag=API\r",
+											"// @allure.label.tag=registration\r",
+											"// @allure.label.tag=negative\r",
+											"// @allure.label.severity=NORMAL\r",
+											"let jsonData = JSON.parse(responseBody);\r",
+											"\r",
+											"pm.test(\"Received correct error message\", function () {\r",
+											"    pm.expect(jsonData).to.have.lengthOf(1);   \r",
+											"    pm.expect(jsonData[0]).to.have.property(\"field\");\r",
+											"    pm.expect(jsonData[0]).to.have.property(\"errorMessage\");\r",
+											"    pm.expect(typeof jsonData[0].field).to.eql(\"string\");\r",
+											"    pm.expect(typeof jsonData[0].errorMessage).to.eql(\"string\");\r",
+											"    pm.expect(jsonData[0].field).to.eql(\"firstName\");\r",
+											"    pm.expect(jsonData[0].errorMessage).to.eql(\"First name cannot contain whitespaces.\");\r",
+											"});\r",
+											"// TODO korrekt error message\r",
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\" : \"{{username}}\",\r\n    \"email\": \"{{$randomEmail}}\",\r\n    \"password\": \"Asdf1234\",\r\n    \"firstName\": \"      \",\r\n    \"lastName\": \"{{$randomLastName}}\",\r\n    \"phoneNumber\": \"+36303630363\",\r\n    \"usageType\": \"BUSINESS\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users/registration",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										"registration"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Test Case 26 - Too Long Last Name",
+					"item": [
+						{
+							"name": "Register User",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"function randomString(minValue, maxValue, dataSet = 'abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ') {\r",
+											"    if (!minValue) {\r",
+											"        minValue = 256;\r",
+											"    }\r",
+											"    if (!maxValue) {\r",
+											"        maxValue = 257;\r",
+											"    }\r",
+											"\r",
+											"    let length = _.random(minValue, maxValue)\r",
+											"    let randomString = \"\";\r",
+											"\r",
+											"    for (let i = 0; i < length; i++)\r",
+											"        randomString += dataSet.charAt(Math.floor(Math.random() * dataSet.length));\r",
+											"    return randomString;\r",
+											"}\r",
+											"\r",
+											"pm.environment.set(\"username\", randomString(6, 15));\r",
+											"pm.environment.set(\"lastName\", randomString(256, 257));\r",
+											"// Érdekes, mert itt 255, 256 még működik, szóval tényleg a var 255-ig van használva. Innentől csak 500-as error."
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// @allure.label.tag=API\r",
+											"// @allure.label.tag=registration\r",
+											"// @allure.label.tag=negative\r",
+											"// @allure.label.severity=NORMAL\r",
+											"let jsonData = JSON.parse(responseBody);\r",
+											"\r",
+											"pm.test(\"Received correct error message\", function () {\r",
+											"    pm.expect(jsonData).to.have.lengthOf(1);   \r",
+											"    pm.expect(jsonData[0]).to.have.property(\"field\");\r",
+											"    pm.expect(jsonData[0]).to.have.property(\"errorMessage\");\r",
+											"    pm.expect(typeof jsonData[0].field).to.eql(\"string\");\r",
+											"    pm.expect(typeof jsonData[0].errorMessage).to.eql(\"string\");\r",
+											"    pm.expect(jsonData[0].field).to.eql(\"lastName\");\r",
+											"    pm.expect(jsonData[0].errorMessage).to.eql(\"Last name cannot be longer than ... .\");\r",
+											"});\r",
+											"// TODO korrekt error message\r",
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\" : \"{{username}}\",\r\n    \"email\": \"{{$randomEmail}}\",\r\n    \"password\": \"Asdf1234\",\r\n    \"firstName\": \"{{$randomFirstName}}\",\r\n    \"lastName\": \"{{lastName}}\",\r\n    \"phoneNumber\": \"+36303630363\",\r\n    \"usageType\": \"BUSINESS\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users/registration",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										"registration"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Test Case 27 - Only Whitespace Last Name",
+					"item": [
+						{
+							"name": "Register User",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"function randomString(minValue, maxValue, dataSet = 'abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ') {\r",
+											"    if (!minValue) {\r",
+											"        minValue = 256;\r",
+											"    }\r",
+											"    if (!maxValue) {\r",
+											"        maxValue = 257;\r",
+											"    }\r",
+											"\r",
+											"    let length = _.random(minValue, maxValue)\r",
+											"    let randomString = \"\";\r",
+											"\r",
+											"    for (let i = 0; i < length; i++)\r",
+											"        randomString += dataSet.charAt(Math.floor(Math.random() * dataSet.length));\r",
+											"    return randomString;\r",
+											"}\r",
+											"\r",
+											"pm.environment.set(\"username\", randomString(6, 15));"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// @allure.label.tag=API\r",
+											"// @allure.label.tag=registration\r",
+											"// @allure.label.tag=negative\r",
+											"// @allure.label.severity=NORMAL\r",
+											"let jsonData = JSON.parse(responseBody);\r",
+											"\r",
+											"pm.test(\"Received correct error message\", function () {\r",
+											"    pm.expect(jsonData).to.have.lengthOf(1);   \r",
+											"    pm.expect(jsonData[0]).to.have.property(\"field\");\r",
+											"    pm.expect(jsonData[0]).to.have.property(\"errorMessage\");\r",
+											"    pm.expect(typeof jsonData[0].field).to.eql(\"string\");\r",
+											"    pm.expect(typeof jsonData[0].errorMessage).to.eql(\"string\");\r",
+											"    pm.expect(jsonData[0].field).to.eql(\"lastName\");\r",
+											"    pm.expect(jsonData[0].errorMessage).to.eql(\"Last name cannot contain whitespaces.\");\r",
+											"});\r",
+											"// TODO korrekt error message\r",
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\" : \"{{username}}\",\r\n    \"email\": \"{{$randomEmail}}\",\r\n    \"password\": \"Asdf1234\",\r\n    \"firstName\": \"{{$randomFirstName}}\",\r\n    \"lastName\": \"      \",\r\n    \"phoneNumber\": \"+36303630363\",\r\n    \"usageType\": \"BUSINESS\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users/registration",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										"registration"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Test Case 28 - Too Short Phone Number",
+					"item": [
+						{
+							"name": "Register User",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"function randomString(minValue, maxValue, dataSet = 'abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ') {\r",
+											"    if (!minValue) {\r",
+											"        minValue = 256;\r",
+											"    }\r",
+											"    if (!maxValue) {\r",
+											"        maxValue = 257;\r",
+											"    }\r",
+											"\r",
+											"    let length = _.random(minValue, maxValue)\r",
+											"    let randomString = \"\";\r",
+											"\r",
+											"    for (let i = 0; i < length; i++)\r",
+											"        randomString += dataSet.charAt(Math.floor(Math.random() * dataSet.length));\r",
+											"    return randomString;\r",
+											"}\r",
+											"\r",
+											"pm.environment.set(\"username\", randomString(6, 15));"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// @allure.label.tag=API\r",
+											"// @allure.label.tag=registration\r",
+											"// @allure.label.tag=negative\r",
+											"// @allure.label.severity=NORMAL\r",
+											"let jsonData = JSON.parse(responseBody);\r",
+											"\r",
+											"pm.test(\"Received correct error message\", function () {\r",
+											"    pm.expect(jsonData).to.have.lengthOf(1);   \r",
+											"    pm.expect(jsonData[0]).to.have.property(\"field\");\r",
+											"    pm.expect(jsonData[0]).to.have.property(\"errorMessage\");\r",
+											"    pm.expect(typeof jsonData[0].field).to.eql(\"string\");\r",
+											"    pm.expect(typeof jsonData[0].errorMessage).to.eql(\"string\");\r",
+											"    pm.expect(jsonData[0].field).to.eql(\"phoneNumber\");\r",
+											"    pm.expect(jsonData[0].errorMessage).to.eql(\"Wrong phone number format!\");\r",
+											"});\r",
+											"// TODO korrekt error message\r",
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\" : \"{{username}}\",\r\n    \"email\": \"{{$randomEmail}}\",\r\n    \"password\": \"Asdf1234\",\r\n    \"firstName\": \"{{$randomFirstName}}\",\r\n    \"lastName\": \"{{$randomLastName}}\",\r\n    \"phoneNumber\": \"+363036303\",\r\n    \"usageType\": \"BUSINESS\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users/registration",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										"registration"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Test Case 29 - Too Long Phone Number",
+					"item": [
+						{
+							"name": "Register User",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"function randomString(minValue, maxValue, dataSet = 'abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ') {\r",
+											"    if (!minValue) {\r",
+											"        minValue = 256;\r",
+											"    }\r",
+											"    if (!maxValue) {\r",
+											"        maxValue = 257;\r",
+											"    }\r",
+											"\r",
+											"    let length = _.random(minValue, maxValue)\r",
+											"    let randomString = \"\";\r",
+											"\r",
+											"    for (let i = 0; i < length; i++)\r",
+											"        randomString += dataSet.charAt(Math.floor(Math.random() * dataSet.length));\r",
+											"    return randomString;\r",
+											"}\r",
+											"\r",
+											"pm.environment.set(\"username\", randomString(6, 15));"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// @allure.label.tag=API\r",
+											"// @allure.label.tag=registration\r",
+											"// @allure.label.tag=negative\r",
+											"// @allure.label.severity=NORMAL\r",
+											"let jsonData = JSON.parse(responseBody);\r",
+											"\r",
+											"pm.test(\"Received correct error message\", function () {\r",
+											"    pm.expect(jsonData).to.have.lengthOf(1);   \r",
+											"    pm.expect(jsonData[0]).to.have.property(\"field\");\r",
+											"    pm.expect(jsonData[0]).to.have.property(\"errorMessage\");\r",
+											"    pm.expect(typeof jsonData[0].field).to.eql(\"string\");\r",
+											"    pm.expect(typeof jsonData[0].errorMessage).to.eql(\"string\");\r",
+											"    pm.expect(jsonData[0].field).to.eql(\"phoneNumber\");\r",
+											"    pm.expect(jsonData[0].errorMessage).to.eql(\"Wrong phone number format!\");\r",
+											"});\r",
+											"// TODO korrekt error message\r",
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\" : \"{{username}}\",\r\n    \"email\": \"{{$randomEmail}}\",\r\n    \"password\": \"Asdf1234\",\r\n    \"firstName\": \"{{$randomFirstName}}\",\r\n    \"lastName\": \"{{$randomLastName}}\",\r\n    \"phoneNumber\": \"+363036303123\",\r\n    \"usageType\": \"BUSINESS\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users/registration",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										"registration"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Test Case 30 - No Country Code in Phone Number",
+					"item": [
+						{
+							"name": "Register User",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"function randomString(minValue, maxValue, dataSet = 'abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ') {\r",
+											"    if (!minValue) {\r",
+											"        minValue = 256;\r",
+											"    }\r",
+											"    if (!maxValue) {\r",
+											"        maxValue = 257;\r",
+											"    }\r",
+											"\r",
+											"    let length = _.random(minValue, maxValue)\r",
+											"    let randomString = \"\";\r",
+											"\r",
+											"    for (let i = 0; i < length; i++)\r",
+											"        randomString += dataSet.charAt(Math.floor(Math.random() * dataSet.length));\r",
+											"    return randomString;\r",
+											"}\r",
+											"\r",
+											"pm.environment.set(\"password\", randomString(8, 10));\r",
+											"pm.environment.set(\"username\", randomString(6, 15));"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// @allure.label.tag=API\r",
+											"// @allure.label.tag=registration\r",
+											"// @allure.label.tag=negative\r",
+											"// @allure.label.severity=NORMAL\r",
+											"let jsonData = JSON.parse(responseBody);\r",
+											"\r",
+											"pm.test(\"Received correct error message\", function () {\r",
+											"    pm.expect(jsonData).to.have.lengthOf(1);   \r",
+											"    pm.expect(jsonData[0]).to.have.property(\"field\");\r",
+											"    pm.expect(jsonData[0]).to.have.property(\"errorMessage\");\r",
+											"    pm.expect(typeof jsonData[0].field).to.eql(\"string\");\r",
+											"    pm.expect(typeof jsonData[0].errorMessage).to.eql(\"string\");\r",
+											"    pm.expect(jsonData[0].field).to.eql(\"phoneNumber\");\r",
+											"    pm.expect(jsonData[0].errorMessage).to.eql(\"Wrong phone number format!\");\r",
+											"});\r",
+											"// TODO korrekt error message\r",
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\" : \"{{username}}\",\r\n    \"email\": \"{{$randomEmail}}\",\r\n    \"password\": \"Asdf1234\",\r\n    \"firstName\": \"{{$randomFirstName}}\",\r\n    \"lastName\": \"{{$randomLastName}}\",\r\n    \"phoneNumber\": \"06303630312\",\r\n    \"usageType\": \"BUSINESS\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users/registration",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										"registration"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Test Case 31 - Non-numerical Phone Number",
+					"item": [
+						{
+							"name": "Register User",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"function randomString(minValue, maxValue, dataSet = 'abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ') {\r",
+											"    if (!minValue) {\r",
+											"        minValue = 256;\r",
+											"    }\r",
+											"    if (!maxValue) {\r",
+											"        maxValue = 257;\r",
+											"    }\r",
+											"\r",
+											"    let length = _.random(minValue, maxValue)\r",
+											"    let randomString = \"\";\r",
+											"\r",
+											"    for (let i = 0; i < length; i++)\r",
+											"        randomString += dataSet.charAt(Math.floor(Math.random() * dataSet.length));\r",
+											"    return randomString;\r",
+											"}\r",
+											"\r",
+											"pm.environment.set(\"username\", randomString(6, 15));"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// @allure.label.tag=API\r",
+											"// @allure.label.tag=registration\r",
+											"// @allure.label.tag=negative\r",
+											"// @allure.label.severity=NORMAL\r",
+											"let jsonData = JSON.parse(responseBody);\r",
+											"\r",
+											"pm.test(\"Received correct error message\", function () {\r",
+											"    pm.expect(jsonData).to.have.lengthOf(1);   \r",
+											"    pm.expect(jsonData[0]).to.have.property(\"field\");\r",
+											"    pm.expect(jsonData[0]).to.have.property(\"errorMessage\");\r",
+											"    pm.expect(typeof jsonData[0].field).to.eql(\"string\");\r",
+											"    pm.expect(typeof jsonData[0].errorMessage).to.eql(\"string\");\r",
+											"    pm.expect(jsonData[0].field).to.eql(\"phoneNumber\");\r",
+											"    pm.expect(jsonData[0].errorMessage).to.eql(\"Wrong phone number format!\");\r",
+											"});\r",
+											"// TODO korrekt error message\r",
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\" : \"{{username}}\",\r\n    \"email\": \"{{$randomEmail}}\",\r\n    \"password\": \"Asdf1234\",\r\n    \"firstName\": \"{{$randomFirstName}}\",\r\n    \"lastName\": \"{{$randomLastName}}\",\r\n    \"phoneNumber\": \"0630a-36*3-03A12\",\r\n    \"usageType\": \"BUSINESS\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users/registration",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										"registration"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Test Case 32 - Existing Username",
+					"item": [
+						{
+							"name": "Register User",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// @allure.label.tag=API\r",
+											"// @allure.label.tag=registration\r",
+											"// @allure.label.tag=negative\r",
+											"// @allure.label.severity=NORMAL\r",
+											"let jsonData = JSON.parse(responseBody);\r",
+											"\r",
+											"pm.test(\"Received correct error message\", function () {\r",
+											"    pm.expect(jsonData).to.have.lengthOf(1);   \r",
+											"    pm.expect(jsonData[0]).to.have.property(\"field\");\r",
+											"    pm.expect(jsonData[0]).to.have.property(\"errorMessage\");\r",
+											"    pm.expect(typeof jsonData[0].field).to.eql(\"string\");\r",
+											"    pm.expect(typeof jsonData[0].errorMessage).to.eql(\"string\");\r",
+											"    pm.expect(jsonData[0].field).to.eql(\"username\");\r",
+											"    pm.expect(jsonData[0].errorMessage).to.eql(\"Username already exists: \" + pm.environment.get('baseline_username'));\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\" : \"{{baseline_username}}\",\r\n    \"email\": \"{{$randomEmail}}\",\r\n    \"password\": \"Asdf1234\",\r\n    \"firstName\": \"{{$randomFirstName}}\",\r\n    \"lastName\": \"{{$randomLastName}}\",\r\n    \"phoneNumber\": \"+36303630363\",\r\n    \"usageType\": \"BUSINESS\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users/registration",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										"registration"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Test Case 33 - Existing Email",
+					"item": [
+						{
+							"name": "Register User",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// @allure.label.tag=API\r",
+											"// @allure.label.tag=registration\r",
+											"// @allure.label.tag=negative\r",
+											"// @allure.label.severity=NORMAL\r",
+											"let jsonData = JSON.parse(responseBody);\r",
+											"\r",
+											"pm.test(\"Received correct error message\", function () {\r",
+											"    pm.expect(jsonData).to.have.lengthOf(1);   \r",
+											"    pm.expect(jsonData[0]).to.have.property(\"field\");\r",
+											"    pm.expect(jsonData[0]).to.have.property(\"errorMessage\");\r",
+											"    pm.expect(typeof jsonData[0].field).to.eql(\"string\");\r",
+											"    pm.expect(typeof jsonData[0].errorMessage).to.eql(\"string\");\r",
+											"    pm.expect(jsonData[0].field).to.eql(\"email\");\r",
+											"    pm.expect(jsonData[0].errorMessage).to.eql(\"Email already exists: \" + pm.environment.get('baseline_email'));\r",
+											"});\r",
+											"\r",
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\" : \"{{$randomUserName}}\",\r\n    \"email\": \"{{baseline_email}}\",\r\n    \"password\": \"Asdf1234\",\r\n    \"firstName\": \"{{$randomFirstName}}\",\r\n    \"lastName\": \"{{$randomLastName}}\",\r\n    \"phoneNumber\": \"+36303630363\",\r\n    \"usageType\": \"BUSINESS\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users/registration",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										"registration"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Test Case 34 - Existing Phone Number",
+					"item": [
+						{
+							"name": "Register User",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// @allure.label.tag=API\r",
+											"// @allure.label.tag=registration\r",
+											"// @allure.label.tag=positive\r",
+											"// @allure.label.severity=NORMAL\r",
+											"let jsonData = JSON.parse(responseBody);\r",
+											"\r",
+											"pm.test(\"Status code is 201\", function () {\r",
+											"    pm.response.to.have.status(201);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\" : \"{{$randomUserName}}\",\r\n    \"email\": \"{{$randomEmail}}\",\r\n    \"password\": \"Asdf1234\",\r\n    \"firstName\": \"{{$randomFirstName}}\",\r\n    \"lastName\": \"{{$randomLastName}}\",\r\n    \"phoneNumber\": \"{{baseline_phone_number}}\",\r\n    \"usageType\": \"BUSINESS\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users/registration",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										"registration"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Test Case 35 - Request Without Username",
+					"item": [
+						{
+							"name": "Register User",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// @allure.label.tag=API\r",
+											"// @allure.label.tag=registration\r",
+											"// @allure.label.tag=negative\r",
+											"// @allure.label.severity=NORMAL\r",
+											"let jsonData = JSON.parse(responseBody);\r",
+											"\r",
+											"pm.test(\"Received correct error message\", function () {\r",
+											"    pm.expect(jsonData).to.have.lengthOf(1);   \r",
+											"    pm.expect(jsonData[0]).to.have.property(\"field\");\r",
+											"    pm.expect(jsonData[0]).to.have.property(\"errorMessage\");\r",
+											"    pm.expect(typeof jsonData[0].field).to.eql(\"string\");\r",
+											"    pm.expect(typeof jsonData[0].errorMessage).to.eql(\"string\");\r",
+											"    pm.expect(jsonData[0].field).to.eql(\"username\");\r",
+											"    pm.expect(jsonData[0].errorMessage).to.eql(\"Your did not fill in your username.\");\r",
+											"});\r",
+											"//TODO korrekt error message\r",
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											""
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\": \"{{$randomEmail}}\",\r\n    \"password\": \"Asdf1234\",\r\n    \"firstName\": \"{{$randomFirstName}}\",\r\n    \"lastName\": \"{{$randomLastName}}\",\r\n    \"phoneNumber\": \"+36309998888\",\r\n    \"usageType\": \"BUSINESS\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users/registration",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										"registration"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Test Case 36 - Request Without Phone Number",
+					"item": [
+						{
+							"name": "Register User",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// @allure.label.tag=API\r",
+											"// @allure.label.tag=registration\r",
+											"// @allure.label.tag=negative\r",
+											"// @allure.label.severity=NORMAL\r",
+											"let jsonData = JSON.parse(responseBody);\r",
+											"\r",
+											"pm.test(\"Received correct error message\", function () {\r",
+											"    pm.expect(jsonData).to.have.lengthOf(1);   \r",
+											"    pm.expect(jsonData[0]).to.have.property(\"field\");\r",
+											"    pm.expect(jsonData[0]).to.have.property(\"errorMessage\");\r",
+											"    pm.expect(typeof jsonData[0].field).to.eql(\"string\");\r",
+											"    pm.expect(typeof jsonData[0].errorMessage).to.eql(\"string\");\r",
+											"    pm.expect(jsonData[0].field).to.eql(\"phoneNumber\");\r",
+											"    pm.expect(jsonData[0].errorMessage).to.eql(\"You did not type in your phone number.\");\r",
+											"});\r",
+											"//TODO korrekt error messages and status code.\r",
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"function randomString(minValue, maxValue, dataSet = 'abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ') {\r",
+											"    if (!minValue) {\r",
+											"        minValue = 256;\r",
+											"    }\r",
+											"    if (!maxValue) {\r",
+											"        maxValue = 257;\r",
+											"    }\r",
+											"\r",
+											"    let length = _.random(minValue, maxValue)\r",
+											"    let randomString = \"\";\r",
+											"\r",
+											"    for (let i = 0; i < length; i++)\r",
+											"        randomString += dataSet.charAt(Math.floor(Math.random() * dataSet.length));\r",
+											"    return randomString;\r",
+											"}\r",
+											"\r",
+											"pm.environment.set(\"username\", randomString(6, 15));"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\" : \"{{username}}\",\r\n    \"email\": \"{{$randomEmail}}\",\r\n    \"password\": \"Asdf1234\",\r\n    \"firstName\": \"{{$randomFirstName}}\",\r\n    \"lastName\": \"{{$randomLastName}}\",\r\n    \"usageType\": \"BUSINESS\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users/registration",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										"registration"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Test Case 37 - Request Without First Name",
+					"item": [
+						{
+							"name": "Register User",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// @allure.label.tag=API\r",
+											"// @allure.label.tag=registration\r",
+											"// @allure.label.tag=negative\r",
+											"// @allure.label.severity=NORMAL\r",
+											"let jsonData = JSON.parse(responseBody);\r",
+											"\r",
+											"pm.test(\"Received correct error message\", function () {\r",
+											"    pm.expect(jsonData).to.have.lengthOf(1);   \r",
+											"    pm.expect(jsonData[0]).to.have.property(\"field\");\r",
+											"    pm.expect(jsonData[0]).to.have.property(\"errorMessage\");\r",
+											"    pm.expect(typeof jsonData[0].field).to.eql(\"string\");\r",
+											"    pm.expect(typeof jsonData[0].errorMessage).to.eql(\"string\");\r",
+											"    pm.expect(jsonData[0].field).to.eql(\"firstName\");\r",
+											"    pm.expect(jsonData[0].errorMessage).to.eql(\"Please write in your first name.\");\r",
+											"});\r",
+											"//TODO korrekt error messages and status code.\r",
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"function randomString(minValue, maxValue, dataSet = 'abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ') {\r",
+											"    if (!minValue) {\r",
+											"        minValue = 256;\r",
+											"    }\r",
+											"    if (!maxValue) {\r",
+											"        maxValue = 257;\r",
+											"    }\r",
+											"\r",
+											"    let length = _.random(minValue, maxValue)\r",
+											"    let randomString = \"\";\r",
+											"\r",
+											"    for (let i = 0; i < length; i++)\r",
+											"        randomString += dataSet.charAt(Math.floor(Math.random() * dataSet.length));\r",
+											"    return randomString;\r",
+											"}\r",
+											"\r",
+											"pm.environment.set(\"username\", randomString(6, 15));"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\" : \"{{username}}\",\r\n    \"email\": \"{{$randomEmail}}\",\r\n    \"password\": \"Asdf1234\",\r\n    \"lastName\": \"{{$randomLastName}}\",\r\n    \"phoneNumber\": \"+36309998888\",\r\n    \"usageType\": \"BUSINESS\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users/registration",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										"registration"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Test Case 38 - Request Without Last Name",
+					"item": [
+						{
+							"name": "Register User",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// @allure.label.tag=API\r",
+											"// @allure.label.tag=registration\r",
+											"// @allure.label.tag=negative\r",
+											"// @allure.label.severity=NORMAL\r",
+											"let jsonData = JSON.parse(responseBody);\r",
+											"\r",
+											"pm.test(\"Received correct error message\", function () {\r",
+											"    pm.expect(jsonData).to.have.lengthOf(1);   \r",
+											"    pm.expect(jsonData[0]).to.have.property(\"field\");\r",
+											"    pm.expect(jsonData[0]).to.have.property(\"errorMessage\");\r",
+											"    pm.expect(typeof jsonData[0].field).to.eql(\"string\");\r",
+											"    pm.expect(typeof jsonData[0].errorMessage).to.eql(\"string\");\r",
+											"    pm.expect(jsonData[0].field).to.eql(\"lastName\");\r",
+											"    pm.expect(jsonData[0].errorMessage).to.eql(\"Please write in your last name.\");\r",
+											"});\r",
+											"//TODO korrekt error messages and status code.\r",
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"function randomString(minValue, maxValue, dataSet = 'abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ') {\r",
+											"    if (!minValue) {\r",
+											"        minValue = 256;\r",
+											"    }\r",
+											"    if (!maxValue) {\r",
+											"        maxValue = 257;\r",
+											"    }\r",
+											"\r",
+											"    let length = _.random(minValue, maxValue)\r",
+											"    let randomString = \"\";\r",
+											"\r",
+											"    for (let i = 0; i < length; i++)\r",
+											"        randomString += dataSet.charAt(Math.floor(Math.random() * dataSet.length));\r",
+											"    return randomString;\r",
+											"}\r",
+											"\r",
+											"pm.environment.set(\"username\", randomString(6, 15));"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\" : \"{{username}}\",\r\n    \"email\": \"{{$randomEmail}}\",\r\n    \"password\": \"Asdf1234\",\r\n    \"firstName\": \"{{$randomFirstName}}\",\r\n    \"phoneNumber\": \"+36309998888\",\r\n    \"usageType\": \"BUSINESS\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users/registration",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										"registration"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Test Case 39 - Request Without Password",
+					"item": [
+						{
+							"name": "Register User",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// @allure.label.tag=API\r",
+											"// @allure.label.tag=registration\r",
+											"// @allure.label.tag=negative\r",
+											"// @allure.label.severity=NORMAL\r",
+											"let jsonData = JSON.parse(responseBody);\r",
+											"\r",
+											"pm.test(\"Received correct error message\", function () {\r",
+											"    pm.expect(jsonData).to.have.lengthOf(1);   \r",
+											"    pm.expect(jsonData[0]).to.have.property(\"field\");\r",
+											"    pm.expect(jsonData[0]).to.have.property(\"errorMessage\");\r",
+											"    pm.expect(typeof jsonData[0].field).to.eql(\"string\");\r",
+											"    pm.expect(typeof jsonData[0].errorMessage).to.eql(\"string\");\r",
+											"    pm.expect(jsonData[0].field).to.eql(\"password\");\r",
+											"    pm.expect(jsonData[0].errorMessage).to.eql(\"Please write in your password.\");\r",
+											"});\r",
+											"//TODO korrekt error messages and status code.\r",
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"function randomString(minValue, maxValue, dataSet = 'abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ') {\r",
+											"    if (!minValue) {\r",
+											"        minValue = 256;\r",
+											"    }\r",
+											"    if (!maxValue) {\r",
+											"        maxValue = 257;\r",
+											"    }\r",
+											"\r",
+											"    let length = _.random(minValue, maxValue)\r",
+											"    let randomString = \"\";\r",
+											"\r",
+											"    for (let i = 0; i < length; i++)\r",
+											"        randomString += dataSet.charAt(Math.floor(Math.random() * dataSet.length));\r",
+											"    return randomString;\r",
+											"}\r",
+											"\r",
+											"pm.environment.set(\"username\", randomString(6, 15));"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\" : \"{{username}}\",\r\n    \"email\": \"{{$randomEmail}}\",\r\n    \"firstName\": \"{{$randomFirstName}}\",\r\n    \"lastName\": \"{{$randomLastName}}\",\r\n    \"phoneNumber\": \"+36309998888\",\r\n    \"usageType\": \"BUSINESS\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users/registration",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										"registration"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Test Case 40 - Request Without Email Address",
+					"item": [
+						{
+							"name": "Register User",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// @allure.label.tag=API\r",
+											"// @allure.label.tag=registration\r",
+											"// @allure.label.tag=negative\r",
+											"// @allure.label.severity=NORMAL\r",
+											"let jsonData = JSON.parse(responseBody);\r",
+											"\r",
+											"pm.test(\"Received correct error message\", function () {\r",
+											"    pm.expect(jsonData).to.have.lengthOf(1);   \r",
+											"    pm.expect(jsonData[0]).to.have.property(\"field\");\r",
+											"    pm.expect(jsonData[0]).to.have.property(\"errorMessage\");\r",
+											"    pm.expect(typeof jsonData[0].field).to.eql(\"string\");\r",
+											"    pm.expect(typeof jsonData[0].errorMessage).to.eql(\"string\");\r",
+											"    pm.expect(jsonData[0].field).to.eql(\"email\");\r",
+											"    pm.expect(jsonData[0].errorMessage).to.eql(\"Please write in your email, it must not be empty.\");\r",
+											"});\r",
+											"//TODO korrekt error messages\r",
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"function randomString(minValue, maxValue, dataSet = 'abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ') {\r",
+											"    if (!minValue) {\r",
+											"        minValue = 256;\r",
+											"    }\r",
+											"    if (!maxValue) {\r",
+											"        maxValue = 257;\r",
+											"    }\r",
+											"\r",
+											"    let length = _.random(minValue, maxValue)\r",
+											"    let randomString = \"\";\r",
+											"\r",
+											"    for (let i = 0; i < length; i++)\r",
+											"        randomString += dataSet.charAt(Math.floor(Math.random() * dataSet.length));\r",
+											"    return randomString;\r",
+											"}\r",
+											"\r",
+											"pm.environment.set(\"username\", randomString(6, 15));"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"{{username}}\",\r\n    \"password\": \"Asdf1234\",\r\n    \"firstName\": \"{{$randomFirstName}}\",\r\n    \"lastName\": \"{{$randomLastName}}\",\r\n    \"phoneNumber\": \"+36309998888\",\r\n    \"usageType\": \"BUSINESS\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users/registration",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										"registration"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Test Case 41 - Request Without Usage Type",
+					"item": [
+						{
+							"name": "Register User",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// @allure.label.tag=API\r",
+											"// @allure.label.tag=registration\r",
+											"// @allure.label.tag=negative\r",
+											"// @allure.label.severity=NORMAL\r",
+											"let jsonData = JSON.parse(responseBody);\r",
+											"\r",
+											"pm.test(\"Received correct error message\", function () {\r",
+											"    pm.expect(jsonData).to.have.lengthOf(1);   \r",
+											"    pm.expect(jsonData[0]).to.have.property(\"field\");\r",
+											"    pm.expect(jsonData[0]).to.have.property(\"errorMessage\");\r",
+											"    pm.expect(typeof jsonData[0].field).to.eql(\"string\");\r",
+											"    pm.expect(typeof jsonData[0].errorMessage).to.eql(\"string\");\r",
+											"    pm.expect(jsonData[0].field).to.eql(\"usageType\");\r",
+											"    pm.expect(jsonData[0].errorMessage).to.eql(\"Please write your usage type.\");\r",
+											"});\r",
+											"//TODO korrekt error messages\r",
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"function randomString(minValue, maxValue, dataSet = 'abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ') {\r",
+											"    if (!minValue) {\r",
+											"        minValue = 256;\r",
+											"    }\r",
+											"    if (!maxValue) {\r",
+											"        maxValue = 257;\r",
+											"    }\r",
+											"\r",
+											"    let length = _.random(minValue, maxValue)\r",
+											"    let randomString = \"\";\r",
+											"\r",
+											"    for (let i = 0; i < length; i++)\r",
+											"        randomString += dataSet.charAt(Math.floor(Math.random() * dataSet.length));\r",
+											"    return randomString;\r",
+											"}\r",
+											"\r",
+											"pm.environment.set(\"username\", randomString(6, 15));"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\": \"{{username}}\",\r\n    \"password\": \"Asdf1234\",\r\n    \"email\": \"{{$randomEmail}}\",\r\n    \"firstName\": \"{{$randomFirstName}}\",\r\n    \"lastName\": \"{{$randomLastName}}\",\r\n    \"phoneNumber\": \"+36309998888\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users/registration",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										"registration"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Test Case 42 - Too Long String Length",
+					"item": [
+						{
+							"name": "Register User",
+							"event": [
+								{
+									"listen": "prerequest",
+									"script": {
+										"exec": [
+											"function randomString(minValue, maxValue, dataSet = 'abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ') {\r",
+											"    if (!minValue) {\r",
+											"        minValue = 256;\r",
+											"    }\r",
+											"    if (!maxValue) {\r",
+											"        maxValue = 257;\r",
+											"    }\r",
+											"\r",
+											"    let length = _.random(minValue, maxValue)\r",
+											"    let randomString = \"\";\r",
+											"\r",
+											"    for (let i = 0; i < length; i++)\r",
+											"        randomString += dataSet.charAt(Math.floor(Math.random() * dataSet.length));\r",
+											"    return randomString;\r",
+											"}\r",
+											"\r",
+											"pm.environment.set(\"password\", randomString(256, 257));\r",
+											"pm.environment.set(\"username\", randomString(256, 257));\r",
+											"pm.environment.set(\"firstName\", randomString(256, 257));\r",
+											"pm.environment.set(\"lastName\", randomString(256, 257));"
+										],
+										"type": "text/javascript"
+									}
+								},
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// @allure.label.tag=API\r",
+											"// @allure.label.tag=registration\r",
+											"// @allure.label.tag=negative\r",
+											"// @allure.label.severity=NORMAL\r",
+											"let jsonData = JSON.parse(responseBody);\r",
+											"\r",
+											"pm.test(\"Received correct error message\", function () {\r",
+											"    pm.expect(jsonData).to.have.lengthOf(4);   \r",
+											"    pm.expect(jsonData[0]).to.have.property(\"field\");\r",
+											"    pm.expect(jsonData[0]).to.have.property(\"errorMessage\");\r",
+											"    pm.expect(typeof jsonData[0].field).to.eql(\"string\");\r",
+											"    pm.expect(typeof jsonData[0].errorMessage).to.eql(\"string\");\r",
+											"    pm.expect(jsonData[0].field).to.eql(\"phoneNumber\");\r",
+											"    pm.expect(jsonData[0].errorMessage).to.eql(\"Wrong phone number format!\");\r",
+											"});\r",
+											"\r",
+											"\r",
+											"// TODO korrekt error messagek, talán 1-nél több kell majd, illetve Firstname, lastname kerdeses\r",
+											"pm.test(\"Status code is 400\", function () {\r",
+											"    pm.response.to.have.status(400);\r",
+											"});"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"username\" : \"{{username}}\",\r\n    \"email\": \"{{$randomEmail}}\",\r\n    \"password\": \"{{password}}\",\r\n    \"firstName\": \"{{firstName}}\",\r\n    \"lastName\": \"{{lastName}}\",\r\n    \"phoneNumber\": \"+36303630312\",\r\n    \"usageType\": \"BUSINESS\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -278,7 +3459,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"username\" : \"{{username}}\",\r\n    \"password\" : \"{{password}}\"\r\n}",
+									"raw": "{\r\n    \"username\" : \"{{baseline_username}}\",\r\n    \"password\" : \"{{baseline_password}}\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
