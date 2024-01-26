@@ -1,8 +1,0 @@
-{
-    "username" : "esfapKg5xmi",
-    "email": "Nichole.Ryan@gmail.com",
-    "password": "Asdf1234",
-    "firstName": "Dannie",
-    "phoneNumber": "+36309998888",
-    "usageType": "BUSINESS"
-}

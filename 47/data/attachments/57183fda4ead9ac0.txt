@@ -1,9 +1,0 @@
-{
-    "username" : "XN4GOEkWJ8zw",
-    "email": "Irma.Mann@yahoo.com",
-    "password": "",
-    "firstName": "Addie",
-    "lastName": "Smitham",
-    "phoneNumber": "+36303630363",
-    "usageType": "BUSINESS"
-}

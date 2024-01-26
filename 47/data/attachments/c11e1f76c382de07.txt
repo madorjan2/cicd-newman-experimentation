@@ -1,9 +1,0 @@
-{
-    "username" : "2EzMXeAUAb",
-    "email": "Golden19@yahoo.com",
-    "password": "Asdf1234",
-    "firstName": "Bethel",
-    "lastName": "LPjT7tDv8ogFbnos4HtERFDFxkJtrpY32YH8nFNl2NXef9I7Qz7iPYNTHKvbWU7NGFddvFLEXQ3K9D5AEkMJ3aw3ynzhPnGH0BVIgWW9Sf8LbtGXpdCvoG7JnHt94Ivk0ULq9H2t1yqgITGPI9hSeyvtxnhukLJfhseiP0tyU3KnFuwUCCnfY9MoG2KMCJT4aiBHh0U4rtmhPy9l9ARRvRcXq4M5L5OkE5i9JpcdixO7y5DgB8EmVhOETSjrULZSb",
-    "phoneNumber": "+36303630363",
-    "usageType": "BUSINESS"
-}

@@ -1,1 +1,0 @@
-{"id":108,"username":"4Vu0XsT7","email":"Payton73@yahoo.com","firstName":"","lastName":"Quitzon","phoneNumber":"+36303630363","usageType":"BUSINESS","roles":["ROLE_GENERAL"],"active":false}

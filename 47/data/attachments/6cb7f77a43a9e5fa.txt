@@ -1,9 +1,0 @@
-{
-    "username" : "xuTkV0wk3F",
-    "email": "Myles.Ziemann@gmail.com",
-    "password": "6KLJ66NT",
-    "firstName": "Alicia",
-    "lastName": "Gibson",
-    "phoneNumber": "+36303630363",
-    "usageType": "BUSINESS"
-}

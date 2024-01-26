@@ -1,9 +1,0 @@
-{
-    "username" : "HkN2VFYw",
-    "email": "Elvis21@gmail.com",
-    "password": "ö££ん®à�©��Aa1",
-    "firstName": "Davion",
-    "lastName": "Hand",
-    "phoneNumber": "+36303630363",
-    "usageType": "BUSINESS"
-}

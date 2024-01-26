@@ -1,0 +1,1 @@
+{"id":121,"username":"a7fv3y6j","email":"Shany_Swaniawski@yahoo.com","firstName":"","lastName":"Hoppe","phoneNumber":"+36303630363","usageType":"BUSINESS","roles":["ROLE_GENERAL"],"active":false}

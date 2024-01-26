@@ -1,1 +1,0 @@
-{"id":110,"username":";(&;{-=/","email":"Leora_Lockman88@hotmail.com","firstName":"Lera","lastName":"Armstrong","phoneNumber":"+36303630363","usageType":"BUSINESS","roles":["ROLE_GENERAL"],"active":false}

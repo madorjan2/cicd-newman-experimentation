@@ -1,1 +1,0 @@
-[{"field":"email","errorMessage":"must not be empty"},{"field":"email","errorMessage":"must not be null"},{"field":"email","errorMessage":"must not be blank"}]

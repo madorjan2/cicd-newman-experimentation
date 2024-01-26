@@ -1,9 +1,0 @@
-{
-    "username" : "jOIBSDT",
-    "email": "Golden96@yahoo.com",
-    "password": "6z9vtumnwt",
-    "firstName": "Marian",
-    "lastName": "Gulgowski",
-    "phoneNumber": "+36303630363",
-    "usageType": "BUSINESS"
-}

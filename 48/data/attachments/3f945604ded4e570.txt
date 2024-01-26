@@ -1,0 +1,1 @@
+{"id":131,"username":"yRXpyuywd","email":"Jerry46@hotmail.com","firstName":null,"lastName":"Littel","phoneNumber":"+36309998888","usageType":"BUSINESS","roles":["ROLE_GENERAL"],"active":false}

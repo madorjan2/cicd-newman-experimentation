@@ -1,9 +1,0 @@
-{
-    "username" : "wZuvq0Nz1Q",
-    "email": "Talon_Metz1@hotmail.com",
-    "password": "Asdf1234",
-    "firstName": "Mireya",
-    "lastName": "Wintheiser",
-    "phoneNumber": "+36303630363",
-    "usageType": ""
-}

@@ -1,9 +1,0 @@
-{
-    "username" : "nWYSZTUpA",
-    "email": "Regan_Wyman@hotmail.com",
-    "password": "asd123",
-    "firstName": "Luis",
-    "lastName": "Crooks",
-    "phoneNumber": "+36303630363",
-    "usageType": "BUSINESS"
-}

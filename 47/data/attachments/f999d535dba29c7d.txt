@@ -1,9 +1,0 @@
-{
-    "username" : "€�ち���ö",
-    "email": "Fabian_Lynch@yahoo.com",
-    "password": "Asdf1234",
-    "firstName": "Emelia",
-    "lastName": "Maggio",
-    "phoneNumber": "+36303630363",
-    "usageType": "BUSINESS"
-}

@@ -1,0 +1,1 @@
+{"id":123,"username":"=)/(]$","email":"Kyler.Rohan89@yahoo.com","firstName":"Carole","lastName":"Beatty","phoneNumber":"+36303630363","usageType":"BUSINESS","roles":["ROLE_GENERAL"],"active":false}

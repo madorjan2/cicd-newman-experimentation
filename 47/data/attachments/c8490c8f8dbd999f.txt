@@ -1,1 +1,0 @@
-{"id":118,"username":"YhZyeswAUkt","email":"Zachariah.Daugherty36@hotmail.com","firstName":null,"lastName":"Stiedemann","phoneNumber":"+36309998888","usageType":"BUSINESS","roles":["ROLE_GENERAL"],"active":false}

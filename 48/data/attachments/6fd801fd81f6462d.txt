@@ -1,0 +1,9 @@
+{
+    "username" : "q4xY nzpDvdUE",
+    "email": "Edwardo_Harris@hotmail.com",
+    "password": "Asdf1234",
+    "firstName": "Pietro",
+    "lastName": "Fisher",
+    "phoneNumber": "+36303630363",
+    "usageType": "BUSINESS"
+}

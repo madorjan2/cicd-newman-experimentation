@@ -1,0 +1,9 @@
+{
+    "username" : "5JOkHTEdA06a",
+    "email": "Makenna97@hotmail.com",
+    "password": "Asdf1234",
+    "firstName": "Kylie",
+    "lastName": "ookIObInMtPmQHjJzivmrKBX6BBEF8pCzKVlQDyigxCYQYZdrmKdryGVYaF2CNkjPVfAOwXpcZnMSjkQv5uzwlyWWUQAQGcPkLpwTsn6fFrBU3aqyhsqYH3mSEPMLHJnbtEEAkzg7msSrUYIeepgCZMPAxLbP887y5WWKIhg14A130UzNHUGdqLUGhwsunkLBctAiCbw9hM1TmkyVP4BqVrN8N1ObCcIItE7N7pMXI9NcynmTqtiwuzriXYtDE6T",
+    "phoneNumber": "+36303630363",
+    "usageType": "BUSINESS"
+}

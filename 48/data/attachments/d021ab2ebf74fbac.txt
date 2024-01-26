@@ -1,0 +1,8 @@
+{
+    "username" : "9qTfUOtF",
+    "email": "Kimberly_Kozey@gmail.com",
+    "password": "Asdf1234",
+    "firstName": "Dannie",
+    "phoneNumber": "+36309998888",
+    "usageType": "BUSINESS"
+}

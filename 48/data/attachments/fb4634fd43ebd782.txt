@@ -1,0 +1,9 @@
+{
+    "username" : "WysazozXSG",
+    "email": "Herta95@gmail.com",
+    "password": "asd123",
+    "firstName": "Jermain",
+    "lastName": "Botsford",
+    "phoneNumber": "+36303630363",
+    "usageType": "BUSINESS"
+}

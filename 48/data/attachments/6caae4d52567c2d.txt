@@ -1,0 +1,9 @@
+{
+    "username" : "=)/(]$",
+    "email": "Kyler.Rohan89@yahoo.com",
+    "password": "Asdf1234",
+    "firstName": "Carole",
+    "lastName": "Beatty",
+    "phoneNumber": "+36303630363",
+    "usageType": "BUSINESS"
+}

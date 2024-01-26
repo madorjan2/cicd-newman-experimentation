@@ -1,9 +1,0 @@
-{
-    "username" : "Elvie75",
-    "email": "Darien.Green@yahoo.com",
-    "password": "Asdf1234",
-    "firstName": "Jesse",
-    "lastName": "Larkin",
-    "phoneNumber": "{{baseline_phone_number}}",
-    "usageType": "BUSINESS"
-}

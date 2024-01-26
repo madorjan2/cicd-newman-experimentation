@@ -1,0 +1,1 @@
+{"id":129,"username":"4UGwH41e2M","email":"Adolfo.Hane59@yahoo.com","firstName":"Kendall","lastName":"      ","phoneNumber":"+36303630363","usageType":"BUSINESS","roles":["ROLE_GENERAL"],"active":false}

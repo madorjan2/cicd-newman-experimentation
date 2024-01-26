@@ -1,0 +1,9 @@
+{
+    "username" : "CLoSfa2qP",
+    "email": "Myrtis30@yahoo.com",
+    "password": "à�は�ん��®🈀Aa1",
+    "firstName": "Estell",
+    "lastName": "Hagenes",
+    "phoneNumber": "+36303630363",
+    "usageType": "BUSINESS"
+}

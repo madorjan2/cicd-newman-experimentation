@@ -1,9 +1,0 @@
-{
-    "username" : ";(&;{-=/",
-    "email": "Leora_Lockman88@hotmail.com",
-    "password": "Asdf1234",
-    "firstName": "Lera",
-    "lastName": "Armstrong",
-    "phoneNumber": "+36303630363",
-    "usageType": "BUSINESS"
-}

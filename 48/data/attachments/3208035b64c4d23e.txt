@@ -1,0 +1,9 @@
+{
+    "username" : "Cloyd_McDermott67",
+    "email": "Kale.Gleichner16@gmail.com",
+    "password": "Asdf1234",
+    "firstName": "Elijah",
+    "lastName": "Prohaska",
+    "phoneNumber": "{{baseline_phone_number}}",
+    "usageType": "BUSINESS"
+}

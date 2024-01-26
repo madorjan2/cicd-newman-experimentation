@@ -1,9 +1,0 @@
-{
-    "username" : "umqKdwrwXzn1anP",
-    "email": "Matteo59@hotmail.com",
-    "password": "Asdf1234",
-    "firstName": "Stanley",
-    "lastName": "Russel",
-    "phoneNumber": "+363036303",
-    "usageType": "BUSINESS"
-}

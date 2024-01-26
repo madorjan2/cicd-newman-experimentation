@@ -1,0 +1,9 @@
+{
+    "username" : "",
+    "email": "Otilia.Cassin43@gmail.com",
+    "password": "Asdf1234",
+    "firstName": "Maximo",
+    "lastName": "Ortiz",
+    "phoneNumber": "+36303630363",
+    "usageType": "BUSINESS"
+}

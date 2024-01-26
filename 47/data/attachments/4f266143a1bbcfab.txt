@@ -1,8 +1,0 @@
-{
-    "email": "Esmeralda10@hotmail.com",
-    "password": "Asdf1234",
-    "firstName": "Alexie",
-    "lastName": "Hane",
-    "phoneNumber": "+36303630363",
-    "usageType": "BUSINESS"
-}

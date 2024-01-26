@@ -1,1 +1,0 @@
-{"id":111,"username":"VKlC 6g","email":"Tevin_Kautzer41@hotmail.com","firstName":"Gudrun","lastName":"Ratke","phoneNumber":"+36303630363","usageType":"BUSINESS","roles":["ROLE_GENERAL"],"active":false}

@@ -1,0 +1,9 @@
+{
+    "username" : "9Ne9xLNhlRheEl",
+    "email": "Ewell38@gmail.com",
+    "password": "bhlvoovMUk",
+    "firstName": "Jettie",
+    "lastName": "Tremblay",
+    "phoneNumber": "+36303630363",
+    "usageType": "BUSINESS"
+}

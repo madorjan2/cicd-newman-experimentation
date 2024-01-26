@@ -1,9 +1,0 @@
-{
-    "username" : "Janis_Effertz",
-    "email": "{{baseline_email}}",
-    "password": "Asdf1234",
-    "firstName": "Talia",
-    "lastName": "Runte",
-    "phoneNumber": "+36303630363",
-    "usageType": "BUSINESS"
-}

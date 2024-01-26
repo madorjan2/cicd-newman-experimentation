@@ -1,0 +1,9 @@
+{
+    "username" : "UwEkNPn9lb",
+    "email": "mqQMts@Fxo5rg.c",
+    "password": "Asdf1234",
+    "firstName": "Lavern",
+    "lastName": "Hagenes",
+    "phoneNumber": "+36303630363",
+    "usageType": "BUSINESS"
+}

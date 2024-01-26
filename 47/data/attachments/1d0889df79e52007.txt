@@ -1,9 +1,0 @@
-{
-    "username" : "hkhRKluOWUDrtSoT",
-    "email": "Cleora_Schowalter@gmail.com",
-    "password": "Asdf1234",
-    "firstName": "Lance",
-    "lastName": "Dach",
-    "phoneNumber": "+36303630363",
-    "usageType": "BUSINESS"
-}

@@ -1,0 +1,8 @@
+{
+    "username": "CpvLfrYgKLbr0wg",
+    "password": "Asdf1234",
+    "email": "Sharon_Abshire@yahoo.com",
+    "firstName": "Carol",
+    "lastName": "Lang",
+    "phoneNumber": "+36309998888"
+}

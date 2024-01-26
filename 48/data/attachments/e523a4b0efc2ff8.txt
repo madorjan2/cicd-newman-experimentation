@@ -1,0 +1,9 @@
+{
+    "username" : "9RglW8hTe",
+    "email": "Rebeka42@yahoo.com",
+    "password": "pns1p2lz",
+    "firstName": "Shakira",
+    "lastName": "Maggio",
+    "phoneNumber": "+36303630363",
+    "usageType": "BUSINESS"
+}

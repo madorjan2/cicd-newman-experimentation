@@ -1,0 +1,8 @@
+{
+    "username" : "08Wbv0c36",
+    "email": "Layne.Robel89@yahoo.com",
+    "firstName": "Delia",
+    "lastName": "Mayer",
+    "phoneNumber": "+36309998888",
+    "usageType": "BUSINESS"
+}

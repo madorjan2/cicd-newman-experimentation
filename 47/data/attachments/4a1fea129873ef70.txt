@@ -1,1 +1,0 @@
-{"id":109,"username":"9DIzQVh","email":"Winifred.Gislason39@gmail.com","firstName":"Estel","lastName":"","phoneNumber":"+36303630363","usageType":"BUSINESS","roles":["ROLE_GENERAL"],"active":false}

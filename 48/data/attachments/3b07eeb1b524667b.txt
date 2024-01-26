@@ -1,0 +1,15 @@
+{
+    "id": 2,
+    "username" : dbhBEEz,
+    "email": "Giuseppe_Abshire@yahoo.com",
+    "password": "Asdf1234",
+    "firstName": "Baylee",
+    "lastName": "O'Kon",
+    "phoneNumber": "+36303630363",
+    "usageType": "BUSINESS",
+    "roles": [
+        "ROLE_GENERAL"
+    ],
+    "active": true,
+    "whatever": "whatever"
+}
