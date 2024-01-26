@@ -6,6 +6,7 @@ TAG = 'setup'
 def get_file_list():
 	parent_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 	path = os.path.join(parent_dir, 'allure-results')
+	print(path)
 	return [os.path.join(path, f) for f in os.listdir(path) if
 			os.path.isfile(os.path.join(path, f)) and f[-5:] == ".json"]
 
@@ -20,8 +21,11 @@ def select_by_tag():
 
 
 def delete_from(file_list):
+	counter = 0
 	for f in file_list:
 		os.remove(f)
+		counter += 1
+	print(f"Removed {counter} files with tag: setup.")
 
 
 delete_from(select_by_tag())
