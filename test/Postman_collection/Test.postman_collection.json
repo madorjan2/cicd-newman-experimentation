@@ -790,6 +790,7 @@
 											"// @allure.label.tag=API\r",
 											"// @allure.label.tag=login\r",
 											"// @allure.label.tag=positive\r",
+											"// @allure.label.tag=setup\r",
 											"// @allure.label.severity=Critical\r",
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
@@ -903,10 +904,11 @@
 									"listen": "test",
 									"script": {
 										"exec": [
-											"// @allure.id=100\r",
 											"let jsonData = JSON.parse(responseBody);\r",
 											"pm.environment.set(\"access_token\", jsonData.accessToken);\r",
-											"pm.environment.set(\"refresh_token\", jsonData.refreshToken);"
+											"pm.environment.set(\"refresh_token\", jsonData.refreshToken);\r",
+											"\r",
+											"// @allure.label.tag=setup"
 										],
 										"type": "text/javascript"
 									}
@@ -956,7 +958,7 @@
 									"listen": "test",
 									"script": {
 										"exec": [
-											"// @allure.id=100\r",
+											"// @allure.label.tag=setup\r",
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
 											"});"
@@ -998,7 +1000,7 @@
 									"listen": "test",
 									"script": {
 										"exec": [
-											"// @allure.id=100\r",
+											"// @allure.label.tag=setup\r",
 											"pm.test(\"Status code is 200\", function () {\r",
 											"    pm.response.to.have.status(200);\r",
 											"});"
@@ -1041,7 +1043,7 @@
 									"listen": "test",
 									"script": {
 										"exec": [
-											"// @allure.id=100\r",
+											"\r",
 											"pm.test(\"Status code is 403\", function () {\r",
 											"    pm.response.to.have.status(403);\r",
 											"});"
