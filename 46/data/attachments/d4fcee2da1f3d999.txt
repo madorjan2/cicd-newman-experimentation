@@ -1,1 +1,0 @@
-{"timestamp":"2024-01-26T10:17:28.387+00:00","status":403,"error":"Forbidden","path":"/api/users/login"}

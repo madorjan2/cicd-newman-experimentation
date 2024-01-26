@@ -1,0 +1,1 @@
+{"id":116,"username":"Es7DZM4Q2TCFt3g","email":"Bernice_Yundt59@gmail.com","firstName":"Pete","lastName":"      ","phoneNumber":"+36303630363","usageType":"BUSINESS","roles":["ROLE_GENERAL"],"active":false}

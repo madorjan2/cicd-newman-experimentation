@@ -1,0 +1,8 @@
+{
+    "email": "Gunner54@hotmail.com",
+    "password": "Asdf1234",
+    "firstName": "Trever",
+    "lastName": "Mohr",
+    "phoneNumber": "+36309998888",
+    "usageType": "BUSINESS"
+}

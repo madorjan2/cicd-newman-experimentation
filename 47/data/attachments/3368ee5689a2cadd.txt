@@ -1,0 +1,9 @@
+{
+    "username" : "dhCTF8BDNcrq",
+    "email": "5txj62ct@r65TK7MzX5ujp83ALg4qt0xGBKuHda77n7ONQTExd4K0tPfiVY.c",
+    "password": "Asdf1234",
+    "firstName": "Christ",
+    "lastName": "Shanahan",
+    "phoneNumber": "+36303630363",
+    "usageType": "BUSINESS"
+}

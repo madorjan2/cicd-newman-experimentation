@@ -1,0 +1,9 @@
+{
+    "username" : "XSFg2reUv",
+    "email": "Destinee_Connelly15@gmail.com",
+    "password": "Asdf1234",
+    "firstName": "Elliot",
+    "lastName": "Heaney",
+    "phoneNumber": "06303630312",
+    "usageType": "BUSINESS"
+}

@@ -1,0 +1,9 @@
+{
+    "username" : "0nKq",
+    "email": "Cheyanne_Gislason@hotmail.com",
+    "password": "Asdf1234",
+    "firstName": "Dario",
+    "lastName": "King",
+    "phoneNumber": "+36303630363",
+    "usageType": "BUSINESS"
+}

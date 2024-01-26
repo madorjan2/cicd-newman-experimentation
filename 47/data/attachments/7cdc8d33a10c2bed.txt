@@ -1,0 +1,8 @@
+{
+    "username" : "IAp6lB8v6F",
+    "email": "Edwin_Rogahn@gmail.com",
+    "firstName": "Jairo",
+    "lastName": "Hickle",
+    "phoneNumber": "+36309998888",
+    "usageType": "BUSINESS"
+}

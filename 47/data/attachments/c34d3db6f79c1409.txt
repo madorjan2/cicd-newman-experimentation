@@ -1,0 +1,1 @@
+[{"field":"password","errorMessage":"Password must contains lower and uppercase characters, numbers and must be at least 8 characters long."}]

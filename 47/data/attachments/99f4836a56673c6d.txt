@@ -1,0 +1,9 @@
+{
+    "username" : "teHEEY",
+    "email": "Karson_Wolff@hotmail.com",
+    "password": "OCSssL5sETNqlNo4i3lvk6P2zC74q6rl59LM1SR6j8p2v5zevChzDjdtCBxRWvy7le60vwqRrxXSQPrVyVmCJzo3JosgGMyzsXodfqEjRjlw8qkm6wPZO63UEXgX8plap7lHK7PjCXY6z8osHqLhadPIaKglWncNqsXRzmI47XuRdReVjEPuEIwblNXbkk4yH4MKFYZMn96ut23nFV7ydIqLmEkMk5vjl6SAGrZzPYdCmkFjyAdnTAEmbuVN6gH2Aa1",
+    "firstName": "Stacy",
+    "lastName": "Mills",
+    "phoneNumber": "+36303630363",
+    "usageType": "BUSINESS"
+}

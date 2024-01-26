@@ -1,0 +1,9 @@
+{
+    "username" : "VKlC 6g",
+    "email": "Tevin_Kautzer41@hotmail.com",
+    "password": "Asdf1234",
+    "firstName": "Gudrun",
+    "lastName": "Ratke",
+    "phoneNumber": "+36303630363",
+    "usageType": "BUSINESS"
+}

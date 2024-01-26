@@ -1,0 +1,1 @@
+{"id":117,"username":"0ZFtiNReXAqkzdy","email":"Orval.Hoppe@gmail.com","firstName":"Johathan","lastName":"Upton","phoneNumber":null,"usageType":"BUSINESS","roles":["ROLE_GENERAL"],"active":false}

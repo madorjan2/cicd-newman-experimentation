@@ -1,0 +1,9 @@
+{
+    "username" : "BDqBxIUer3m",
+    "email": "Kara62@hotmail.com",
+    "password": "Asdf1234",
+    "firstName": "FiMYJ2Nr7onX4fATiZgdDau2cubGMN0AcBKaHmMsxVCmgC8W1C9iuYEuYw3vWE7Hmv3L7cJS5VyizMtQDXGafxbI4lSFobkOeyKwyWWTuTwQpqvZiZwnMC8wLOQIpZhWvVNHxJEybPEQiCSPSOfvFiyqMEQpmV35WjGMmOtrVsWa5qcCl3uw9nUPuYctHmypWjFfkkkqus2cozs7Fp2UsW2RQXJYzY28UfOja4BEzQ1fyCY7CkMzDCNveKcDv2oe",
+    "lastName": "Bauch",
+    "phoneNumber": "+36303630363",
+    "usageType": "BUSINESS"
+}

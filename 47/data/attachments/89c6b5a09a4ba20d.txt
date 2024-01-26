@@ -1,0 +1,17 @@
+function randomString(minValue, maxValue, dataSet = 'abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ') {
+    if (!minValue) {
+        minValue = 6;
+    }
+    if (!maxValue) {
+        maxValue = 15;
+    }
+
+    let length = _.random(minValue, maxValue)
+    let randomString = "";
+
+    for (let i = 0; i < length; i++)
+        randomString += dataSet.charAt(Math.floor(Math.random() * dataSet.length));
+    return randomString;
+}
+
+pm.environment.set("username", randomString(4, 4) + ' ' + randomString(1, 10))

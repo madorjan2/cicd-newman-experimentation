@@ -1,0 +1,8 @@
+{
+    "username" : "0ZFtiNReXAqkzdy",
+    "email": "Orval.Hoppe@gmail.com",
+    "password": "Asdf1234",
+    "firstName": "Johathan",
+    "lastName": "Upton",
+    "usageType": "BUSINESS"
+}
