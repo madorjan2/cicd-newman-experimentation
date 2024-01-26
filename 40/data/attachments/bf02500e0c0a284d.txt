@@ -1,8 +1,0 @@
-{
-    "email": "Phyllis.Ondricka@hotmail.com",
-    "password": "Asdf1234",
-    "firstName": "Mafalda",
-    "lastName": "Lehner",
-    "phoneNumber": "+36303630363",
-    "usageType": "BUSINESS"
-}

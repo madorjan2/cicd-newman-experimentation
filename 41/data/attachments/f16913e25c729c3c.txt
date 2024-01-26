@@ -1,0 +1,8 @@
+{
+    "email": "Presley_Corwin54@gmail.com",
+    "password": "Asdf1234",
+    "firstName": "Natalie",
+    "lastName": "Dare",
+    "phoneNumber": "+36303630363",
+    "usageType": "BUSINESS"
+}

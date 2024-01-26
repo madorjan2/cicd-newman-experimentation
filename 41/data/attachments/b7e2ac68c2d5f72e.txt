@@ -1,0 +1,1 @@
+{"id":75,"username":"W65Mk066","email":"Hunter23@gmail.com","firstName":"Daphney","lastName":"Maggio","phoneNumber":"+36303630363","usageType":"BUSINESS","roles":["ROLE_GENERAL"],"active":false}
