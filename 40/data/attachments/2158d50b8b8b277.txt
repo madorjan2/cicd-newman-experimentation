@@ -1,0 +1,12 @@
+let jsonData = JSON.parse(responseBody);
+pm.environment.set("access_token", jsonData.accessToken);
+pm.environment.set("refresh_token", jsonData.refreshToken);
+
+// @allure.label.tag=API
+// @allure.label.tag=login
+// @allure.label.tag=positive
+// @allure.label.tag=setup
+// @allure.label.severity=Critical
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+});
