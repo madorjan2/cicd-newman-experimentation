@@ -1,9 +1,0 @@
-{
-    "username" : "JL7Ya2ULSJN",
-    "email": "Monroe.Lubowitz12@hotmail.com",
-    "password": "Asdf1234",
-    "firstName": "Alfred",
-    "lastName": "Pollich",
-    "phoneNumber": "0630a-36*3-03A12",
-    "usageType": "BUSINESS"
-}

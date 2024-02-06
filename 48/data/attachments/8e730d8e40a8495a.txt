@@ -1,9 +1,0 @@
-{
-    "username" : "eBxLVIJzFGB3ZLO",
-    "email": "Arno.Hane@hotmail.com",
-    "password": "Asdf1234",
-    "firstName": "Wq4pRNQYBs56zdn2FYyMFBMUv77Mx3WiqpnLKuQaso3Lj5Z2x3otva3e6yaUqVML49r1XqMZZPNBWe287txrWUCkB6fMIQX5VgCkoeKtUmlJ6oPSDLbssEuYzijGuNnAKXEjJy5DiFW6TQne9MlGf2wLvSuqiW66R5d0qyzxFwZTIMkSFzwiSiOTRE2CIDVCtsGtpC7FvcF2JsGiuYbmzyK8ya1ggDViFo6vI2hZO2uxyJR5kg1lHOPiBsafTn43",
-    "lastName": "Moore",
-    "phoneNumber": "+36303630363",
-    "usageType": "BUSINESS"
-}

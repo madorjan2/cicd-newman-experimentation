@@ -1,9 +1,0 @@
-{
-    "username" : "Si9JYQ1DZoGE7MY",
-    "email": "Katrina_Beer@gmail.com",
-    "password": "Asdf1234",
-    "firstName": "Alicia",
-    "lastName": "Mitchell",
-    "phoneNumber": "",
-    "usageType": "BUSINESS"
-}

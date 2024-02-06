@@ -1,9 +1,0 @@
-{
-    "username" : "      ",
-    "email": "Marisol_Fisher@gmail.com",
-    "password": "Asdf1234",
-    "firstName": "Jacey",
-    "lastName": "Kreiger",
-    "phoneNumber": "+36303630363",
-    "usageType": "BUSINESS"
-}

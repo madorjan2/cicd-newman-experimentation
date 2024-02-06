@@ -1,9 +1,0 @@
-{
-    "username" : "zI9Tq0hJ",
-    "email": "Sienna.Schneider@yahoo.com",
-    "password": "Asdf1234",
-    "firstName": "Easter",
-    "lastName": "Hagenes",
-    "phoneNumber": "+36303630363",
-    "usageType": ""
-}

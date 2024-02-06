@@ -1,0 +1,1 @@
+{"id":174,"username":"QgfKzuhf","email":"Nelson.Pfannerstill@gmail.com","firstName":null,"lastName":"Schaden","phoneNumber":"+36309998888","usageType":"BUSINESS","roles":["ROLE_GENERAL"],"active":false}

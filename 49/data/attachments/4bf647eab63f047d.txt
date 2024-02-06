@@ -1,0 +1,9 @@
+{
+    "username" : "OleAEp",
+    "email": "Corine_Emmerich92@gmail.com",
+    "password": "Asdf1234",
+    "firstName": "Alex",
+    "lastName": "Conroy",
+    "phoneNumber": "0630a-36*3-03A12",
+    "usageType": "BUSINESS"
+}

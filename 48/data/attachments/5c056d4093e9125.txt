@@ -1,9 +1,0 @@
-{
-    "username" : "��µ©�👋こ",
-    "email": "Giles_Roob94@hotmail.com",
-    "password": "Asdf1234",
-    "firstName": "Nels",
-    "lastName": "Willms",
-    "phoneNumber": "+36303630363",
-    "usageType": "BUSINESS"
-}

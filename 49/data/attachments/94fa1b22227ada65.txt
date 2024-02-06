@@ -1,0 +1,1 @@
+{"id":169,"username":"f3If Ypk9tF","email":"Giovanni46@hotmail.com","firstName":"Virgie","lastName":"Larkin","phoneNumber":"+36303630363","usageType":"BUSINESS","roles":["ROLE_GENERAL"],"active":false}

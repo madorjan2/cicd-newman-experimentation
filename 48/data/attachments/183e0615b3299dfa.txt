@@ -1,1 +1,0 @@
-{"id":130,"username":"fDENmNwMxZ","email":"Ursula40@gmail.com","firstName":"Jeromy","lastName":"Douglas","phoneNumber":null,"usageType":"BUSINESS","roles":["ROLE_GENERAL"],"active":false}

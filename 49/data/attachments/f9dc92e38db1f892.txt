@@ -1,0 +1,9 @@
+{
+    "username" : "rr1MXhldtKEL",
+    "email": "Garland.Upton24@yahoo.com",
+    "password": "Asdf1234",
+    "firstName": "Easter",
+    "lastName": "VSwnnexXJyJZquVFLjeYyWgbKnGIXtMmauBLGBziQxMMyZumhtogpQwIZYGjcFYMuhKNdTMQfjriVdwMhiWNPstqiOxBQzFdHmMWuaxRKTfVKgtNvqvUWKXBAYutNfGruMUcqqbysFZmMocwkbOpWjREsOYVGXlfLXotAFsCvTNzLrUrJtPFPlPUuxuMsaKrGiONhWfRFBuBHVLEoocfRqRiLTBchXhPelPBIfqJPlQlLyZSuOQAayCLMBveYmsLR",
+    "phoneNumber": "+36303630363",
+    "usageType": "BUSINESS"
+}

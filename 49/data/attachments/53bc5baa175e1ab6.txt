@@ -1,0 +1,8 @@
+{
+    "username" : "QgfKzuhf",
+    "email": "Nelson.Pfannerstill@gmail.com",
+    "password": "Asdf1234",
+    "lastName": "Schaden",
+    "phoneNumber": "+36309998888",
+    "usageType": "BUSINESS"
+}

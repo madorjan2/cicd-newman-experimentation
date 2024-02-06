@@ -1,0 +1,1 @@
+{"id":170,"username":"kakvfCH7Ul9","email":"Melissa92@gmail.com","firstName":"Erna","lastName":"Heidenreich","phoneNumber":"+36303630363","usageType":"BUSINESS","roles":["ROLE_GENERAL"],"active":false}

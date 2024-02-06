@@ -1,0 +1,20 @@
+// @allure.label.tag=API
+// @allure.label.tag=ads
+// @allure.label.tag=edit
+// @allure.label.tag=negative
+// @allure.label.severity=Normal
+pm.test("Status code is 400", function () {
+    pm.response.to.have.status(400);
+});
+
+pm.test("Received correct error message", function () {
+    pm.expect(jsonData).to.have.lengthOf(1);    
+    pm.expect(jsonData[0]).to.have.property("field");
+    pm.expect(jsonData[0]).to.have.property("errorMessage");
+    pm.expect(typeof jsonData[0].field).to.eql("string");
+    pm.expect(typeof jsonData[0].errorMessage).to.eql("string");
+    pm.expect(jsonData[0].field).to.eql("address");
+    pm.expect(jsonData[0].errorMessage).to.eql("Cannot have missing address");
+});
+
+//TODO correct error message

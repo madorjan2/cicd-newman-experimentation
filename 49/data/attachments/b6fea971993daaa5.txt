@@ -1,0 +1,9 @@
+{
+    "username" : "LPHHbxJFE2",
+    "email": "Theodore.Tromp79@gmail.com",
+    "password": "asd123",
+    "firstName": "Reymundo",
+    "lastName": "Jones",
+    "phoneNumber": "+36303630363",
+    "usageType": "BUSINESS"
+}

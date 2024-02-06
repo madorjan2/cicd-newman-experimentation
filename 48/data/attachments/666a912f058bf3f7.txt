@@ -1,9 +1,0 @@
-{
-    "username" : "Sg6ZYP",
-    "email": "Alize47@gmail.com",
-    "password": "Asdf1234",
-    "firstName": "Corrine",
-    "lastName": "",
-    "phoneNumber": "+36303630363",
-    "usageType": "BUSINESS"
-}

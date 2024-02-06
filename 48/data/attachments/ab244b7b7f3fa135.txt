@@ -1,9 +1,0 @@
-{
-    "username" : "sRpaH6K",
-    "email": "Abraham_Turcotte62@gmail.com",
-    "password": "B3GI55S82L",
-    "firstName": "Stanley",
-    "lastName": "Ferry",
-    "phoneNumber": "+36303630363",
-    "usageType": "BUSINESS"
-}

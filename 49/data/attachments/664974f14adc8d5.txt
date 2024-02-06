@@ -1,0 +1,9 @@
+{
+    "username" : ")@*..(*]*&}",
+    "email": "Zakary52@hotmail.com",
+    "password": "Asdf1234",
+    "firstName": "Angel",
+    "lastName": "Hartmann",
+    "phoneNumber": "+36303630363",
+    "usageType": "BUSINESS"
+}

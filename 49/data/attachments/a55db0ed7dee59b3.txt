@@ -1,0 +1,9 @@
+{
+    "username" : "T6OhMPohShpn",
+    "email": "Johnathon.Bernier74@gmail.com",
+    "password": "MOZPa7nEq2iZvKin9eazJZPLhF7O9FcpZ0NyU2QrKAi985VBTkorYuEfqJbLwzjfs5aSO9zjKeSyY5P4iEjBCOGYGVo7R94DGhTdoQlQRnxwb4WgG4Ue8BgiALz4cOJBrnHgAaAXY9F6dikEQFDFdX4k3aZnN5gH8or85KmXbJ8oM93WfyRI2QqBtOOAge1en0kNX47FNotuiyOtpDzrObzJSHBae5kzDNM4AA8xonXotJQpI2hXhjXwcU3gJzV9Aa1",
+    "firstName": "Gwen",
+    "lastName": "Weimann",
+    "phoneNumber": "+36303630363",
+    "usageType": "BUSINESS"
+}

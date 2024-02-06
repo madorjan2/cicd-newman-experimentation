@@ -1,1 +1,0 @@
-{"id":126,"username":"CLoSfa2qP","email":"Myrtis30@yahoo.com","firstName":"Estell","lastName":"Hagenes","phoneNumber":"+36303630363","usageType":"BUSINESS","roles":["ROLE_GENERAL"],"active":false}

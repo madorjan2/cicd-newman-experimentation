@@ -1,1 +1,0 @@
-{"id":128,"username":"rnsG4XBavhhZG","email":"Belle_Hickle@yahoo.com","firstName":"      ","lastName":"Little","phoneNumber":"+36303630363","usageType":"BUSINESS","roles":["ROLE_GENERAL"],"active":false}

@@ -1,0 +1,1 @@
+{"id":178,"username":"Io43T00ZG5Niv","email":"Ismael.Johnston@yahoo.com","firstName":"Samanta","lastName":"Yundt","phoneNumber":"+36303630363","usageType":"BUSINESS","roles":["ROLE_GENERAL"],"active":true}

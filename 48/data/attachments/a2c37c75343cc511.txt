@@ -1,1 +1,0 @@
-{"id":125,"username":"��µ©�\uD83D\uDC4Bこ","email":"Giles_Roob94@hotmail.com","firstName":"Nels","lastName":"Willms","phoneNumber":"+36303630363","usageType":"BUSINESS","roles":["ROLE_GENERAL"],"active":false}

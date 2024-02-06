@@ -1,9 +1,0 @@
-{
-    "username" : "jyCWWM4GrJdeZqAk",
-    "email": "Rolando.Fisher11@yahoo.com",
-    "password": "Asdf1234",
-    "firstName": "Pearlie",
-    "lastName": "Walter",
-    "phoneNumber": "+36303630363",
-    "usageType": "BUSINESS"
-}

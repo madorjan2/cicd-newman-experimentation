@@ -1,0 +1,1 @@
+{"id":199,"username":"iwTscklkm","email":"Saul_Olson78@gmail.com","firstName":"Rigoberto","lastName":"Jacobs","phoneNumber":"0670*0!0303","usageType":"BUSINESS","roles":["ROLE_GENERAL"],"active":true}

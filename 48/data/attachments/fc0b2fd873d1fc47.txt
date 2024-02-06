@@ -1,8 +1,0 @@
-{
-    "email": "Miles_Bahringer@hotmail.com",
-    "password": "Asdf1234",
-    "firstName": "Rowan",
-    "lastName": "Stracke",
-    "phoneNumber": "+36303630363",
-    "usageType": "BUSINESS"
-}

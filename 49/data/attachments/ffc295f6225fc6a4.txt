@@ -1,0 +1,1 @@
+{"id":180,"username":"4kLHId4anq9","email":"Trenton72@yahoo.com","firstName":"Lessie","lastName":"Hoppe","phoneNumber":"+36303630363","usageType":"BUSINESS","roles":["ROLE_GENERAL"],"active":true}

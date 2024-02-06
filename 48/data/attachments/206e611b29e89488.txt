@@ -1,8 +1,0 @@
-{
-    "username" : "fDENmNwMxZ",
-    "email": "Ursula40@gmail.com",
-    "password": "Asdf1234",
-    "firstName": "Jeromy",
-    "lastName": "Douglas",
-    "usageType": "BUSINESS"
-}

@@ -1,0 +1,9 @@
+{
+    "username" : "kakvfCH7Ul9",
+    "email": "Melissa92@gmail.com",
+    "password": "ö©ñんö�Aa1",
+    "firstName": "Erna",
+    "lastName": "Heidenreich",
+    "phoneNumber": "+36303630363",
+    "usageType": "BUSINESS"
+}

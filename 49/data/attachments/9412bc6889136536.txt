@@ -1,0 +1,21 @@
+let jsonData = JSON.parse(responseBody);
+
+// @allure.label.tag=API
+// @allure.label.tag=profile
+// @allure.label.tag=positive
+// @allure.label.severity=Critical
+pm.test("Status code is 403", function () {
+    pm.response.to.have.status(403);
+});
+
+pm.test("Received correct error message", function () {
+    pm.expect(jsonData).to.have.lengthOf(1);
+    pm.expect(jsonData[0]).to.have.property("error_message");
+    pm.expect(typeof jsonData.error_message).to.eql("string");
+    pm.expect(jsonData[0].error_message).to.eql("The bearer token is invalid.");
+});
+
+//TODO: error_message to errorMessage, also errormessage text
+pm.test("Previous test(s) passed", function () {
+    pm.expect(pm.environment.get('assertion_chain')).to.be.true;
+});

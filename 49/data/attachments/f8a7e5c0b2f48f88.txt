@@ -1,0 +1,1 @@
+{"id":175,"username":"jUK9dUzj3y","email":"Keanu_Breitenberg@hotmail.com","firstName":"Stephania","lastName":null,"phoneNumber":"+36309998888","usageType":"BUSINESS","roles":["ROLE_GENERAL"],"active":false}

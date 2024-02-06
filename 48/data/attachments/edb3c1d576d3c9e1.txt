@@ -1,9 +1,0 @@
-{
-    "username" : "rnsG4XBavhhZG",
-    "email": "Belle_Hickle@yahoo.com",
-    "password": "Asdf1234",
-    "firstName": "      ",
-    "lastName": "Little",
-    "phoneNumber": "+36303630363",
-    "usageType": "BUSINESS"
-}

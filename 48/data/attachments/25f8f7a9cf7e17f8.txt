@@ -1,9 +1,0 @@
-{
-    "username" : "madorjan",
-    "email": "Linwood_Lowe79@gmail.com",
-    "password": "Asdf1234",
-    "firstName": "Enrico",
-    "lastName": "Bernier",
-    "phoneNumber": "+36303630363",
-    "usageType": "BUSINESS"
-}

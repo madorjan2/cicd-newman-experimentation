@@ -1,9 +1,0 @@
-{
-    "username" : "ZtluInfOsOub",
-    "email": "Krystal.Kertzmann@yahoo.com",
-    "password": "L07PpUdV2UxCCy29AlCjwMuVaJVOWwYKQt6LYQZUkSQUOV1SiIGrwZ5GfLGyugz4PjjU0SRhOH53qJqSl4A7lWDDIrrqn864WKaZ3fLrwXwVR9oTgZJjzlkqnbLAuSI3ghIX7tUv7QO3KrZhI3ZHG5cNva7W8CU3GEwbq7UvX9R0SrKT6E24yyl7398YwhGaAUBLjbY3jLLZ3pa76MeJTHnQw1Qn04hMtwUV27iwKy7Y7e6HoaUeAWTmt5HRc1jevAa1",
-    "firstName": "Jazmyn",
-    "lastName": "Lindgren",
-    "phoneNumber": "+36303630363",
-    "usageType": "BUSINESS"
-}

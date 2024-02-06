@@ -1,0 +1,1 @@
+[{"field":"password","errorMessage":"Password must contains lower and uppercase characters, numbers and the length must be between 8 and 20 characters."},{"field":"lastName","errorMessage":"Lastname can include lower and uppercase."}]
