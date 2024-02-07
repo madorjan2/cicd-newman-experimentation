@@ -1,0 +1,8 @@
+{
+    "username": "AvT58b6BR",
+    "password": "Asdf1234",
+    "firstName": "Laisha",
+    "lastName": "Goodwin",
+    "phoneNumber": "+36309998888",
+    "usageType": "BUSINESS"
+}

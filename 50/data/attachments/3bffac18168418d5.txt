@@ -1,0 +1,8 @@
+{
+    "username" : "fxpY0npKp2NuZ",
+    "email": "Kasey_Marvin56@gmail.com",
+    "password": "Asdf1234",
+    "firstName": "Alessia",
+    "phoneNumber": "+36309998888",
+    "usageType": "BUSINESS"
+}

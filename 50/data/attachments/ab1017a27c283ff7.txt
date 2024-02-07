@@ -1,0 +1,23 @@
+// @allure.label.tag=API
+// @allure.label.tag=ads
+// @allure.label.tag=post
+// @allure.label.tag=negative
+// @allure.label.severity=Normal
+pm.test("Status code is 400", function () {
+    pm.response.to.have.status(400);
+});
+
+pm.test("Received correct error message", function () {
+    pm.expect(jsonData).to.have.lengthOf(1);    
+    pm.expect(jsonData[0]).to.have.property("field");
+    pm.expect(jsonData[0]).to.have.property("errorMessage");
+    pm.expect(typeof jsonData[0].field).to.eql("string");
+    pm.expect(typeof jsonData[0].errorMessage).to.eql("string");
+    pm.expect(jsonData[0].field).to.eql("plot");
+    pm.expect(jsonData[0].errorMessage).to.eql("Plot cannot be 0 or negative");
+});
+
+pm.test("Previous test(s) passed", function () {
+    pm.expect(pm.environment.get('assertion_chain')).to.be.true;
+});
+//TODO correct error message

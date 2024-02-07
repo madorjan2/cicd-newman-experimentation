@@ -1,0 +1,9 @@
+{
+    "username" : "]#*,.(]$",
+    "email": "Lawrence97@gmail.com",
+    "password": "Asdf1234",
+    "firstName": "Raleigh",
+    "lastName": "Stanton",
+    "phoneNumber": "+36303630363",
+    "usageType": "BUSINESS"
+}

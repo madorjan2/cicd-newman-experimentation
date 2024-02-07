@@ -1,0 +1,9 @@
+{
+    "username" : "KYMmovlgQKnUmN",
+    "email": "Dianna.Franecki38@hotmail.com",
+    "password": "pmjfqfe4g",
+    "firstName": "Nick",
+    "lastName": "Rowe",
+    "phoneNumber": "+36303630363",
+    "usageType": "BUSINESS"
+}

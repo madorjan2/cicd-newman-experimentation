@@ -1,0 +1,1 @@
+{"id":254,"username":"8mVkUx","email":"Afton.Schoen87@gmail.com","firstName":"Aurelio","lastName":"Hodkiewicz","phoneNumber":"+36303630363","usageType":"BUSINESS","roles":["ROLE_GENERAL"],"active":true}

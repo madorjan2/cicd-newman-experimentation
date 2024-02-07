@@ -1,0 +1,8 @@
+{
+    "email": "Stone.Kirlin52@gmail.com",
+    "password": "Asdf1234",
+    "firstName": "Kobe",
+    "lastName": "Hoppe",
+    "phoneNumber": "+36309998888",
+    "usageType": "BUSINESS"
+}

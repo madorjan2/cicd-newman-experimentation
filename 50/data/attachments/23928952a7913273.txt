@@ -1,0 +1,1 @@
+{"id":252,"username":"aLqydMpXSAnM","email":"Frederik.Dibbert@yahoo.com","firstName":"Tiara","lastName":"Cartwright","phoneNumber":"+36309998888","usageType":null,"roles":["ROLE_GENERAL"],"active":false}

@@ -1,0 +1,9 @@
+{
+    "username" : "KYBpGfg6f2mHZDIDr",
+    "email": "Bryana.Schuster@yahoo.com",
+    "password": "Asdf1234",
+    "firstName": "Mossie",
+    "lastName": "Satterfield",
+    "phoneNumber": "+36303630363",
+    "usageType": "BUSINESS"
+}

@@ -1,0 +1,8 @@
+{
+    "username": "aLqydMpXSAnM",
+    "password": "Asdf1234",
+    "email": "Frederik.Dibbert@yahoo.com",
+    "firstName": "Tiara",
+    "lastName": "Cartwright",
+    "phoneNumber": "+36309998888"
+}

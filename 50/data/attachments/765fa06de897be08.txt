@@ -1,0 +1,1 @@
+{"id":259,"username":"FA2XqKxDUl","email":"madorjan@gmail.com","firstName":"Napoleon","lastName":"Kerluke","phoneNumber":"+36303630363","usageType":"BUSINESS","roles":["ROLE_GENERAL"],"active":true}

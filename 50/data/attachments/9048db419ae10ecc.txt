@@ -1,0 +1,1 @@
+pm.environment.set("fake_userid", pm.environment.get('baseline_id')-1);

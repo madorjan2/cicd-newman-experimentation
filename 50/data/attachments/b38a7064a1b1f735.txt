@@ -1,0 +1,9 @@
+{
+    "username" : "Wilfred_Simonis4",
+    "email": "halib75567@grassdev.com",
+    "password": "Asdf1234",
+    "firstName": "Mckayla",
+    "lastName": "Medhurst",
+    "phoneNumber": "+36303630363",
+    "usageType": "BUSINESS"
+}

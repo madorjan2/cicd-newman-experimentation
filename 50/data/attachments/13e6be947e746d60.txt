@@ -1,0 +1,9 @@
+{
+    "username" : "PKi5I7Dn",
+    "email": "Letitia11@gmail.com",
+    "password": "Asdf1234",
+    "firstName": "Jamir",
+    "lastName": "LOLqKTZBntlZgofVgrkdGUaYwombCenkrWigKZIhIHcFjBUSrCLOWQUZuZRuLLYKbliTmqdQDXkmzjLNIllSnCCHnAdyUoROfsSAxfAZaHMiSAerXgGCnAAoVQhSLAxertqOYSqVWIdjOfDNBhPgMpZrYIlUWXDwfyfFwcDhqVBNpJErpiGzapcSByMLGCfZSDjWollSsVHMKZMosVLOjmGvQGhUkNmZuWscvQfUwMeVQSQYwHloXNQGeqToZtBrC",
+    "phoneNumber": "+36303630363",
+    "usageType": "BUSINESS"
+}

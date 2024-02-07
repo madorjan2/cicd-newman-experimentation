@@ -1,0 +1,9 @@
+{
+    "username" : "QVb2Xz",
+    "email": "Geovany_Emard@gmail.com",
+    "password": "Asdf1234",
+    "firstName": "Vivian",
+    "lastName": "Kuphal",
+    "phoneNumber": "06303630312",
+    "usageType": "BUSINESS"
+}

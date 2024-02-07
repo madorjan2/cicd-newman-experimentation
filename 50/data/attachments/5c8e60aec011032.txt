@@ -1,0 +1,1 @@
+{"id":256,"username":"xZwflFLEqXSpk","email":"Linda.Prohaska40@hotmail.com","firstName":"Anita","lastName":"Mann","phoneNumber":"+36303630363","usageType":"BUSINESS","roles":["ROLE_GENERAL"],"active":true}
