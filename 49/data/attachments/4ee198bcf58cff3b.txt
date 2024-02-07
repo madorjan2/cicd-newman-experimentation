@@ -1,8 +1,0 @@
-{
-    "username": "UCwKGS",
-    "password": "Asdf1234",
-    "email": "Lee61@gmail.com",
-    "firstName": "Thalia",
-    "lastName": "Davis",
-    "phoneNumber": "+36309998888"
-}

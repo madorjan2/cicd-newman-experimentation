@@ -1,9 +1,0 @@
-{
-    "username" : "nhW",
-    "email": "Mabel_Bergnaum15@gmail.com",
-    "password": "Asdf1234",
-    "firstName": "Annamae",
-    "lastName": "Hahn",
-    "phoneNumber": "+36303630363",
-    "usageType": "BUSINESS"
-}

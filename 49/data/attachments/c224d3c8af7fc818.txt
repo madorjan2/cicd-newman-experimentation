@@ -1,9 +1,0 @@
-{
-    "username" : "zw2k7d9BVcee6Z4",
-    "email": "Dion12@hotmail.com",
-    "password": "Asdf1234",
-    "firstName": "Ladarius",
-    "lastName": "Weber",
-    "phoneNumber": "06303630312",
-    "usageType": "BUSINESS"
-}

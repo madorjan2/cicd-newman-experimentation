@@ -1,1 +1,0 @@
-{"id":197,"username":"kicpbWopAHp","email":"Neil.Toy25@gmail.com","firstName":"Pascale","lastName":"Harvey","phoneNumber":"+367010101010101010","usageType":"BUSINESS","roles":["ROLE_GENERAL"],"active":true}

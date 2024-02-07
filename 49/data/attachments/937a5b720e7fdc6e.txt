@@ -1,9 +1,0 @@
-{
-    "username" : "nObPFwSdM",
-    "email": "Charley.Jaskolski99@gmail.com",
-    "password": "Asdf1234",
-    "firstName": "      ",
-    "lastName": "Haag",
-    "phoneNumber": "+36303630363",
-    "usageType": "BUSINESS"
-}

@@ -1,1 +1,0 @@
-pm.environment.set("first_name", "        ");

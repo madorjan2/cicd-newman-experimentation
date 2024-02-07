@@ -1,1 +1,0 @@
-{"id":179,"username":"C2lJWgS","email":"Elvis_Balistreri@hotmail.com","firstName":"Alta","lastName":"Fadel","phoneNumber":"+36303630363","usageType":"BUSINESS","roles":["ROLE_GENERAL"],"active":true}

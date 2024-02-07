@@ -1,9 +1,0 @@
-{
-    "username" : "09P5vO",
-    "email": "Rhianna79@hotmail.com",
-    "password": "slRlFACyM",
-    "firstName": "Breana",
-    "lastName": "Beier",
-    "phoneNumber": "+36303630363",
-    "usageType": "BUSINESS"
-}

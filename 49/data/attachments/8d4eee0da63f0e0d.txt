@@ -1,9 +1,0 @@
-{
-    "username" : "NRExZTwkGkA",
-    "email": "Triston35@gmail.com",
-    "password": "EGNXBB50X",
-    "firstName": "Petra",
-    "lastName": "Spencer",
-    "phoneNumber": "+36303630363",
-    "usageType": "BUSINESS"
-}

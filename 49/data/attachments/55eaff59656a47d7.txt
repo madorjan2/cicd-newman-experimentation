@@ -1,1 +1,0 @@
-{"id":195,"username":"2SPNDrkZ","email":"Emmanuel.Predovic@yahoo.com","firstName":"Dell","lastName":"        ","phoneNumber":"+36303630363","usageType":"BUSINESS","roles":["ROLE_GENERAL"],"active":true}

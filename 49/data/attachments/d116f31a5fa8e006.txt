@@ -1,1 +1,0 @@
-{"id":196,"username":"xEqru0sH","email":"Casandra.Kuhn1@gmail.com","firstName":"Effie","lastName":"Conroy","phoneNumber":"+367","usageType":"BUSINESS","roles":["ROLE_GENERAL"],"active":true}

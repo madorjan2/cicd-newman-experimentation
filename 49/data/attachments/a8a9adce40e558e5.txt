@@ -1,1 +1,0 @@
-{"id":173,"username":"buqRS0","email":"Mallory.Kassulke38@hotmail.com","firstName":"Davon","lastName":"Gulgowski","phoneNumber":null,"usageType":"BUSINESS","roles":["ROLE_GENERAL"],"active":false}

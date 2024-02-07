@@ -1,1 +1,0 @@
-{"id":176,"username":"UCwKGS","email":"Lee61@gmail.com","firstName":"Thalia","lastName":"Davis","phoneNumber":"+36309998888","usageType":null,"roles":["ROLE_GENERAL"],"active":false}

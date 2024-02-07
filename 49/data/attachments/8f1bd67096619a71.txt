@@ -1,9 +1,0 @@
-{
-    "username" : "�é���àö",
-    "email": "Taya_Gleichner7@hotmail.com",
-    "password": "Asdf1234",
-    "firstName": "Edgar",
-    "lastName": "Barton",
-    "phoneNumber": "+36303630363",
-    "usageType": "BUSINESS"
-}

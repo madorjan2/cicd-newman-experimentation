@@ -1,1 +1,0 @@
-{"id":172,"username":"Antone_OReilly","email":"Angelica.Macejkovic@yahoo.com","firstName":"Pascale","lastName":"Dickinson","phoneNumber":"+36303630363","usageType":"BUSINESS","roles":["ROLE_GENERAL"],"active":false}

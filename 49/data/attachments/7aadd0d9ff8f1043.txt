@@ -1,8 +1,0 @@
-{
-    "username" : "jUK9dUzj3y",
-    "email": "Keanu_Breitenberg@hotmail.com",
-    "password": "Asdf1234",
-    "firstName": "Stephania",
-    "phoneNumber": "+36309998888",
-    "usageType": "BUSINESS"
-}

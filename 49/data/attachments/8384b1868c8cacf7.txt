@@ -1,9 +1,0 @@
-{
-    "username" : "PcJ1wOqepHTw",
-    "email": "Arnaldo_Hane42@hotmail.com",
-    "password": "Asdf1234",
-    "firstName": "Lillian",
-    "lastName": "Parisian",
-    "phoneNumber": "+363036303123",
-    "usageType": "BUSINESS"
-}

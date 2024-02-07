@@ -1,9 +1,0 @@
-{
-    "username" : "madorjan",
-    "email": "Dejuan92@hotmail.com",
-    "password": "Asdf1234",
-    "firstName": "Aditya",
-    "lastName": "Olson",
-    "phoneNumber": "+36303630363",
-    "usageType": "BUSINESS"
-}

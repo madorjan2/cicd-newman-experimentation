@@ -1,1 +1,0 @@
-{"id":200,"username":"8hUZhgSaFAD","email":"Susie65@hotmail.com","firstName":"","lastName":"Lehner","phoneNumber":"+36303630363","usageType":"BUSINESS","roles":["ROLE_GENERAL"],"active":true}

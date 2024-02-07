@@ -1,8 +1,0 @@
-// @allure.label.tag=API
-// @allure.label.tag=ads
-// @allure.label.tag=post
-// @allure.label.tag=negative
-// @allure.label.severity=CRITICAL
-pm.test("Status code is 403", function () {
-    pm.response.to.have.status(403);
-});

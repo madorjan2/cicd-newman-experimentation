@@ -1,1 +1,0 @@
-{"id":181,"username":"UAC89ws3","email":"Damaris79@gmail.com","firstName":"Terence","lastName":"Heathcote","phoneNumber":"+36707070707","usageType":"BUSINESS","roles":["ROLE_GENERAL"],"active":true}

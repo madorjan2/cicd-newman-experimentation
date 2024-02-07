@@ -1,1 +1,0 @@
-{"timestamp":"2024-02-06T11:29:10.967+00:00","status":500,"error":"Internal Server Error","path":"/api/users/registration"}

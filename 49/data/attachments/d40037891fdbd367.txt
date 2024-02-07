@@ -1,9 +1,0 @@
-{
-    "username" : "G8CVH1thZ3FrG",
-    "email": "Angus31@gmail.com",
-    "password": "Asdf1234",
-    "firstName": "Louvenia",
-    "lastName": "Schmeler",
-    "phoneNumber": "+363036303",
-    "usageType": "BUSINESS"
-}

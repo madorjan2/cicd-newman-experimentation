@@ -1,1 +1,0 @@
-{"id":183,"username":"K8dxC5","email":"madorjan@gmail.com","firstName":"Mathew","lastName":"Weimann","phoneNumber":"+36303630363","usageType":"BUSINESS","roles":["ROLE_GENERAL"],"active":true}

@@ -1,1 +1,0 @@
-pm.environment.set("userid", pm.environment.get("baseline_id")-1)

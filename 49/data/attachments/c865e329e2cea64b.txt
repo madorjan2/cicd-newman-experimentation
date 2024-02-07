@@ -1,9 +1,0 @@
-{
-    "username" : "duYixkXjzm",
-    "email": "V8DkHAA@1YUBI.c",
-    "password": "Asdf1234",
-    "firstName": "Hyman",
-    "lastName": "Kuhn",
-    "phoneNumber": "+36303630363",
-    "usageType": "BUSINESS"
-}

@@ -1,9 +1,0 @@
-{
-    "username" : "1cc43q2Hux",
-    "email": "Zachary_Bergnaum16@yahoo.com",
-    "password": "Asdf1234",
-    "firstName": "Rhiannon",
-    "lastName": "      ",
-    "phoneNumber": "+36303630363",
-    "usageType": "BUSINESS"
-}

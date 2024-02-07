@@ -1,9 +1,0 @@
-{
-    "username" : "A9FsSGa",
-    "email": "Enoch_Turcotte32@yahoo.com",
-    "password": "yvtw18al",
-    "firstName": "Pearline",
-    "lastName": "O'Keefe",
-    "phoneNumber": "+36303630363",
-    "usageType": "BUSINESS"
-}

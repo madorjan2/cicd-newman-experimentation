@@ -1,8 +1,0 @@
-{
-    "username": "DFLsWYy",
-    "password": "Asdf1234",
-    "firstName": "Raphaelle",
-    "lastName": "Waters",
-    "phoneNumber": "+36309998888",
-    "usageType": "BUSINESS"
-}

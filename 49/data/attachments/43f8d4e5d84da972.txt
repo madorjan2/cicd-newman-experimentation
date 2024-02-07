@@ -1,8 +1,0 @@
-{
-    "username" : "buqRS0",
-    "email": "Mallory.Kassulke38@hotmail.com",
-    "password": "Asdf1234",
-    "firstName": "Davon",
-    "lastName": "Gulgowski",
-    "usageType": "BUSINESS"
-}

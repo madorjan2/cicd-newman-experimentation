@@ -1,9 +1,0 @@
-{
-    "username" : "ofJIaaL7",
-    "email": "Casey.Hartmann@gmail.com",
-    "password": "Asdf1234",
-    "firstName": "",
-    "lastName": "Brekke",
-    "phoneNumber": "+36303630363",
-    "usageType": "BUSINESS"
-}

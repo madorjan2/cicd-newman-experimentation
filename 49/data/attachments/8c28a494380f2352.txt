@@ -1,8 +1,0 @@
-{
-    "username" : "Y479a68G4U",
-    "email": "Isaias_Lynch37@hotmail.com",
-    "firstName": "Rosamond",
-    "lastName": "Considine",
-    "phoneNumber": "+36309998888",
-    "usageType": "BUSINESS"
-}

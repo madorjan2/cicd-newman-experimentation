@@ -1,9 +1,0 @@
-{
-    "username" : "dbrnsPR3b",
-    "email": "Rolando_Haley26@yahoo.com",
-    "password": "Asdf1234",
-    "firstName": "ACvnjzgOaUMxVHnfofROjMjrXCeRYgNMUsoeHUIWjlqCadkbOetZTfvmoiQQIIdBTaSBbxfekCuIwZCWUmDpBTKHcRvAsOJZYYvlodrPgRMKYVEsXIAFgSDZVCsZazqgphyGuNXaKfyohkghNyoXeNpkWEWNrQYAcLqZRcHyEoHjqiNQVlHKsjioJKfjBZMsaIJgQOLaezOpJiNYiZOIWseswkcnJAtLILFldzJUPFZBADrfsQmZyRpbCLBSYPnRY",
-    "lastName": "Weber",
-    "phoneNumber": "+36303630363",
-    "usageType": "BUSINESS"
-}
