@@ -1,9 +1,0 @@
-{
-    "username" : "63u2GWn",
-    "email": "Remington2@hotmail.com",
-    "password": "µñ�µこん�Aa1",
-    "firstName": "Elizabeth",
-    "lastName": "Doyle",
-    "phoneNumber": "+36303630363",
-    "usageType": "BUSINESS"
-}

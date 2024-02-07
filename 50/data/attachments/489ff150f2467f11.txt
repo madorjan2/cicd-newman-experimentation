@@ -1,1 +1,0 @@
-{"id":273,"username":"DKFOiYwHHw","email":"Katrine_Feest@gmail.com","firstName":"Anibal","lastName":"Gerlach","phoneNumber":"+367010101010101010","usageType":"BUSINESS","roles":["ROLE_GENERAL"],"active":true}

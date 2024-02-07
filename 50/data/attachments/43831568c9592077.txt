@@ -1,9 +1,0 @@
-{
-    "username" : "IdX4zeXVm7",
-    "email": "Maynard.Schumm52@hotmail.com",
-    "password": "Asdf1234",
-    "firstName": "Sigrid",
-    "lastName": "",
-    "phoneNumber": "+36303630363",
-    "usageType": "BUSINESS"
-}

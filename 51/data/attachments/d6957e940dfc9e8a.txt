@@ -1,0 +1,18 @@
+// @allure.label.tag=ads
+// @allure.label.tag=list
+// @allure.label.tag=positive
+// @allure.label.severity=NORMAL
+
+let jsonData = JSON.parse(responseBody);
+
+pm.test("Response body is empty.", function (){
+    pm.expect(jsonData).to.be.empty
+})
+
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+});
+
+pm.test("Previous test(s) passed", function () {
+    pm.expect(pm.environment.get('assertion_chain')).to.be.true;
+});

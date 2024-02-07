@@ -1,0 +1,1 @@
+{"id":305,"username":"kWhOW3N","email":"Kaylin.Glover90@hotmail.com","firstName":"Celestino","lastName":"Schamberger","phoneNumber":"06703030303","usageType":"BUSINESS","roles":["ROLE_GENERAL"],"active":true}

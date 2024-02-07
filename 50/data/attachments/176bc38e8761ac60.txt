@@ -1,9 +1,0 @@
-{
-    "username" : "C1OFoPZNxpi",
-    "email": "Jarrett49@gmail.com",
-    "password": "MY1drYvOag6Fu2YD3j4MN8HPdytOzFNVZb1tKl1I2zpBnCdyJdJjEU10nUjrDXvlBVYHEse1MclVDYPo3pZpybOpbYLjTuIHLwXFID8LLJsWQG03RK4sKRPzATsyidtMIO5mDD8I5yortu9j6piv27lYa4OmHcpTCGkAUHMuSYFPmEtrRHzoqxyS6gPJf3ut8LDM62pDNTLFemFpGHSeTajcXXpXKi6UVvyhdfqY5AcAUuL1fClqc0dbIhNfFRrdwAa1",
-    "firstName": "Marlin",
-    "lastName": "Jaskolski",
-    "phoneNumber": "+36303630363",
-    "usageType": "BUSINESS"
-}

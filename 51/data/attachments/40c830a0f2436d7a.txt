@@ -1,0 +1,9 @@
+{
+    "username" : "Jarvis.Greenholt35",
+    "email": "halib75567@grassdev.com",
+    "password": "Asdf1234",
+    "firstName": "Alexzander",
+    "lastName": "Considine",
+    "phoneNumber": "+36303630363",
+    "usageType": "BUSINESS"
+}

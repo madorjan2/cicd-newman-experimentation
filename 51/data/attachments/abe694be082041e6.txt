@@ -1,0 +1,9 @@
+{
+    "username" : "9JHWHUn3t",
+    "email": "Dashawn_Macejkovic83@hotmail.com",
+    "password": "Asdf1234",
+    "firstName": "KLWJFCxzRHIMDMzWHSQbiEAIMmcOTxZdGnrEuHbMDIXhJsTOyAbaAPxTVJBuWIEQGYIazYPurJqfIVnvfBKkwcmsGfnPsVkGDUbefzaUtjndkGklhDHaHVjeHdFtFCAWExLZkTnFNYUNEknotaJifTjURbMhomnlcgHlERRlOWrhXACnMduzqWRMUOcYlgiFUjAKjhJHxfAyecuAHyfcppeOwfFgqDyGoLzoixpvRPJJoWwHbYiPdeLkjQPWidYII",
+    "lastName": "Berge",
+    "phoneNumber": "+36303630363",
+    "usageType": "BUSINESS"
+}

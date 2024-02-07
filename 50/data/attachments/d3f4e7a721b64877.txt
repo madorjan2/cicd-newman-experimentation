@@ -1,9 +1,0 @@
-{
-    "username" : "zorzIOBkE",
-    "email": "Ocie_Blanda47@yahoo.com",
-    "password": "Asdf1234",
-    "firstName": "Arnold",
-    "lastName": "Harber",
-    "phoneNumber": "",
-    "usageType": "BUSINESS"
-}

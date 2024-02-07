@@ -1,0 +1,18 @@
+// @allure.label.tag=ads
+// @allure.label.tag=list
+// @allure.label.tag=positive
+// @allure.label.severity=CRITICAL
+
+let jsonData = JSON.parse(responseBody);
+
+pm.test("The correct number of ads are shown.", function (){
+    pm.expect(jsonData.length).to.be.eql(pm.environment.get("page_size"));
+});
+
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+});
+
+pm.test("Previous test(s) passed", function () {
+    pm.expect(pm.environment.get('assertion_chain')).to.be.true;
+});

@@ -1,9 +1,0 @@
-{
-    "username" : "tkJ8JkTgu",
-    "email": "Halle_Rippin@hotmail.com",
-    "password": "Asdf1234",
-    "firstName": "Jakayla",
-    "lastName": "Zieme",
-    "phoneNumber": "+363036303",
-    "usageType": "BUSINESS"
-}

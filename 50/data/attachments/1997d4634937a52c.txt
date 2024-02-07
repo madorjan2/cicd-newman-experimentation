@@ -1,1 +1,0 @@
-{"id":247,"username":"e54vXc09Bxheo","email":"502Ak@ZK6Csj.c","firstName":"Brielle","lastName":"Osinski","phoneNumber":"+36303630363","usageType":"BUSINESS","roles":["ROLE_GENERAL"],"active":false}

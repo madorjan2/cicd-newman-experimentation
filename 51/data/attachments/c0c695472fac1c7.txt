@@ -1,0 +1,8 @@
+{
+    "username" : "upamOvE0HHn847",
+    "email": "Leatha.Kreiger@hotmail.com",
+    "password": "Asdf1234",
+    "firstName": "Frederique",
+    "phoneNumber": "+36309998888",
+    "usageType": "BUSINESS"
+}

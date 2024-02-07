@@ -1,0 +1,8 @@
+{
+    "username" : "rqUX1s8",
+    "email": "Vladimir.Abbott60@yahoo.com",
+    "firstName": "Nyah",
+    "lastName": "Klein",
+    "phoneNumber": "+36309998888",
+    "usageType": "BUSINESS"
+}

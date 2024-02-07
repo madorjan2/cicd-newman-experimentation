@@ -1,1 +1,0 @@
-{"id":246,"username":"63u2GWn","email":"Remington2@hotmail.com","firstName":"Elizabeth","lastName":"Doyle","phoneNumber":"+36303630363","usageType":"BUSINESS","roles":["ROLE_GENERAL"],"active":false}

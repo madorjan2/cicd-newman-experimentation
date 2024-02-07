@@ -1,9 +1,0 @@
-{
-    "username" : "bJ2Wpc",
-    "email": "Mckayla64@gmail.com",
-    "password": "asd123",
-    "firstName": "Eldridge",
-    "lastName": "Zboncak",
-    "phoneNumber": "+36303630363",
-    "usageType": "BUSINESS"
-}

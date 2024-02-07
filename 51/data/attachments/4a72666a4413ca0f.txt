@@ -1,0 +1,8 @@
+{
+    "username" : "BAfM1irZWcjAg1t",
+    "email": "Ricky_Farrell87@yahoo.com",
+    "password": "Asdf1234",
+    "firstName": "Jannie",
+    "lastName": "Deckow",
+    "usageType": "BUSINESS"
+}

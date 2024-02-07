@@ -1,0 +1,9 @@
+{
+    "username" : "zwvkEV",
+    "email": "Emmett59@yahoo.com",
+    "password": "Asdf1234",
+    "firstName": "Theodora",
+    "lastName": "pGXRmOwawhShJIgdbtcWNWrwOJrHGmhgjDPzNMeLWIBJaSonPfuFZZHUtkbesANNONsouAAlbnlNMAEBxxIVaCWjoVpJiNQSyzBSeUviypLcILvIGncaRLdSMuomVhePTVwNgGCKjKbAoXylVwyZYblnOVXSeXsgzAzwTHWKaRCYPaKjCyjSIRgeTmnUTXyGwmiCkOovxYnkLnegVdQQtzSRqIeQfulOZfiIyfYrJKRugyWlMklmcbgMTHFZFbwn",
+    "phoneNumber": "+36303630363",
+    "usageType": "BUSINESS"
+}

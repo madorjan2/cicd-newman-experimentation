@@ -1,9 +1,0 @@
-{
-    "username" : "7oLEL4KmAsybGbJ",
-    "email": "Harvey89@yahoo.com",
-    "password": "Asdf1234",
-    "firstName": "Samara",
-    "lastName": "Grady",
-    "phoneNumber": "+36303630363",
-    "usageType": ""
-}

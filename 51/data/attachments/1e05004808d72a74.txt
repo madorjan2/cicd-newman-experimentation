@@ -1,0 +1,1 @@
+{"id":276,"username":"Uow2 k3","email":"Denis74@hotmail.com","firstName":"Virgil","lastName":"Paucek","phoneNumber":"+36303630363","usageType":"BUSINESS","roles":["ROLE_GENERAL"],"active":false}

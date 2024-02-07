@@ -1,9 +1,0 @@
-{
-    "username" : "n2iXKc7ExpXIKJV",
-    "email": "Bailey47@hotmail.com",
-    "password": "0P34H7SA",
-    "firstName": "Jamil",
-    "lastName": "Cole",
-    "phoneNumber": "+36303630363",
-    "usageType": "BUSINESS"
-}

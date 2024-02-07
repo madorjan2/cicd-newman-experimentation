@@ -1,9 +1,0 @@
-{
-    "username" : "TN7Gqq",
-    "email": "Selmer_Friesen@hotmail.com",
-    "password": "hmaJijKvg",
-    "firstName": "Romaine",
-    "lastName": "Kerluke",
-    "phoneNumber": "+36303630363",
-    "usageType": "BUSINESS"
-}

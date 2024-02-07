@@ -1,0 +1,9 @@
+{
+    "username" : "La2AarBh",
+    "email": "Kaycee.Wehner@gmail.com",
+    "password": "Asdf1234",
+    "firstName": "Marina",
+    "lastName": "Heathcote",
+    "phoneNumber": "0630a-36*3-03A12",
+    "usageType": "BUSINESS"
+}

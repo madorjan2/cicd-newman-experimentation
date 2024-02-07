@@ -1,1 +1,0 @@
-{"id":275,"username":"9peieG1wHSzX","email":"Fausto_Lindgren@yahoo.com","firstName":"","lastName":"Brekke","phoneNumber":"+36303630363","usageType":"BUSINESS","roles":["ROLE_GENERAL"],"active":true}

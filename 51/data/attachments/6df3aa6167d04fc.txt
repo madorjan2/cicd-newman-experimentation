@@ -1,0 +1,1 @@
+{"id":290,"username":"RV27LYFjZ9t","email":"madorjan@gmail.com","firstName":"Gabriella","lastName":"Ankunding","phoneNumber":"+36303630363","usageType":"BUSINESS","roles":["ROLE_GENERAL"],"active":true}

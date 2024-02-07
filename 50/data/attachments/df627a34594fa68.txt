@@ -1,1 +1,0 @@
-{"id":257,"username":"4MeZklRZOJC","email":"Royal.Walker@hotmail.com","firstName":"Myriam","lastName":"Sporer","phoneNumber":"+36707070707","usageType":"BUSINESS","roles":["ROLE_GENERAL"],"active":true}

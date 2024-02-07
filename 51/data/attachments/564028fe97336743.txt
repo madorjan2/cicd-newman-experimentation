@@ -1,0 +1,10 @@
+// @allure.label.tag=ads
+// @allure.label.tag=list
+// @allure.label.tag=negative
+// @allure.label.severity=NORMAL
+
+let jsonData = JSON.parse(responseBody);
+
+pm.test("Status code is 400", function () {
+    pm.response.to.have.status(400);
+});

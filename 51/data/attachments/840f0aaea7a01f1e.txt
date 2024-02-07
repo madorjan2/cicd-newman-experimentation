@@ -1,0 +1,1 @@
+{"id":285,"username":"tjo7mWmJQQhN5S7","email":"Monroe_Walker52@yahoo.com","firstName":"Bryon","lastName":"Ferry","phoneNumber":"+36303630363","usageType":"BUSINESS","roles":["ROLE_GENERAL"],"active":true}

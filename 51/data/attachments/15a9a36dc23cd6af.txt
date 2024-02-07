@@ -1,0 +1,9 @@
+{
+    "username" : "rIWLMyQmef",
+    "email": "Samir_Fisher83@gmail.com",
+    "password": "FGMXMRJLNA",
+    "firstName": "Forest",
+    "lastName": "Lemke",
+    "phoneNumber": "+36303630363",
+    "usageType": "BUSINESS"
+}

@@ -1,0 +1,19 @@
+{
+    "address": "1111 Budapest, Egy utca 1.",
+    "price": 45000000,
+    "floorArea": 40.3,
+    "rooms": 2.5,
+    "builtYear": 1995,
+    "floor": 2,
+    "elevator": true,
+    "balcony": false,
+    "plot": 65.75,
+    "description": "v34LghQ5XDn9U26sPmf9nG8EdVjJLwJhkZkWZrFqkJduYDj7uWm7FdYNKluRWJLKHJFGNX9izf2bYbR4DDB6T0pzWJYfctrZ8ozNojU6b1wUjn40GFacrpUKFGwIDGEV6inaqOmRtymqsKEgKG8VOxQDQeF72fH6PH6cJRlqDcL1Gwcfe2nWeF9kcG22AiYEHBmjzSN1ymXRu5LyngOMNloKRQ3WIrlS7qYFXEFE67pDQv09005uscPH3A5WJcjuiXcWf6DR9o",
+    "active": true,
+    "buildingMaterialType": "BRICK",
+    "advertiseType": "FOR_SALE",
+    "buildingCondition": "RENOVATED",
+    "propertyType": "FLAT",
+    "heating": "WOOD_HEATING",
+    "photos": []
+}

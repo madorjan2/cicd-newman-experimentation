@@ -1,8 +1,0 @@
-{
-    "username" : "9GTaRxHIu4PhaG",
-    "email": "Birdie.Morar34@hotmail.com",
-    "firstName": "Zechariah",
-    "lastName": "Kris",
-    "phoneNumber": "+36309998888",
-    "usageType": "BUSINESS"
-}

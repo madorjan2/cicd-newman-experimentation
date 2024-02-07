@@ -1,9 +1,0 @@
-{
-    "username" : "BGhZuw",
-    "email": "Mylene_Oberbrunner@hotmail.com",
-    "password": "Asdf1234",
-    "firstName": "Layla",
-    "lastName": "Kling",
-    "phoneNumber": "+363036303123",
-    "usageType": "BUSINESS"
-}

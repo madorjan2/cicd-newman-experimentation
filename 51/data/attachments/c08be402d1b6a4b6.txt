@@ -1,0 +1,1 @@
+{"id":300,"username":"BlOfjELMdEiN1dR","email":"Joan_White53@gmail.com","firstName":"        ","lastName":"Kuhlman","phoneNumber":"+36303630363","usageType":"BUSINESS","roles":["ROLE_GENERAL"],"active":true}

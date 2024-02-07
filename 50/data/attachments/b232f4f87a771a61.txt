@@ -1,1 +1,0 @@
-{"id":245,"username":"vJ7k kxj3Qnhv","email":"Krystina.Rath55@hotmail.com","firstName":"Greyson","lastName":"Wuckert","phoneNumber":"+36303630363","usageType":"BUSINESS","roles":["ROLE_GENERAL"],"active":false}

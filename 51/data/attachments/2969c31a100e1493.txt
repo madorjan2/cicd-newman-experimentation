@@ -1,0 +1,9 @@
+{
+    "username" : "aDR57wtVveETd",
+    "email": "Fleta.Rolfson21@hotmail.com",
+    "password": "Asdf1234",
+    "firstName": "Caterina",
+    "lastName": "Weissnat",
+    "phoneNumber": "+363036303",
+    "usageType": "BUSINESS"
+}

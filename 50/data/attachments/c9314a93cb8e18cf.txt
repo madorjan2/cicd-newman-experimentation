@@ -1,9 +1,0 @@
-{
-    "username" : "に�£ち€é¥😀�àん®んñ",
-    "email": "Ansel_Schuster46@hotmail.com",
-    "password": "Asdf1234",
-    "firstName": "Lew",
-    "lastName": "Abernathy",
-    "phoneNumber": "+36303630363",
-    "usageType": "BUSINESS"
-}

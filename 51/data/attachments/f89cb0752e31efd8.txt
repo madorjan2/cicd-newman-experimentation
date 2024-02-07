@@ -1,0 +1,9 @@
+{
+    "username" : "ACCE2cI6Z6rgLn",
+    "email": "Chauncey.Littel@yahoo.com",
+    "password": "OYOqjdoKAivXx2N9rLs38Ltr2KerjApEMgYTkERsrHCMVhItZf1ulhBSdNvzJtlhUHqXlmbCmtgE3oimDyLEiMXcRGNG6kDebhy0LDUUnLoMbPALqNiIbHAqlKQUOFw5KYOduhqU3jCtsLopYL9vzrRfM0AVGM9sQovYEE8BQiyEubR2BFAHFgadt9g2jUgLnL4uNj4TWkENLaGgOWQcfV9KC6hE9aKpRZsC9uAiB774yTKFI7syyCUDTzdkodkDAa1",
+    "firstName": "Emerald",
+    "lastName": "Batz",
+    "phoneNumber": "+36303630363",
+    "usageType": "BUSINESS"
+}

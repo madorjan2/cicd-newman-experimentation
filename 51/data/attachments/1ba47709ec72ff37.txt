@@ -1,0 +1,8 @@
+{
+    "username" : "j8OW17p09w2vx",
+    "email": "Marguerite_Casper71@yahoo.com",
+    "password": "Asdf1234",
+    "lastName": "Hayes",
+    "phoneNumber": "+36309998888",
+    "usageType": "BUSINESS"
+}

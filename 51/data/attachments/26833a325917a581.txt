@@ -1,0 +1,1 @@
+pm.environment.set("build_cond", "TO_BE_RENOVATED")

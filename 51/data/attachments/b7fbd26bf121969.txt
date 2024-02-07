@@ -1,0 +1,1 @@
+{"id":304,"username":"oS7Z2Rx1","email":"Devyn.Russel@gmail.com","firstName":"Bart","lastName":"Cartwright","phoneNumber":"+367010101010101010","usageType":"BUSINESS","roles":["ROLE_GENERAL"],"active":true}

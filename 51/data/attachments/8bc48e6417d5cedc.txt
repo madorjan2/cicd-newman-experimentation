@@ -1,0 +1,14 @@
+// @allure.label.tag=ads
+// @allure.label.tag=list
+// @allure.label.tag=positive
+// @allure.label.severity=NORMAL
+
+let jsonData = JSON.parse(responseBody);
+
+pm.test("Correct implementation", function () {
+    pm.expect(true).to.be.false;
+});
+
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+});

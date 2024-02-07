@@ -1,0 +1,9 @@
+{
+    "username" : "aKdhMUTiYTQ",
+    "email": "Mafalda_Goyette@hotmail.com",
+    "password": "Asdf1234",
+    "firstName": "",
+    "lastName": "Thompson",
+    "phoneNumber": "+36303630363",
+    "usageType": "BUSINESS"
+}

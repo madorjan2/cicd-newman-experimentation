@@ -1,1 +1,0 @@
-{"id":255,"username":"oXLYxjgLsrfJ","email":"Anjali_Heaney39@hotmail.com","firstName":"Sabina","lastName":"Wyman","phoneNumber":"+36303630363","usageType":"BUSINESS","roles":["ROLE_GENERAL"],"active":true}

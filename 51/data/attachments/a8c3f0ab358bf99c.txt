@@ -1,0 +1,9 @@
+{
+    "username" : "tvJoJfW",
+    "email": "Jailyn.Medhurst2@yahoo.com",
+    "password": "asd123",
+    "firstName": "Rory",
+    "lastName": "Gaylord",
+    "phoneNumber": "+36303630363",
+    "usageType": "BUSINESS"
+}

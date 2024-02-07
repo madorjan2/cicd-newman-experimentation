@@ -1,0 +1,1 @@
+[{"field":"username","errorMessage":"Username must be between 6 and 15 characters long"},{"field":"username","errorMessage":"Username can include lowercase and uppercase letters, numbers, underscores, and hyphens."}]

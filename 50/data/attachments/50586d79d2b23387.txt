@@ -1,9 +1,0 @@
-{
-    "username" : "Ab6qmkda",
-    "email": "Jo57@hotmail.com",
-    "password": "Asdf1234",
-    "firstName": "IiFNZoQYSAxLrhKVVHmfzjhiwUvSVgXFBEViMUvFDefDJOdljNTgUvDLmZsXOamIiyHseWCIaEtBTJWbZTWUYZpLAiPkzrHWuqFcmqmRYrPHYIlwoAerzzCKTcHSKqWrQshAwzYQRfLNTsjIySGsIOhecfTxwYuYofKVpQluKvZXwjrfFvPUJwsVhXkpOXELjeBGLbPLkcTUwTMWYMCumtKeHCKhbNQRQIIKAMuHKWIttbTRThXNBOnoXJOboszxd",
-    "lastName": "Blick",
-    "phoneNumber": "+36303630363",
-    "usageType": "BUSINESS"
-}

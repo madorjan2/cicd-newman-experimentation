@@ -1,8 +1,0 @@
-{
-    "username" : "DRkh3caMBpL",
-    "email": "Bridie84@yahoo.com",
-    "password": "Asdf1234",
-    "lastName": "Prosacco",
-    "phoneNumber": "+36309998888",
-    "usageType": "BUSINESS"
-}
