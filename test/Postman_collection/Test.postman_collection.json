@@ -10567,9 +10567,7 @@
 											"pm.test(\"Previous test(s) passed\", function () {\r",
 											"    pm.expect(pm.environment.get('assertion_chain')).to.be.true;\r",
 											"    pm.environment.set('assertion_chain', pm.environment.get('assertion_chain') && pm.response.code == 201)\r",
-											"});\r",
-											"let jsonData = JSON.parse(responseBody);\r",
-											"pm.environment.set(\"active_id\", jsonData.id);"
+											"});"
 										],
 										"type": "text/javascript"
 									}
@@ -10598,21 +10596,13 @@
 									}
 								},
 								"url": {
-									"raw": "{{baseUrl}}/ads/:userId/ads",
+									"raw": "{{baseUrl}}/ads/ads",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"ads",
-										":userId",
 										"ads"
-									],
-									"variable": [
-										{
-											"key": "userId",
-											"value": "{{baseline_id}}",
-											"description": "Id of the posting user"
-										}
 									]
 								},
 								"description": "Posts a new ad in the name of the given user id."
@@ -10630,9 +10620,7 @@
 											"pm.test(\"Previous test(s) passed\", function () {\r",
 											"    pm.expect(pm.environment.get('assertion_chain')).to.be.true;\r",
 											"    pm.environment.set('assertion_chain', pm.environment.get('assertion_chain') && pm.response.code == 201)\r",
-											"});\r",
-											"let jsonData = JSON.parse(responseBody);\r",
-											"pm.environment.set(\"inactive_id\", jsonData.id);"
+											"});"
 										],
 										"type": "text/javascript"
 									}
@@ -10797,22 +10785,16 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/ads/:userId/ads/:adId",
+									"raw": "{{baseUrl}}/ads/ads/:adId",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"ads",
-										":userId",
 										"ads",
 										":adId"
 									],
 									"variable": [
-										{
-											"key": "userId",
-											"value": "{{baseline_id}}",
-											"description": "Id of the posting user"
-										},
 										{
 											"key": "adId",
 											"value": "{{active_id}}",
@@ -10854,22 +10836,16 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/ads/:userId/ads/:adId",
+									"raw": "{{baseUrl}}/ads/ads/:adId",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"ads",
-										":userId",
 										"ads",
 										":adId"
 									],
 									"variable": [
-										{
-											"key": "userId",
-											"value": "{{baseline_id}}",
-											"description": "Id of the posting user"
-										},
 										{
 											"key": "adId",
 											"value": "{{inactive_id}}",
@@ -11099,9 +11075,7 @@
 											"pm.test(\"Previous test(s) passed\", function () {\r",
 											"    pm.expect(pm.environment.get('assertion_chain')).to.be.true;\r",
 											"    pm.environment.set('assertion_chain', pm.environment.get('assertion_chain') && pm.response.code == 201)\r",
-											"});\r",
-											"let jsonData = JSON.parse(responseBody);\r",
-											"pm.environment.set(\"adid\", jsonData.id);"
+											"});"
 										],
 										"type": "text/javascript"
 									}
@@ -11139,14 +11113,61 @@
 									}
 								},
 								"url": {
-									"raw": "{{baseUrl}}/ads/:userId/ads",
+									"raw": "{{baseUrl}}/ads/ads",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"ads",
+										"ads"
+									]
+								},
+								"description": "Posts a new ad in the name of the given user id."
+							},
+							"response": []
+						},
+						{
+							"name": "All Ads By User",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// @allure.label.tag=setup\r",
+											"pm.test(\"Previous test(s) passed\", function () {\r",
+											"    pm.expect(pm.environment.get('assertion_chain')).to.be.true;\r",
+											"    pm.environment.set('assertion_chain', pm.environment.get('assertion_chain') && pm.response.code == 200)\r",
+											"});\r",
+											"\r",
+											"let jsonData = JSON.parse(responseBody);\r",
+											"let curr_max = -1\r",
+											"for (let responseDict of jsonData){\r",
+											"        if (responseDict.id > curr_max) {\r",
+											"            curr_max = responseDict.id;\r",
+											"        }\r",
+											"}\r",
+											"\r",
+											"pm.environment.set('adid', curr_max);\r",
+											"if (curr_max == -1) {\r",
+											"    pm.environment.set('assertion_chain', false);\r",
+											"}"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/ads/:userId/advertisement",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"ads",
 										":userId",
-										"ads"
+										"advertisement"
 									],
 									"variable": [
 										{
@@ -11156,7 +11177,7 @@
 										}
 									]
 								},
-								"description": "Posts a new ad in the name of the given user id."
+								"description": "Returns all ads by the user with the given user id."
 							},
 							"response": []
 						},
@@ -11200,21 +11221,16 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/ads/:userId/ads/:adId",
+									"raw": "{{baseUrl}}/ads/ads/:adId",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"ads",
-										":userId",
 										"ads",
 										":adId"
 									],
 									"variable": [
-										{
-											"key": "userId",
-											"value": "{{baseline_id}}"
-										},
 										{
 											"key": "adId",
 											"value": "{{adid}}"
@@ -11263,22 +11279,16 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/ads/:userId/ads/:adId",
+									"raw": "{{baseUrl}}/ads/ads/:adId",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"ads",
-										":userId",
 										"ads",
 										":adId"
 									],
 									"variable": [
-										{
-											"key": "userId",
-											"value": "{{baseline_id}}",
-											"description": "Id of the posting user"
-										},
 										{
 											"key": "adId",
 											"value": "{{adid}}",
@@ -11365,9 +11375,7 @@
 											"pm.test(\"Previous test(s) passed\", function () {\r",
 											"    pm.expect(pm.environment.get('assertion_chain')).to.be.true;\r",
 											"    pm.environment.set('assertion_chain', pm.environment.get('assertion_chain') && pm.response.code == 201)\r",
-											"});\r",
-											"let jsonData = JSON.parse(responseBody);\r",
-											"pm.environment.set(\"adid\", jsonData.id);"
+											"});"
 										],
 										"type": "text/javascript"
 									}
@@ -11405,14 +11413,68 @@
 									}
 								},
 								"url": {
-									"raw": "{{baseUrl}}/ads/:userId/ads",
+									"raw": "{{baseUrl}}/ads/ads/:adId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"ads",
+										"ads",
+										":adId"
+									],
+									"variable": [
+										{
+											"key": "adId",
+											"value": ""
+										}
+									]
+								},
+								"description": "Posts a new ad in the name of the given user id."
+							},
+							"response": []
+						},
+						{
+							"name": "All Ads By User",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// @allure.label.tag=setup\r",
+											"pm.test(\"Previous test(s) passed\", function () {\r",
+											"    pm.expect(pm.environment.get('assertion_chain')).to.be.true;\r",
+											"    pm.environment.set('assertion_chain', pm.environment.get('assertion_chain') && pm.response.code == 200)\r",
+											"});\r",
+											"\r",
+											"let jsonData = JSON.parse(responseBody);\r",
+											"let curr_max = -1\r",
+											"for (let responseDict of jsonData){\r",
+											"        if (responseDict.id > curr_max) {\r",
+											"            curr_max = responseDict.id;\r",
+											"        }\r",
+											"}\r",
+											"\r",
+											"pm.environment.set('adid', curr_max);\r",
+											"if (curr_max == -1) {\r",
+											"    pm.environment.set('assertion_chain', false);\r",
+											"}"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/ads/:userId/advertisement",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"ads",
 										":userId",
-										"ads"
+										"advertisement"
 									],
 									"variable": [
 										{
@@ -11422,7 +11484,7 @@
 										}
 									]
 								},
-								"description": "Posts a new ad in the name of the given user id."
+								"description": "Returns all ads by the user with the given user id."
 							},
 							"response": []
 						},
@@ -11459,21 +11521,16 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/ads/:userId/ads/:adId",
+									"raw": "{{baseUrl}}/ads/ads/:adId",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"ads",
-										":userId",
 										"ads",
 										":adId"
 									],
 									"variable": [
-										{
-											"key": "userId",
-											"value": "{{baseline_id}}"
-										},
 										{
 											"key": "adId",
 											"value": "{{adid}}"
@@ -11522,22 +11579,16 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/ads/:userId/ads/:adId",
+									"raw": "{{baseUrl}}/ads/ads/:adId",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"ads",
-										":userId",
 										"ads",
 										":adId"
 									],
 									"variable": [
-										{
-											"key": "userId",
-											"value": "{{baseline_id}}",
-											"description": "Id of the posting user"
-										},
 										{
 											"key": "adId",
 											"value": "{{adid}}",
@@ -11664,14 +11715,61 @@
 									}
 								},
 								"url": {
-									"raw": "{{baseUrl}}/ads/:userId/ads",
+									"raw": "{{baseUrl}}/ads/ads",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"ads",
+										"ads"
+									]
+								},
+								"description": "Posts a new ad in the name of the given user id."
+							},
+							"response": []
+						},
+						{
+							"name": "All Ads By User",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// @allure.label.tag=setup\r",
+											"pm.test(\"Previous test(s) passed\", function () {\r",
+											"    pm.expect(pm.environment.get('assertion_chain')).to.be.true;\r",
+											"    pm.environment.set('assertion_chain', pm.environment.get('assertion_chain') && pm.response.code == 200)\r",
+											"});\r",
+											"\r",
+											"let jsonData = JSON.parse(responseBody);\r",
+											"let curr_max = -1\r",
+											"for (let responseDict of jsonData){\r",
+											"        if (responseDict.id > curr_max) {\r",
+											"            curr_max = responseDict.id;\r",
+											"        }\r",
+											"}\r",
+											"\r",
+											"pm.environment.set('adid', curr_max);\r",
+											"if (curr_max == -1) {\r",
+											"    pm.environment.set('assertion_chain', false);\r",
+											"}"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/ads/:userId/advertisement",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"ads",
 										":userId",
-										"ads"
+										"advertisement"
 									],
 									"variable": [
 										{
@@ -11681,7 +11779,7 @@
 										}
 									]
 								},
-								"description": "Posts a new ad in the name of the given user id."
+								"description": "Returns all ads by the user with the given user id."
 							},
 							"response": []
 						},
@@ -11725,22 +11823,16 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/ads/:userId/ads/:adId",
+									"raw": "{{baseUrl}}/ads/ads/:adId",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"ads",
-										":userId",
 										"ads",
 										":adId"
 									],
 									"variable": [
-										{
-											"key": "userId",
-											"value": "{{baseline_id}}",
-											"description": "Id of the posting user"
-										},
 										{
 											"key": "adId",
 											"value": "{{adid}}",
@@ -11785,21 +11877,16 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/ads/:userId/ads/:adId",
+									"raw": "{{baseUrl}}/ads/ads/:adId",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"ads",
-										":userId",
 										"ads",
 										":adId"
 									],
 									"variable": [
-										{
-											"key": "userId",
-											"value": "{{baseline_id}}"
-										},
 										{
 											"key": "adId",
 											"value": "{{adid}}"
@@ -11884,9 +11971,7 @@
 											"pm.test(\"Previous test(s) passed\", function () {\r",
 											"    pm.expect(pm.environment.get('assertion_chain')).to.be.true;\r",
 											"    pm.environment.set('assertion_chain', pm.environment.get('assertion_chain') && pm.response.code == 201)\r",
-											"});\r",
-											"let jsonData = JSON.parse(responseBody);\r",
-											"pm.environment.set(\"adid\", jsonData.id);"
+											"});"
 										],
 										"type": "text/javascript"
 									}
@@ -11924,14 +12009,61 @@
 									}
 								},
 								"url": {
-									"raw": "{{baseUrl}}/ads/:userId/ads",
+									"raw": "{{baseUrl}}/ads/ads",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"ads",
+										"ads"
+									]
+								},
+								"description": "Posts a new ad in the name of the given user id."
+							},
+							"response": []
+						},
+						{
+							"name": "All Ads By User",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// @allure.label.tag=setup\r",
+											"pm.test(\"Previous test(s) passed\", function () {\r",
+											"    pm.expect(pm.environment.get('assertion_chain')).to.be.true;\r",
+											"    pm.environment.set('assertion_chain', pm.environment.get('assertion_chain') && pm.response.code == 200)\r",
+											"});\r",
+											"\r",
+											"let jsonData = JSON.parse(responseBody);\r",
+											"let curr_max = -1\r",
+											"for (let responseDict of jsonData){\r",
+											"        if (responseDict.id > curr_max) {\r",
+											"            curr_max = responseDict.id;\r",
+											"        }\r",
+											"}\r",
+											"\r",
+											"pm.environment.set('adid', curr_max);\r",
+											"if (curr_max == -1) {\r",
+											"    pm.environment.set('assertion_chain', false);\r",
+											"}"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/ads/:userId/advertisement",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"ads",
 										":userId",
-										"ads"
+										"advertisement"
 									],
 									"variable": [
 										{
@@ -11941,7 +12073,7 @@
 										}
 									]
 								},
-								"description": "Posts a new ad in the name of the given user id."
+								"description": "Returns all ads by the user with the given user id."
 							},
 							"response": []
 						},
@@ -12047,21 +12179,16 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/ads/:userId/ads/:adId",
+									"raw": "{{baseUrl}}/ads/ads/:adId",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"ads",
-										":userId",
 										"ads",
 										":adId"
 									],
 									"variable": [
-										{
-											"key": "userId",
-											"value": "{{baseline_id}}"
-										},
 										{
 											"key": "adId",
 											"value": "{{adid}}"
@@ -12110,22 +12237,16 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/ads/:userId/ads/:adId",
+									"raw": "{{baseUrl}}/ads/ads/:adId",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"ads",
-										":userId",
 										"ads",
 										":adId"
 									],
 									"variable": [
-										{
-											"key": "userId",
-											"value": "{{baseline_id}}",
-											"description": "Id of the posting user"
-										},
 										{
 											"key": "adId",
 											"value": "{{adid}}",
@@ -12223,7 +12344,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/ads/adsListBySearch?address=&minPrice=&maxPrice=&floorArea=&rooms=&builtYear=&floor=&elevator=&balcony=&plot=&active=true&advertiseType=&buildingMaterialType=&buildingCondition=&propertyType=&heating=",
+									"raw": "{{baseUrl}}/ads/adsListBySearch?active=true&pageSize=999999999",
 									"host": [
 										"{{baseUrl}}"
 									],
@@ -12235,52 +12356,62 @@
 										{
 											"key": "address",
 											"value": "",
-											"description": "Search Criteria for address"
+											"description": "Search Criteria for address",
+											"disabled": true
 										},
 										{
 											"key": "minPrice",
 											"value": "",
-											"description": "Search Criteria for minimum price"
+											"description": "Search Criteria for minimum price",
+											"disabled": true
 										},
 										{
 											"key": "maxPrice",
 											"value": "",
-											"description": "Search Criteria for maximum price"
+											"description": "Search Criteria for maximum price",
+											"disabled": true
 										},
 										{
 											"key": "floorArea",
 											"value": "",
-											"description": "Search Criteria for floor area (no min/max???)"
+											"description": "Search Criteria for floor area (no min/max???)",
+											"disabled": true
 										},
 										{
 											"key": "rooms",
 											"value": "",
-											"description": "Search Criteria for rooms (no min/max???)"
+											"description": "Search Criteria for rooms (no min/max???)",
+											"disabled": true
 										},
 										{
 											"key": "builtYear",
 											"value": "",
-											"description": "Search Criteria for year of construction (no min/max???)"
+											"description": "Search Criteria for year of construction (no min/max???)",
+											"disabled": true
 										},
 										{
 											"key": "floor",
 											"value": "",
-											"description": "Search Criteria for floor (no min/max???)"
+											"description": "Search Criteria for floor (no min/max???)",
+											"disabled": true
 										},
 										{
 											"key": "elevator",
 											"value": "",
-											"description": "Search Criteria for elevator"
+											"description": "Search Criteria for elevator",
+											"disabled": true
 										},
 										{
 											"key": "balcony",
 											"value": "",
-											"description": "Search Criteria for balcony"
+											"description": "Search Criteria for balcony",
+											"disabled": true
 										},
 										{
 											"key": "plot",
 											"value": "",
-											"description": "Search Criteria for plot area (no min/max???)"
+											"description": "Search Criteria for plot area (no min/max???)",
+											"disabled": true
 										},
 										{
 											"key": "active",
@@ -12290,25 +12421,30 @@
 										{
 											"key": "advertiseType",
 											"value": "",
-											"description": "Search Criteria for advertiseType"
+											"description": "Search Criteria for advertiseType",
+											"disabled": true
 										},
 										{
 											"key": "buildingMaterialType",
-											"value": ""
+											"value": "",
+											"disabled": true
 										},
 										{
 											"key": "buildingCondition",
-											"value": ""
+											"value": "",
+											"disabled": true
 										},
 										{
 											"key": "propertyType",
 											"value": "",
-											"description": "Search Criteria for property type"
+											"description": "Search Criteria for property type",
+											"disabled": true
 										},
 										{
 											"key": "heating",
 											"value": "",
-											"description": "Search Criteria for heating"
+											"description": "Search Criteria for heating",
+											"disabled": true
 										},
 										{
 											"key": "pageNo",
@@ -12318,9 +12454,8 @@
 										},
 										{
 											"key": "pageSize",
-											"value": "10",
-											"description": "The number of items per page in pagination",
-											"disabled": true
+											"value": "999999999",
+											"description": "The number of items per page in pagination"
 										}
 									]
 								},
@@ -12412,7 +12547,10 @@
 											"pm.test(\"Status code is 201\", function () {\r",
 											"    pm.response.to.have.status(201);\r",
 											"});\r",
-											""
+											"\r",
+											"pm.test(\"Previous test(s) passed\", function () {\r",
+											"    pm.expect(pm.environment.get('assertion_chain')).to.be.true;\r",
+											"});"
 										],
 										"type": "text/javascript"
 									}
@@ -12441,21 +12579,13 @@
 									}
 								},
 								"url": {
-									"raw": "{{baseUrl}}/ads/:userId/ads",
+									"raw": "{{baseUrl}}/ads/ads",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"ads",
-										":userId",
 										"ads"
-									],
-									"variable": [
-										{
-											"key": "userId",
-											"value": "{{baseline_id}}",
-											"description": "Id of the posting user"
-										}
 									]
 								},
 								"description": "Posts a new ad in the name of the given user id."
@@ -12501,22 +12631,16 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/ads/:userId/ads/:adId",
+									"raw": "{{baseUrl}}/ads/ads/:adId",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"ads",
-										":userId",
 										"ads",
 										":adId"
 									],
 									"variable": [
-										{
-											"key": "userId",
-											"value": "{{baseline_id}}",
-											"description": "Id of the posting user"
-										},
 										{
 											"key": "adId",
 											"value": "{{adid}}",
@@ -12618,6 +12742,9 @@
 											"    pm.expect(jsonData[0].errorMessage).to.eql(\"Cannot have missing address\");\r",
 											"});\r",
 											"\r",
+											"pm.test(\"Previous test(s) passed\", function () {\r",
+											"    pm.expect(pm.environment.get('assertion_chain')).to.be.true;\r",
+											"});\r",
 											"//TODO correct error message"
 										],
 										"type": "text/javascript"
@@ -12647,21 +12774,13 @@
 									}
 								},
 								"url": {
-									"raw": "{{baseUrl}}/ads/:userId/ads",
+									"raw": "{{baseUrl}}/ads/ads",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"ads",
-										":userId",
 										"ads"
-									],
-									"variable": [
-										{
-											"key": "userId",
-											"value": "{{baseline_id}}",
-											"description": "Id of the posting user"
-										}
 									]
 								},
 								"description": "Posts a new ad in the name of the given user id."
@@ -12758,6 +12877,9 @@
 											"    pm.expect(jsonData[0].errorMessage).to.eql(\"Cannot have empty address\");\r",
 											"});\r",
 											"\r",
+											"pm.test(\"Previous test(s) passed\", function () {\r",
+											"    pm.expect(pm.environment.get('assertion_chain')).to.be.true;\r",
+											"});\r",
 											"//TODO correct error message"
 										],
 										"type": "text/javascript"
@@ -12787,21 +12909,13 @@
 									}
 								},
 								"url": {
-									"raw": "{{baseUrl}}/ads/:userId/ads",
+									"raw": "{{baseUrl}}/ads/ads",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"ads",
-										":userId",
 										"ads"
-									],
-									"variable": [
-										{
-											"key": "userId",
-											"value": "{{baseline_id}}",
-											"description": "Id of the posting user"
-										}
 									]
 								},
 								"description": "Posts a new ad in the name of the given user id."
@@ -12898,6 +13012,9 @@
 											"    pm.expect(jsonData[0].errorMessage).to.eql(\"Price must be integer\");\r",
 											"});\r",
 											"\r",
+											"pm.test(\"Previous test(s) passed\", function () {\r",
+											"    pm.expect(pm.environment.get('assertion_chain')).to.be.true;\r",
+											"});\r",
 											"//TODO correct error message"
 										],
 										"type": "text/javascript"
@@ -12927,21 +13044,13 @@
 									}
 								},
 								"url": {
-									"raw": "{{baseUrl}}/ads/:userId/ads",
+									"raw": "{{baseUrl}}/ads/ads",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"ads",
-										":userId",
 										"ads"
-									],
-									"variable": [
-										{
-											"key": "userId",
-											"value": "{{baseline_id}}",
-											"description": "Id of the posting user"
-										}
 									]
 								},
 								"description": "Posts a new ad in the name of the given user id."
@@ -13028,30 +13137,9 @@
 											"    pm.response.to.have.status(201);\r",
 											"});\r",
 											"\r",
-											"let jsonData = JSON.parse(responseBody);\r",
-											"pm.test('Response contains all required fields', function (){\r",
-											"    pm.expect(jsonData.id).to.exist();\r",
-											"    pm.environment.set('adid', jsonData.id);\r",
-											"    pm.expect(jsonData.address).to.be.eql(pm.environment.get(\"baseline_address\"));\r",
-											"    pm.expect(jsonData.price).to.be.eql(pm.environment.get('baseline_price'));\r",
-											"    pm.expect(typeof jsonData.floorArea).to.be.eql('number');\r",
-											"    pm.expect(jsonData.floorArea).to.be.eql(pm.environment.get(10.0));\r",
-											"    pm.expect(jsonData.rooms).to.be.eql(pm.environment.get('baseline_rooms'));\r",
-											"    pm.expect(jsonData.builtYear).to.be.eql(pm.environment.get('baseline_built_year'));\r",
-											"    pm.expect(jsonData.floor).to.be.eql(pm.environment.get('baseline_floor'));\r",
-											"    pm.expect(jsonData.elevator).to.be.eql(pm.environment.get('baseline_elevator'));\r",
-											"    pm.expect(jsonData.balcony).to.be.eql(pm.environment.get('baseline_balcony'));\r",
-											"    pm.expect(jsonData.plot).to.be.eql(pm.environment.get('baseline_plot'));\r",
-											"    pm.expect(jsonData.description).to.be.eql(pm.environment.get('baseline_description'));\r",
-											"    pm.expect(jsonData.active).to.be.true;\r",
-											"    pm.expect(jsonData.buildingMaterialType).to.be.eql(pm.environment.get('baseline_building_material_type'));\r",
-											"    pm.expect(jsonData.advertiseType).to.be.eql(pm.environment.get('baseline_advertise_type'));\r",
-											"    pm.expect(jsonData.buildingCondition).to.be.eql(pm.environment.get('baseline_building_condition'));\r",
-											"    pm.expect(jsonData.propertyType).to.be.eql(pm.environment.get('baseline_property_type'));\r",
-											"    pm.expect(jsonData.heating).to.be.eql(pm.environment.get('baseline_heating'));\r",
-											"    pm.expect(jsonData.photos).to.have.lengthOf(0);\r",
-											"});\r",
-											""
+											"pm.test(\"Previous test(s) passed\", function () {\r",
+											"    pm.expect(pm.environment.get('assertion_chain')).to.be.true;\r",
+											"});"
 										],
 										"type": "text/javascript"
 									}
@@ -13080,21 +13168,13 @@
 									}
 								},
 								"url": {
-									"raw": "{{baseUrl}}/ads/:userId/ads",
+									"raw": "{{baseUrl}}/ads/ads",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"ads",
-										":userId",
 										"ads"
-									],
-									"variable": [
-										{
-											"key": "userId",
-											"value": "{{baseline_id}}",
-											"description": "Id of the posting user"
-										}
 									]
 								},
 								"description": "Posts a new ad in the name of the given user id."
@@ -13140,22 +13220,16 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/ads/:userId/ads/:adId",
+									"raw": "{{baseUrl}}/ads/ads/:adId",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"ads",
-										":userId",
 										"ads",
 										":adId"
 									],
 									"variable": [
-										{
-											"key": "userId",
-											"value": "{{baseline_id}}",
-											"description": "Id of the posting user"
-										},
 										{
 											"key": "adId",
 											"value": "{{adid}}",
@@ -13246,30 +13320,9 @@
 											"pm.test(\"Status code is 201\", function () {\r",
 											"    pm.response.to.have.status(201);\r",
 											"});\r",
-											"\r",
-											"let jsonData = JSON.parse(responseBody);\r",
-											"pm.test('Response contains all required fields', function (){\r",
-											"    pm.expect(jsonData.id).to.exist();\r",
-											"    pm.environment.set('adid', jsonData.id);\r",
-											"    pm.expect(jsonData.address).to.be.eql(pm.environment.get(\"baseline_address\"));\r",
-											"    pm.expect(jsonData.price).to.be.eql(2147483650);\r",
-											"    pm.expect(jsonData.floorArea).to.be.eql(pm.environment.get('baseline_floor_area'));\r",
-											"    pm.expect(jsonData.rooms).to.be.eql(pm.environment.get('baseline_rooms'));\r",
-											"    pm.expect(jsonData.builtYear).to.be.eql(pm.environment.get('baseline_built_year'));\r",
-											"    pm.expect(jsonData.floor).to.be.eql(pm.environment.get('baseline_floor'));\r",
-											"    pm.expect(jsonData.elevator).to.be.eql(pm.environment.get('baseline_elevator'));\r",
-											"    pm.expect(jsonData.balcony).to.be.eql(pm.environment.get('baseline_balcony'));\r",
-											"    pm.expect(jsonData.plot).to.be.eql(pm.environment.get('baseline_plot'));\r",
-											"    pm.expect(jsonData.description).to.be.eql(pm.environment.get('baseline_description'));\r",
-											"    pm.expect(jsonData.active).to.be.true;\r",
-											"    pm.expect(jsonData.buildingMaterialType).to.be.eql(pm.environment.get('baseline_building_material_type'));\r",
-											"    pm.expect(jsonData.advertiseType).to.be.eql(pm.environment.get('baseline_advertise_type'));\r",
-											"    pm.expect(jsonData.buildingCondition).to.be.eql(pm.environment.get('baseline_building_condition'));\r",
-											"    pm.expect(jsonData.propertyType).to.be.eql(pm.environment.get('baseline_property_type'));\r",
-											"    pm.expect(jsonData.heating).to.be.eql(pm.environment.get('baseline_heating'));\r",
-											"    pm.expect(jsonData.photos).to.have.lengthOf(0);\r",
-											"});\r",
-											""
+											"pm.test(\"Previous test(s) passed\", function () {\r",
+											"    pm.expect(pm.environment.get('assertion_chain')).to.be.true;\r",
+											"});"
 										],
 										"type": "text/javascript"
 									}
@@ -13298,21 +13351,13 @@
 									}
 								},
 								"url": {
-									"raw": "{{baseUrl}}/ads/:userId/ads",
+									"raw": "{{baseUrl}}/ads/ads",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"ads",
-										":userId",
 										"ads"
-									],
-									"variable": [
-										{
-											"key": "userId",
-											"value": "{{baseline_id}}",
-											"description": "Id of the posting user"
-										}
 									]
 								},
 								"description": "Posts a new ad in the name of the given user id."
@@ -13358,22 +13403,16 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/ads/:userId/ads/:adId",
+									"raw": "{{baseUrl}}/ads/ads/:adId",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"ads",
-										":userId",
 										"ads",
 										":adId"
 									],
 									"variable": [
-										{
-											"key": "userId",
-											"value": "{{baseline_id}}",
-											"description": "Id of the posting user"
-										},
 										{
 											"key": "adId",
 											"value": "{{adid}}",
@@ -13465,27 +13504,8 @@
 											"    pm.response.to.have.status(201);\r",
 											"});\r",
 											"\r",
-											"let jsonData = JSON.parse(responseBody);\r",
-											"pm.test('Response contains all required fields', function (){\r",
-											"    pm.expect(jsonData.id).to.exist();\r",
-											"    pm.environment.set('adid', jsonData.id);\r",
-											"    pm.expect(jsonData.address).to.be.eql(pm.environment.get(\"baseline_address\"));\r",
-											"    pm.expect(jsonData.price).to.be.eql(pm.environment.get('baseline_price'));\r",
-											"    pm.expect(jsonData.floorArea).to.be.eql(pm.environment.get('baseline_floor_area'));\r",
-											"    pm.expect(jsonData.rooms).to.be.eql(pm.environment.get('baseline_rooms'));\r",
-											"    pm.expect(jsonData.builtYear).to.be.eql(pm.environment.get('baseline_built_year'));\r",
-											"    pm.expect(jsonData.floor).to.be.eql(pm.environment.get('baseline_floor'));\r",
-											"    pm.expect(jsonData.elevator).to.be.eql(pm.environment.get('baseline_elevator'));\r",
-											"    pm.expect(jsonData.balcony).to.be.eql(pm.environment.get('baseline_balcony'));\r",
-											"    pm.expect(jsonData.plot).to.be.eql(pm.environment.get('baseline_plot'));\r",
-											"    pm.expect(jsonData.description).to.be.eql(pm.environment.get('description_over_256'));\r",
-											"    pm.expect(jsonData.active).to.be.true;\r",
-											"    pm.expect(jsonData.buildingMaterialType).to.be.eql(pm.environment.get('baseline_building_material_type'));\r",
-											"    pm.expect(jsonData.advertiseType).to.be.eql(pm.environment.get('baseline_advertise_type'));\r",
-											"    pm.expect(jsonData.buildingCondition).to.be.eql(pm.environment.get('baseline_building_condition'));\r",
-											"    pm.expect(jsonData.propertyType).to.be.eql(pm.environment.get('baseline_property_type'));\r",
-											"    pm.expect(jsonData.heating).to.be.eql(pm.environment.get('baseline_heating'));\r",
-											"    pm.expect(jsonData.photos).to.have.lengthOf(0);\r",
+											"pm.test(\"Previous test(s) passed\", function () {\r",
+											"    pm.expect(pm.environment.get('assertion_chain')).to.be.true;\r",
 											"});\r",
 											""
 										],
@@ -13516,21 +13536,13 @@
 									}
 								},
 								"url": {
-									"raw": "{{baseUrl}}/ads/:userId/ads",
+									"raw": "{{baseUrl}}/ads/ads",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"ads",
-										":userId",
 										"ads"
-									],
-									"variable": [
-										{
-											"key": "userId",
-											"value": "{{baseline_id}}",
-											"description": "Id of the posting user"
-										}
 									]
 								},
 								"description": "Posts a new ad in the name of the given user id."
@@ -13576,22 +13588,16 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/ads/:userId/ads/:adId",
+									"raw": "{{baseUrl}}/ads/ads/:adId",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"ads",
-										":userId",
 										"ads",
 										":adId"
 									],
 									"variable": [
-										{
-											"key": "userId",
-											"value": "{{baseline_id}}",
-											"description": "Id of the posting user"
-										},
 										{
 											"key": "adId",
 											"value": "{{adid}}",
@@ -13693,6 +13699,9 @@
 											"    pm.expect(jsonData[0].errorMessage).to.eql(\"Cannot be over 256 characters\");\r",
 											"});\r",
 											"\r",
+											"pm.test(\"Previous test(s) passed\", function () {\r",
+											"    pm.expect(pm.environment.get('assertion_chain')).to.be.true;\r",
+											"});\r",
 											"//TODO correct error message"
 										],
 										"type": "text/javascript"
@@ -13722,21 +13731,13 @@
 									}
 								},
 								"url": {
-									"raw": "{{baseUrl}}/ads/:userId/ads",
+									"raw": "{{baseUrl}}/ads/ads",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"ads",
-										":userId",
 										"ads"
-									],
-									"variable": [
-										{
-											"key": "userId",
-											"value": "{{baseline_id}}",
-											"description": "Id of the posting user"
-										}
 									]
 								},
 								"description": "Posts a new ad in the name of the given user id."
@@ -13833,6 +13834,9 @@
 											"    pm.expect(jsonData[0].errorMessage).to.eql(\"Unsupported heating type\");\r",
 											"});\r",
 											"\r",
+											"pm.test(\"Previous test(s) passed\", function () {\r",
+											"    pm.expect(pm.environment.get('assertion_chain')).to.be.true;\r",
+											"});\r",
 											"//TODO correct error message"
 										],
 										"type": "text/javascript"
@@ -13862,21 +13866,13 @@
 									}
 								},
 								"url": {
-									"raw": "{{baseUrl}}/ads/:userId/ads",
+									"raw": "{{baseUrl}}/ads/ads",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"ads",
-										":userId",
 										"ads"
-									],
-									"variable": [
-										{
-											"key": "userId",
-											"value": "{{baseline_id}}",
-											"description": "Id of the posting user"
-										}
 									]
 								},
 								"description": "Posts a new ad in the name of the given user id."
@@ -13973,6 +13969,9 @@
 											"    pm.expect(jsonData[0].errorMessage).to.eql(\"Invalid input type for elevator\");\r",
 											"});\r",
 											"\r",
+											"pm.test(\"Previous test(s) passed\", function () {\r",
+											"    pm.expect(pm.environment.get('assertion_chain')).to.be.true;\r",
+											"});\r",
 											"//TODO correct error message"
 										],
 										"type": "text/javascript"
@@ -14002,21 +14001,13 @@
 									}
 								},
 								"url": {
-									"raw": "{{baseUrl}}/ads/:userId/ads",
+									"raw": "{{baseUrl}}/ads/ads",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"ads",
-										":userId",
 										"ads"
-									],
-									"variable": [
-										{
-											"key": "userId",
-											"value": "{{baseline_id}}",
-											"description": "Id of the posting user"
-										}
 									]
 								},
 								"description": "Posts a new ad in the name of the given user id."
@@ -14113,6 +14104,9 @@
 											"    pm.expect(jsonData[0].errorMessage).to.eql(\"Price cannot be negative\");\r",
 											"});\r",
 											"\r",
+											"pm.test(\"Previous test(s) passed\", function () {\r",
+											"    pm.expect(pm.environment.get('assertion_chain')).to.be.true;\r",
+											"});\r",
 											"//TODO correct error message"
 										],
 										"type": "text/javascript"
@@ -14142,21 +14136,13 @@
 									}
 								},
 								"url": {
-									"raw": "{{baseUrl}}/ads/:userId/ads",
+									"raw": "{{baseUrl}}/ads/ads",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"ads",
-										":userId",
 										"ads"
-									],
-									"variable": [
-										{
-											"key": "userId",
-											"value": "{{baseline_id}}",
-											"description": "Id of the posting user"
-										}
 									]
 								},
 								"description": "Posts a new ad in the name of the given user id."
@@ -14253,6 +14239,9 @@
 											"    pm.expect(jsonData[0].errorMessage).to.eql(\"Plot cannot be 0 or negative\");\r",
 											"});\r",
 											"\r",
+											"pm.test(\"Previous test(s) passed\", function () {\r",
+											"    pm.expect(pm.environment.get('assertion_chain')).to.be.true;\r",
+											"});\r",
 											"//TODO correct error message"
 										],
 										"type": "text/javascript"
@@ -14282,158 +14271,13 @@
 									}
 								},
 								"url": {
-									"raw": "{{baseUrl}}/ads/:userId/ads",
+									"raw": "{{baseUrl}}/ads/ads",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"ads",
-										":userId",
 										"ads"
-									],
-									"variable": [
-										{
-											"key": "userId",
-											"value": "{{baseline_id}}",
-											"description": "Id of the posting user"
-										}
-									]
-								},
-								"description": "Posts a new ad in the name of the given user id."
-							},
-							"response": []
-						}
-					]
-				},
-				{
-					"name": "Test Case 13 - Posting in Another User's Name (API)",
-					"item": [
-						{
-							"name": "Login",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"exec": [
-											"let jsonData = JSON.parse(responseBody);\r",
-											"\r",
-											"pm.environment.set(\"access_token\", jsonData.accessToken);\r",
-											"pm.environment.set(\"refresh_token\", jsonData.refreshToken);\r",
-											"\r",
-											"// @allure.label.tag=setup\r",
-											"pm.test(\"Status code is 200\", function () {\r",
-											"    pm.environment.set(\"assertion_chain\", pm.response.code == 200);\r",
-											"    pm.response.to.have.status(200);\r",
-											"});"
-										],
-										"type": "text/javascript"
-									}
-								},
-								{
-									"listen": "prerequest",
-									"script": {
-										"exec": [
-											""
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"request": {
-								"auth": {
-									"type": "noauth"
-								},
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"username\" : \"{{baseline_username}}\",\r\n    \"password\" : \"{{baseline_password}}\"\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{baseUrl}}/users/login",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"users",
-										"login"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "New Ad",
-							"event": [
-								{
-									"listen": "test",
-									"script": {
-										"exec": [
-											"// @allure.label.tag=API\r",
-											"// @allure.label.tag=ads\r",
-											"// @allure.label.tag=post\r",
-											"// @allure.label.tag=negative\r",
-											"// @allure.label.severity=CRITICAL\r",
-											"pm.test(\"Status code is 403\", function () {\r",
-											"    pm.response.to.have.status(403);\r",
-											"});"
-										],
-										"type": "text/javascript"
-									}
-								},
-								{
-									"listen": "prerequest",
-									"script": {
-										"exec": [
-											"pm.environment.set(\"fake_userid\", pm.environment.get('baseline_id')-1);"
-										],
-										"type": "text/javascript"
-									}
-								}
-							],
-							"request": {
-								"auth": {
-									"type": "bearer",
-									"bearer": [
-										{
-											"key": "token",
-											"value": "{{access_token}}",
-											"type": "string"
-										}
-									]
-								},
-								"method": "POST",
-								"header": [],
-								"body": {
-									"mode": "raw",
-									"raw": "{\r\n    \"address\": \"{{baseline_address}}\",\r\n    \"price\": {{baseline_price}},\r\n    \"floorArea\": {{baseline_floor_area}},\r\n    \"rooms\": {{baseline_rooms}},\r\n    \"builtYear\": {{baseline_built_year}},\r\n    \"floor\": {{baseline_floor}},\r\n    \"elevator\": {{baseline_elevator}},\r\n    \"balcony\": {{baseline_balcony}},\r\n    \"plot\": {{baseline_plot}},\r\n    \"description\": \"{{baseline_description}}\",\r\n    \"active\": true,\r\n    \"buildingMaterialType\": \"{{baseline_building_material_type}}\",\r\n    \"advertiseType\": \"{{baseline_advertise_type}}\",\r\n    \"buildingCondition\": \"{{baseline_building_condition}}\",\r\n    \"propertyType\": \"{{baseline_property_type}}\",\r\n    \"heating\": \"{{baseline_heating}}\",\r\n    \"photos\": []\r\n}",
-									"options": {
-										"raw": {
-											"language": "json"
-										}
-									}
-								},
-								"url": {
-									"raw": "{{baseUrl}}/ads/:userId/ads",
-									"host": [
-										"{{baseUrl}}"
-									],
-									"path": [
-										"ads",
-										":userId",
-										"ads"
-									],
-									"variable": [
-										{
-											"key": "userId",
-											"value": "{{fake_userid}}",
-											"description": "Id of the posting user"
-										}
 									]
 								},
 								"description": "Posts a new ad in the name of the given user id."
@@ -14490,21 +14334,13 @@
 									}
 								},
 								"url": {
-									"raw": "{{baseUrl}}/ads/:userId/ads",
+									"raw": "{{baseUrl}}/ads/ads",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"ads",
-										":userId",
 										"ads"
-									],
-									"variable": [
-										{
-											"key": "userId",
-											"value": "{{baseline_id}}",
-											"description": "Id of the posting user"
-										}
 									]
 								},
 								"description": "Posts a new ad in the name of the given user id."
@@ -14586,10 +14422,7 @@
 											"pm.test(\"Previous test(s) passed\", function () {\r",
 											"    pm.expect(pm.environment.get('assertion_chain')).to.be.true;\r",
 											"    pm.environment.set('assertion_chain', pm.environment.get('assertion_chain') && pm.response.code == 201)\r",
-											"});\r",
-											"\r",
-											"let jsonData = JSON.parse(responseBody);\r",
-											"pm.environment.set('adid', jsonData.id);"
+											"});"
 										],
 										"type": "text/javascript"
 									}
@@ -14618,21 +14451,13 @@
 									}
 								},
 								"url": {
-									"raw": "{{baseUrl}}/ads/:userId/ads",
+									"raw": "{{baseUrl}}/ads/ads",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"ads",
-										":userId",
 										"ads"
-									],
-									"variable": [
-										{
-											"key": "userId",
-											"value": "{{baseline_id}}",
-											"description": "Id of the posting user"
-										}
 									]
 								},
 								"description": "Posts a new ad in the name of the given user id."
@@ -14665,6 +14490,9 @@
 											"    pm.expect(jsonData[0].errorMessage).to.eql(\"Address already in database\");\r",
 											"});\r",
 											"\r",
+											"pm.test(\"Previous test(s) passed\", function () {\r",
+											"    pm.expect(pm.environment.get('assertion_chain')).to.be.true;\r",
+											"});\r",
 											"//TODO correct error message"
 										],
 										"type": "text/javascript"
@@ -14694,21 +14522,13 @@
 									}
 								},
 								"url": {
-									"raw": "{{baseUrl}}/ads/:userId/ads",
+									"raw": "{{baseUrl}}/ads/ads",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"ads",
-										":userId",
 										"ads"
-									],
-									"variable": [
-										{
-											"key": "userId",
-											"value": "{{baseline_id}}",
-											"description": "Id of the posting user"
-										}
 									]
 								},
 								"description": "Posts a new ad in the name of the given user id."
@@ -14754,22 +14574,16 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/ads/:userId/ads/:adId",
+									"raw": "{{baseUrl}}/ads/ads/:adId",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"ads",
-										":userId",
 										"ads",
 										":adId"
 									],
 									"variable": [
-										{
-											"key": "userId",
-											"value": "{{baseline_id}}",
-											"description": "Id of the posting user"
-										},
 										{
 											"key": "adId",
 											"value": "{{adid}}",
@@ -14861,10 +14675,7 @@
 											"pm.test(\"Previous test(s) passed\", function () {\r",
 											"    pm.expect(pm.environment.get('assertion_chain')).to.be.true;\r",
 											"    pm.environment.set('assertion_chain', pm.environment.get('assertion_chain') && pm.response.code == 201)\r",
-											"});\r",
-											"\r",
-											"let jsonData = JSON.parse(responseBody);\r",
-											"pm.environment.set('adid', jsonData.id);"
+											"});"
 										],
 										"type": "text/javascript"
 									}
@@ -14893,14 +14704,61 @@
 									}
 								},
 								"url": {
-									"raw": "{{baseUrl}}/ads/:userId/ads",
+									"raw": "{{baseUrl}}/ads/ads",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"ads",
+										"ads"
+									]
+								},
+								"description": "Posts a new ad in the name of the given user id."
+							},
+							"response": []
+						},
+						{
+							"name": "All Ads By User",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// @allure.label.tag=setup\r",
+											"pm.test(\"Previous test(s) passed\", function () {\r",
+											"    pm.expect(pm.environment.get('assertion_chain')).to.be.true;\r",
+											"    pm.environment.set('assertion_chain', pm.environment.get('assertion_chain') && pm.response.code == 200)\r",
+											"});\r",
+											"\r",
+											"let jsonData = JSON.parse(responseBody);\r",
+											"let curr_max = -1\r",
+											"for (let responseDict of jsonData){\r",
+											"        if (responseDict.id > curr_max) {\r",
+											"            curr_max = responseDict.id;\r",
+											"        }\r",
+											"}\r",
+											"\r",
+											"pm.environment.set('adid', curr_max);\r",
+											"if (curr_max == -1) {\r",
+											"    pm.environment.set('assertion_chain', false);\r",
+											"}"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/ads/:userId/advertisement",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"ads",
 										":userId",
-										"ads"
+										"advertisement"
 									],
 									"variable": [
 										{
@@ -14910,7 +14768,7 @@
 										}
 									]
 								},
-								"description": "Posts a new ad in the name of the given user id."
+								"description": "Returns all ads by the user with the given user id."
 							},
 							"response": []
 						},
@@ -14950,18 +14808,31 @@
 											"    pm.expect(jsonData.heating).to.be.eql(pm.environment.get('baseline_heating'));\r",
 											"    pm.expect(jsonData.photos).to.have.lengthOf(0);\r",
 											"});\r",
-											""
+											"\r",
+											"pm.test(\"Previous test(s) passed\", function () {\r",
+											"    pm.expect(pm.environment.get('assertion_chain')).to.be.true;\r",
+											"});"
 										],
 										"type": "text/javascript"
 									}
 								}
 							],
 							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
 								"method": "PUT",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"address\": \"{{baseline_address_2}}\",\r\n    \"price\": {{baseline_price}},\r\n    \"floorArea\": {{baseline_floor_area}},\r\n    \"rooms\": {{baseline_rooms}},\r\n    \"builtYear\": {{baseline_built_year}},\r\n    \"floor\": {{baseline_floor}},\r\n    \"elevator\": {{baseline_elevator}},\r\n    \"balcony\": {{baseline_balcony}},\r\n    \"plot\": {{baseline_plot}},\r\n    \"description\": \"{{baseline_description}}\",\r\n    \"active\": true,\r\n    \"buildingMaterialType\": \"{{baseline_building_material_type}}\",\r\n    \"advertiseType\": \"{{baseline_advertise_type}}\",\r\n    \"buildingCondition\": \"{{baseline_building_condition}}\",\r\n    \"propertyType\": \"{{baseline_property_type}}\",\r\n    \"heating\": \"{{baseline_heating}}\"\r\n}",
+									"raw": "{\r\n    \"address\": \"{{baseline_address_2}}\",\r\n    \"price\": {{baseline_price}},\r\n    \"floorArea\": {{baseline_floor_area}},\r\n    \"rooms\": {{baseline_rooms}},\r\n    \"builtYear\": {{baseline_built_year}},\r\n    \"floor\": {{baseline_floor}},\r\n    \"elevator\": {{baseline_elevator}},\r\n    \"balcony\": {{baseline_balcony}},\r\n    \"plot\": {{baseline_plot}},\r\n    \"description\": \"{{baseline_description}}\",\r\n    \"active\": true,\r\n    \"buildingMaterialType\": \"{{baseline_building_material_type}}\",\r\n    \"advertiseType\": \"{{baseline_advertise_type}}\",\r\n    \"buildingCondition\": \"{{baseline_building_condition}}\",\r\n    \"propertyType\": \"{{baseline_property_type}}\",\r\n    \"heating\": \"{{baseline_heating}}\",\r\n    \"photos\": []\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -14969,22 +14840,16 @@
 									}
 								},
 								"url": {
-									"raw": "{{baseUrl}}/ads/:userId/ads/:adId",
+									"raw": "{{baseUrl}}/ads/ads/:adId",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"ads",
-										":userId",
 										"ads",
 										":adId"
 									],
 									"variable": [
-										{
-											"key": "userId",
-											"value": "{{baseline_id}}",
-											"description": "Id of the posting user"
-										},
 										{
 											"key": "adId",
 											"value": "{{adid}}",
@@ -15035,22 +14900,16 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/ads/:userId/ads/:adId",
+									"raw": "{{baseUrl}}/ads/ads/:adId",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"ads",
-										":userId",
 										"ads",
 										":adId"
 									],
 									"variable": [
-										{
-											"key": "userId",
-											"value": "{{baseline_id}}",
-											"description": "Id of the posting user"
-										},
 										{
 											"key": "adId",
 											"value": "{{adid}}",
@@ -15137,10 +14996,7 @@
 											"pm.test(\"Previous test(s) passed\", function () {\r",
 											"    pm.expect(pm.environment.get('assertion_chain')).to.be.true;\r",
 											"    pm.environment.set('assertion_chain', pm.environment.get('assertion_chain') && pm.response.code == 201)\r",
-											"});\r",
-											"\r",
-											"let jsonData = JSON.parse(responseBody);\r",
-											"pm.environment.set('adid', jsonData.id);"
+											"});"
 										],
 										"type": "text/javascript"
 									}
@@ -15169,14 +15025,61 @@
 									}
 								},
 								"url": {
-									"raw": "{{baseUrl}}/ads/:userId/ads",
+									"raw": "{{baseUrl}}/ads/ads",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"ads",
+										"ads"
+									]
+								},
+								"description": "Posts a new ad in the name of the given user id."
+							},
+							"response": []
+						},
+						{
+							"name": "All Ads By User",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// @allure.label.tag=setup\r",
+											"pm.test(\"Previous test(s) passed\", function () {\r",
+											"    pm.expect(pm.environment.get('assertion_chain')).to.be.true;\r",
+											"    pm.environment.set('assertion_chain', pm.environment.get('assertion_chain') && pm.response.code == 200)\r",
+											"});\r",
+											"\r",
+											"let jsonData = JSON.parse(responseBody);\r",
+											"let curr_max = -1\r",
+											"for (let responseDict of jsonData){\r",
+											"        if (responseDict.id > curr_max) {\r",
+											"            curr_max = responseDict.id;\r",
+											"        }\r",
+											"}\r",
+											"\r",
+											"pm.environment.set('adid', curr_max);\r",
+											"if (curr_max == -1) {\r",
+											"    pm.environment.set('assertion_chain', false);\r",
+											"}"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/ads/:userId/advertisement",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"ads",
 										":userId",
-										"ads"
+										"advertisement"
 									],
 									"variable": [
 										{
@@ -15186,7 +15089,7 @@
 										}
 									]
 								},
-								"description": "Posts a new ad in the name of the given user id."
+								"description": "Returns all ads by the user with the given user id."
 							},
 							"response": []
 						},
@@ -15216,6 +15119,9 @@
 											"    pm.expect(jsonData[0].errorMessage).to.eql(\"Cannot have missing address\");\r",
 											"});\r",
 											"\r",
+											"pm.test(\"Previous test(s) passed\", function () {\r",
+											"    pm.expect(pm.environment.get('assertion_chain')).to.be.true;\r",
+											"});\r",
 											"//TODO correct error message"
 										],
 										"type": "text/javascript"
@@ -15223,11 +15129,21 @@
 								}
 							],
 							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
 								"method": "PUT",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"price\": {{baseline_price}},\r\n    \"floorArea\": {{baseline_floor_area}},\r\n    \"rooms\": {{baseline_rooms}},\r\n    \"builtYear\": {{baseline_built_year}},\r\n    \"floor\": {{baseline_floor}},\r\n    \"elevator\": {{baseline_elevator}},\r\n    \"balcony\": {{baseline_balcony}},\r\n    \"plot\": {{baseline_plot}},\r\n    \"description\": \"{{baseline_description}}\",\r\n    \"active\": true,\r\n    \"buildingMaterialType\": \"{{baseline_building_material_type}}\",\r\n    \"advertiseType\": \"{{baseline_advertise_type}}\",\r\n    \"buildingCondition\": \"{{baseline_building_condition}}\",\r\n    \"propertyType\": \"{{baseline_property_type}}\",\r\n    \"heating\": \"{{baseline_heating}}\"\r\n}",
+									"raw": "{\r\n    \"price\": {{baseline_price}},\r\n    \"floorArea\": {{baseline_floor_area}},\r\n    \"rooms\": {{baseline_rooms}},\r\n    \"builtYear\": {{baseline_built_year}},\r\n    \"floor\": {{baseline_floor}},\r\n    \"elevator\": {{baseline_elevator}},\r\n    \"balcony\": {{baseline_balcony}},\r\n    \"plot\": {{baseline_plot}},\r\n    \"description\": \"{{baseline_description}}\",\r\n    \"active\": true,\r\n    \"buildingMaterialType\": \"{{baseline_building_material_type}}\",\r\n    \"advertiseType\": \"{{baseline_advertise_type}}\",\r\n    \"buildingCondition\": \"{{baseline_building_condition}}\",\r\n    \"propertyType\": \"{{baseline_property_type}}\",\r\n    \"heating\": \"{{baseline_heating}}\",\r\n    \"photos\": []\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -15235,22 +15151,16 @@
 									}
 								},
 								"url": {
-									"raw": "{{baseUrl}}/ads/:userId/ads/:adId",
+									"raw": "{{baseUrl}}/ads/ads/:adId",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"ads",
-										":userId",
 										"ads",
 										":adId"
 									],
 									"variable": [
-										{
-											"key": "userId",
-											"value": "{{baseline_id}}",
-											"description": "Id of the posting user"
-										},
 										{
 											"key": "adId",
 											"value": "{{adid}}",
@@ -15301,22 +15211,16 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/ads/:userId/ads/:adId",
+									"raw": "{{baseUrl}}/ads/ads/:adId",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"ads",
-										":userId",
 										"ads",
 										":adId"
 									],
 									"variable": [
-										{
-											"key": "userId",
-											"value": "{{baseline_id}}",
-											"description": "Id of the posting user"
-										},
 										{
 											"key": "adId",
 											"value": "{{adid}}",
@@ -15403,10 +15307,7 @@
 											"pm.test(\"Previous test(s) passed\", function () {\r",
 											"    pm.expect(pm.environment.get('assertion_chain')).to.be.true;\r",
 											"    pm.environment.set('assertion_chain', pm.environment.get('assertion_chain') && pm.response.code == 201)\r",
-											"});\r",
-											"\r",
-											"let jsonData = JSON.parse(responseBody);\r",
-											"pm.environment.set('adid', jsonData.id);"
+											"});"
 										],
 										"type": "text/javascript"
 									}
@@ -15435,14 +15336,61 @@
 									}
 								},
 								"url": {
-									"raw": "{{baseUrl}}/ads/:userId/ads",
+									"raw": "{{baseUrl}}/ads/ads",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"ads",
+										"ads"
+									]
+								},
+								"description": "Posts a new ad in the name of the given user id."
+							},
+							"response": []
+						},
+						{
+							"name": "All Ads By User",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// @allure.label.tag=setup\r",
+											"pm.test(\"Previous test(s) passed\", function () {\r",
+											"    pm.expect(pm.environment.get('assertion_chain')).to.be.true;\r",
+											"    pm.environment.set('assertion_chain', pm.environment.get('assertion_chain') && pm.response.code == 200)\r",
+											"});\r",
+											"\r",
+											"let jsonData = JSON.parse(responseBody);\r",
+											"let curr_max = -1\r",
+											"for (let responseDict of jsonData){\r",
+											"        if (responseDict.id > curr_max) {\r",
+											"            curr_max = responseDict.id;\r",
+											"        }\r",
+											"}\r",
+											"\r",
+											"pm.environment.set('adid', curr_max);\r",
+											"if (curr_max == -1) {\r",
+											"    pm.environment.set('assertion_chain', false);\r",
+											"}"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/ads/:userId/advertisement",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"ads",
 										":userId",
-										"ads"
+										"advertisement"
 									],
 									"variable": [
 										{
@@ -15452,7 +15400,7 @@
 										}
 									]
 								},
-								"description": "Posts a new ad in the name of the given user id."
+								"description": "Returns all ads by the user with the given user id."
 							},
 							"response": []
 						},
@@ -15482,6 +15430,9 @@
 											"    pm.expect(jsonData[0].errorMessage).to.eql(\"Excess data in request\");\r",
 											"});\r",
 											"\r",
+											"pm.test(\"Previous test(s) passed\", function () {\r",
+											"    pm.expect(pm.environment.get('assertion_chain')).to.be.true;\r",
+											"});\r",
 											"//TODO correct error message"
 										],
 										"type": "text/javascript"
@@ -15489,11 +15440,21 @@
 								}
 							],
 							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
 								"method": "PUT",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"address\": {{baseline_address_2}},\r\n    \"price\": {{baseline_price}},\r\n    \"floorArea\": {{baseline_floor_area}},\r\n    \"rooms\": {{baseline_rooms}},\r\n    \"builtYear\": {{baseline_built_year}},\r\n    \"floor\": {{baseline_floor}},\r\n    \"elevator\": {{baseline_elevator}},\r\n    \"balcony\": {{baseline_balcony}},\r\n    \"plot\": {{baseline_plot}},\r\n    \"description\": \"{{baseline_description}}\",\r\n    \"active\": true,\r\n    \"buildingMaterialType\": \"{{baseline_building_material_type}}\",\r\n    \"advertiseType\": \"{{baseline_advertise_type}}\",\r\n    \"buildingCondition\": \"{{baseline_building_condition}}\",\r\n    \"propertyType\": \"{{baseline_property_type}}\",\r\n    \"heating\": \"{{baseline_heating}}\",\r\n    \"whatever\": \"whatever indeed\",\r\n    \"someExtraData\": 14\r\n}",
+									"raw": "{\r\n    \"address\": {{baseline_address_2}},\r\n    \"price\": {{baseline_price}},\r\n    \"floorArea\": {{baseline_floor_area}},\r\n    \"rooms\": {{baseline_rooms}},\r\n    \"builtYear\": {{baseline_built_year}},\r\n    \"floor\": {{baseline_floor}},\r\n    \"elevator\": {{baseline_elevator}},\r\n    \"balcony\": {{baseline_balcony}},\r\n    \"plot\": {{baseline_plot}},\r\n    \"description\": \"{{baseline_description}}\",\r\n    \"active\": true,\r\n    \"buildingMaterialType\": \"{{baseline_building_material_type}}\",\r\n    \"advertiseType\": \"{{baseline_advertise_type}}\",\r\n    \"buildingCondition\": \"{{baseline_building_condition}}\",\r\n    \"propertyType\": \"{{baseline_property_type}}\",\r\n    \"heating\": \"{{baseline_heating}}\",\r\n    \"photos\": [],\r\n    \"whatever\": \"whatever indeed\",\r\n    \"someExtraData\": 14\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -15501,22 +15462,16 @@
 									}
 								},
 								"url": {
-									"raw": "{{baseUrl}}/ads/:userId/ads/:adId",
+									"raw": "{{baseUrl}}/ads/ads/:adId",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"ads",
-										":userId",
 										"ads",
 										":adId"
 									],
 									"variable": [
-										{
-											"key": "userId",
-											"value": "{{baseline_id}}",
-											"description": "Id of the posting user"
-										},
 										{
 											"key": "adId",
 											"value": "{{adid}}",
@@ -15567,22 +15522,16 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/ads/:userId/ads/:adId",
+									"raw": "{{baseUrl}}/ads/ads/:adId",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"ads",
-										":userId",
 										"ads",
 										":adId"
 									],
 									"variable": [
-										{
-											"key": "userId",
-											"value": "{{baseline_id}}",
-											"description": "Id of the posting user"
-										},
 										{
 											"key": "adId",
 											"value": "{{adid}}",
@@ -15669,10 +15618,7 @@
 											"pm.test(\"Previous test(s) passed\", function () {\r",
 											"    pm.expect(pm.environment.get('assertion_chain')).to.be.true;\r",
 											"    pm.environment.set('assertion_chain', pm.environment.get('assertion_chain') && pm.response.code == 201)\r",
-											"});\r",
-											"\r",
-											"let jsonData = JSON.parse(responseBody);\r",
-											"pm.environment.set('adid', jsonData.id);"
+											"});"
 										],
 										"type": "text/javascript"
 									}
@@ -15701,14 +15647,61 @@
 									}
 								},
 								"url": {
-									"raw": "{{baseUrl}}/ads/:userId/ads",
+									"raw": "{{baseUrl}}/ads/ads",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"ads",
+										"ads"
+									]
+								},
+								"description": "Posts a new ad in the name of the given user id."
+							},
+							"response": []
+						},
+						{
+							"name": "All Ads By User",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// @allure.label.tag=setup\r",
+											"pm.test(\"Previous test(s) passed\", function () {\r",
+											"    pm.expect(pm.environment.get('assertion_chain')).to.be.true;\r",
+											"    pm.environment.set('assertion_chain', pm.environment.get('assertion_chain') && pm.response.code == 200)\r",
+											"});\r",
+											"\r",
+											"let jsonData = JSON.parse(responseBody);\r",
+											"let curr_max = -1\r",
+											"for (let responseDict of jsonData){\r",
+											"        if (responseDict.id > curr_max) {\r",
+											"            curr_max = responseDict.id;\r",
+											"        }\r",
+											"}\r",
+											"\r",
+											"pm.environment.set('adid', curr_max);\r",
+											"if (curr_max == -1) {\r",
+											"    pm.environment.set('assertion_chain', false);\r",
+											"}"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/ads/:userId/advertisement",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"ads",
 										":userId",
-										"ads"
+										"advertisement"
 									],
 									"variable": [
 										{
@@ -15718,7 +15711,7 @@
 										}
 									]
 								},
-								"description": "Posts a new ad in the name of the given user id."
+								"description": "Returns all ads by the user with the given user id."
 							},
 							"response": []
 						},
@@ -15748,6 +15741,9 @@
 											"    pm.expect(jsonData[0].errorMessage).to.eql(\"Cannot have empty address\");\r",
 											"});\r",
 											"\r",
+											"pm.test(\"Previous test(s) passed\", function () {\r",
+											"    pm.expect(pm.environment.get('assertion_chain')).to.be.true;\r",
+											"});\r",
 											"//TODO correct error message"
 										],
 										"type": "text/javascript"
@@ -15755,11 +15751,21 @@
 								}
 							],
 							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
 								"method": "PUT",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"address\": \"\",\r\n    \"price\": {{baseline_price}},\r\n    \"floorArea\": {{baseline_floor_area}},\r\n    \"rooms\": {{baseline_rooms}},\r\n    \"builtYear\": {{baseline_built_year}},\r\n    \"floor\": {{baseline_floor}},\r\n    \"elevator\": {{baseline_elevator}},\r\n    \"balcony\": {{baseline_balcony}},\r\n    \"plot\": {{baseline_plot}},\r\n    \"description\": \"{{baseline_description}}\",\r\n    \"active\": true,\r\n    \"buildingMaterialType\": \"{{baseline_building_material_type}}\",\r\n    \"advertiseType\": \"{{baseline_advertise_type}}\",\r\n    \"buildingCondition\": \"{{baseline_building_condition}}\",\r\n    \"propertyType\": \"{{baseline_property_type}}\",\r\n    \"heating\": \"{{baseline_heating}}\"\r\n}",
+									"raw": "{\r\n    \"address\": \"\",\r\n    \"price\": {{baseline_price}},\r\n    \"floorArea\": {{baseline_floor_area}},\r\n    \"rooms\": {{baseline_rooms}},\r\n    \"builtYear\": {{baseline_built_year}},\r\n    \"floor\": {{baseline_floor}},\r\n    \"elevator\": {{baseline_elevator}},\r\n    \"balcony\": {{baseline_balcony}},\r\n    \"plot\": {{baseline_plot}},\r\n    \"description\": \"{{baseline_description}}\",\r\n    \"active\": true,\r\n    \"buildingMaterialType\": \"{{baseline_building_material_type}}\",\r\n    \"advertiseType\": \"{{baseline_advertise_type}}\",\r\n    \"buildingCondition\": \"{{baseline_building_condition}}\",\r\n    \"propertyType\": \"{{baseline_property_type}}\",\r\n    \"heating\": \"{{baseline_heating}}\",\r\n    \"photos\": []\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -15767,22 +15773,16 @@
 									}
 								},
 								"url": {
-									"raw": "{{baseUrl}}/ads/:userId/ads/:adId",
+									"raw": "{{baseUrl}}/ads/ads/:adId",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"ads",
-										":userId",
 										"ads",
 										":adId"
 									],
 									"variable": [
-										{
-											"key": "userId",
-											"value": "{{baseline_id}}",
-											"description": "Id of the posting user"
-										},
 										{
 											"key": "adId",
 											"value": "{{adid}}",
@@ -15833,22 +15833,16 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/ads/:userId/ads/:adId",
+									"raw": "{{baseUrl}}/ads/ads/:adId",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"ads",
-										":userId",
 										"ads",
 										":adId"
 									],
 									"variable": [
-										{
-											"key": "userId",
-											"value": "{{baseline_id}}",
-											"description": "Id of the posting user"
-										},
 										{
 											"key": "adId",
 											"value": "{{adid}}",
@@ -15935,10 +15929,7 @@
 											"pm.test(\"Previous test(s) passed\", function () {\r",
 											"    pm.expect(pm.environment.get('assertion_chain')).to.be.true;\r",
 											"    pm.environment.set('assertion_chain', pm.environment.get('assertion_chain') && pm.response.code == 201)\r",
-											"});\r",
-											"\r",
-											"let jsonData = JSON.parse(responseBody);\r",
-											"pm.environment.set('adid', jsonData.id);"
+											"});"
 										],
 										"type": "text/javascript"
 									}
@@ -15967,14 +15958,61 @@
 									}
 								},
 								"url": {
-									"raw": "{{baseUrl}}/ads/:userId/ads",
+									"raw": "{{baseUrl}}/ads/ads",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"ads",
+										"ads"
+									]
+								},
+								"description": "Posts a new ad in the name of the given user id."
+							},
+							"response": []
+						},
+						{
+							"name": "All Ads By User",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// @allure.label.tag=setup\r",
+											"pm.test(\"Previous test(s) passed\", function () {\r",
+											"    pm.expect(pm.environment.get('assertion_chain')).to.be.true;\r",
+											"    pm.environment.set('assertion_chain', pm.environment.get('assertion_chain') && pm.response.code == 200)\r",
+											"});\r",
+											"\r",
+											"let jsonData = JSON.parse(responseBody);\r",
+											"let curr_max = -1\r",
+											"for (let responseDict of jsonData){\r",
+											"        if (responseDict.id > curr_max) {\r",
+											"            curr_max = responseDict.id;\r",
+											"        }\r",
+											"}\r",
+											"\r",
+											"pm.environment.set('adid', curr_max);\r",
+											"if (curr_max == -1) {\r",
+											"    pm.environment.set('assertion_chain', false);\r",
+											"}"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/ads/:userId/advertisement",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"ads",
 										":userId",
-										"ads"
+										"advertisement"
 									],
 									"variable": [
 										{
@@ -15984,7 +16022,7 @@
 										}
 									]
 								},
-								"description": "Posts a new ad in the name of the given user id."
+								"description": "Returns all ads by the user with the given user id."
 							},
 							"response": []
 						},
@@ -16014,6 +16052,9 @@
 											"    pm.expect(jsonData[0].errorMessage).to.eql(\"Rooms must be number\");\r",
 											"});\r",
 											"\r",
+											"pm.test(\"Previous test(s) passed\", function () {\r",
+											"    pm.expect(pm.environment.get('assertion_chain')).to.be.true;\r",
+											"});\r",
 											"//TODO correct error message"
 										],
 										"type": "text/javascript"
@@ -16021,11 +16062,21 @@
 								}
 							],
 							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "{{access_token}}",
+											"type": "string"
+										}
+									]
+								},
 								"method": "PUT",
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"address\": {{baseline_address_2}},\r\n    \"price\": {{baseline_price}},\r\n    \"floorArea\": {{baseline_floor_area}},\r\n    \"rooms\": \"ketto darab osszesen\",\r\n    \"builtYear\": {{baseline_built_year}},\r\n    \"floor\": {{baseline_floor}},\r\n    \"elevator\": {{baseline_elevator}},\r\n    \"balcony\": {{baseline_balcony}},\r\n    \"plot\": {{baseline_plot}},\r\n    \"description\": \"{{baseline_description}}\",\r\n    \"active\": true,\r\n    \"buildingMaterialType\": \"{{baseline_building_material_type}}\",\r\n    \"advertiseType\": \"{{baseline_advertise_type}}\",\r\n    \"buildingCondition\": \"{{baseline_building_condition}}\",\r\n    \"propertyType\": \"{{baseline_property_type}}\",\r\n    \"heating\": \"{{baseline_heating}}\"\r\n}",
+									"raw": "{\r\n    \"address\": {{baseline_address_2}},\r\n    \"price\": {{baseline_price}},\r\n    \"floorArea\": {{baseline_floor_area}},\r\n    \"rooms\": \"ketto darab osszesen\",\r\n    \"builtYear\": {{baseline_built_year}},\r\n    \"floor\": {{baseline_floor}},\r\n    \"elevator\": {{baseline_elevator}},\r\n    \"balcony\": {{baseline_balcony}},\r\n    \"plot\": {{baseline_plot}},\r\n    \"description\": \"{{baseline_description}}\",\r\n    \"active\": true,\r\n    \"buildingMaterialType\": \"{{baseline_building_material_type}}\",\r\n    \"advertiseType\": \"{{baseline_advertise_type}}\",\r\n    \"buildingCondition\": \"{{baseline_building_condition}}\",\r\n    \"propertyType\": \"{{baseline_property_type}}\",\r\n    \"heating\": \"{{baseline_heating}}\",\r\n    \"photos\": []\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -16033,22 +16084,16 @@
 									}
 								},
 								"url": {
-									"raw": "{{baseUrl}}/ads/:userId/ads/:adId",
+									"raw": "{{baseUrl}}/ads/ads/:adId",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"ads",
-										":userId",
 										"ads",
 										":adId"
 									],
 									"variable": [
-										{
-											"key": "userId",
-											"value": "{{baseline_id}}",
-											"description": "Id of the posting user"
-										},
 										{
 											"key": "adId",
 											"value": "{{adid}}",
@@ -16099,22 +16144,16 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/ads/:userId/ads/:adId",
+									"raw": "{{baseUrl}}/ads/ads/:adId",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"ads",
-										":userId",
 										"ads",
 										":adId"
 									],
 									"variable": [
-										{
-											"key": "userId",
-											"value": "{{baseline_id}}",
-											"description": "Id of the posting user"
-										},
 										{
 											"key": "adId",
 											"value": "{{adid}}",
@@ -16201,10 +16240,7 @@
 											"pm.test(\"Previous test(s) passed\", function () {\r",
 											"    pm.expect(pm.environment.get('assertion_chain')).to.be.true;\r",
 											"    pm.environment.set('assertion_chain', pm.environment.get('assertion_chain') && pm.response.code == 201)\r",
-											"});\r",
-											"\r",
-											"let jsonData = JSON.parse(responseBody);\r",
-											"pm.environment.set('adid', jsonData.id);"
+											"});"
 										],
 										"type": "text/javascript"
 									}
@@ -16233,14 +16269,61 @@
 									}
 								},
 								"url": {
-									"raw": "{{baseUrl}}/ads/:userId/ads",
+									"raw": "{{baseUrl}}/ads/ads",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"ads",
+										"ads"
+									]
+								},
+								"description": "Posts a new ad in the name of the given user id."
+							},
+							"response": []
+						},
+						{
+							"name": "All Ads By User",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"// @allure.label.tag=setup\r",
+											"pm.test(\"Previous test(s) passed\", function () {\r",
+											"    pm.expect(pm.environment.get('assertion_chain')).to.be.true;\r",
+											"    pm.environment.set('assertion_chain', pm.environment.get('assertion_chain') && pm.response.code == 200)\r",
+											"});\r",
+											"\r",
+											"let jsonData = JSON.parse(responseBody);\r",
+											"let curr_max = -1\r",
+											"for (let responseDict of jsonData){\r",
+											"        if (responseDict.id > curr_max) {\r",
+											"            curr_max = responseDict.id;\r",
+											"        }\r",
+											"}\r",
+											"\r",
+											"pm.environment.set('adid', curr_max);\r",
+											"if (curr_max == -1) {\r",
+											"    pm.environment.set('assertion_chain', false);\r",
+											"}"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/ads/:userId/advertisement",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"ads",
 										":userId",
-										"ads"
+										"advertisement"
 									],
 									"variable": [
 										{
@@ -16250,7 +16333,7 @@
 										}
 									]
 								},
-								"description": "Posts a new ad in the name of the given user id."
+								"description": "Returns all ads by the user with the given user id."
 							},
 							"response": []
 						},
@@ -16310,22 +16393,16 @@
 									}
 								},
 								"url": {
-									"raw": "{{baseUrl}}/ads/:userId/ads/:adId",
+									"raw": "{{baseUrl}}/ads/ads/:adId",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"ads",
-										":userId",
 										"ads",
 										":adId"
 									],
 									"variable": [
-										{
-											"key": "userId",
-											"value": "{{baseline_id}}",
-											"description": "Id of the posting user"
-										},
 										{
 											"key": "adId",
 											"value": "{{adid}}",
@@ -16376,22 +16453,16 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "{{baseUrl}}/ads/:userId/ads/:adId",
+									"raw": "{{baseUrl}}/ads/ads/:adId",
 									"host": [
 										"{{baseUrl}}"
 									],
 									"path": [
 										"ads",
-										":userId",
 										"ads",
 										":adId"
 									],
 									"variable": [
-										{
-											"key": "userId",
-											"value": "{{baseline_id}}",
-											"description": "Id of the posting user"
-										},
 										{
 											"key": "adId",
 											"value": "{{adid}}",
