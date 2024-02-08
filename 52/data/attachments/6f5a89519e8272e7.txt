@@ -1,0 +1,1 @@
+{"id":340,"username":"HnGWFN8M6","email":"Elinor25@yahoo.com","firstName":"","lastName":"Aufderhar","phoneNumber":"+36303630363","usageType":"BUSINESS","roles":["ROLE_GENERAL"],"active":true}

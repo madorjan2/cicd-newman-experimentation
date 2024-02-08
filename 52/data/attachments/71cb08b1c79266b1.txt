@@ -1,0 +1,1 @@
+{"id":318,"username":"aUBEP6Xw","email":"Ethan_OKeefe64@yahoo.com","firstName":"Angela","lastName":"Abshire","phoneNumber":"+36303630363","usageType":"BUSINESS","roles":["ROLE_GENERAL"],"active":true}

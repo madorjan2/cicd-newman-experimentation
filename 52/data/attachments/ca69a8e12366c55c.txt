@@ -1,0 +1,9 @@
+{
+    "username" : "OcOiC9",
+    "email": "Adrianna.Quitzon8@yahoo.com",
+    "password": "ち®®ñ�©�ち����Aa1",
+    "firstName": "Isobel",
+    "lastName": "Turner",
+    "phoneNumber": "+36303630363",
+    "usageType": "BUSINESS"
+}

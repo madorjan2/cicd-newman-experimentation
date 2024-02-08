@@ -1,0 +1,9 @@
+{
+    "username" : "7SQDgIWUw2XwSk",
+    "email": "Peyton32@yahoo.com",
+    "password": "Asdf1234",
+    "firstName": "Zoey",
+    "lastName": "Tromp",
+    "phoneNumber": "0630a-36*3-03A12",
+    "usageType": "BUSINESS"
+}

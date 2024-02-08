@@ -1,0 +1,1 @@
+{"id":333,"username":"LfrADo","email":"Karlie49@hotmail.com","firstName":"        ","lastName":"Leannon","phoneNumber":"+36303630363","usageType":"BUSINESS","roles":["ROLE_GENERAL"],"active":true}

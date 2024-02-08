@@ -1,1 +1,0 @@
-{"timestamp":"2024-02-07T15:43:57.041+00:00","status":500,"error":"Internal Server Error","path":"/api/ads/adsListBySearch"}

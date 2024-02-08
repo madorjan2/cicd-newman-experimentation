@@ -1,0 +1,1 @@
+{"id":338,"username":"OtrAg3","email":"Laverne_Runolfsdottir27@gmail.com","firstName":"Marc","lastName":"Brekke","phoneNumber":"06703030303","usageType":"BUSINESS","roles":["ROLE_GENERAL"],"active":true}

@@ -1,0 +1,19 @@
+{
+    "address": "Da3B3NdjBpetQxP8CTYnue09l6dHHoipKtGAgssmIgo1DhwKC0Odg8003lOf6jHCG58VrpVWFBOn9fB42c5FnpPj0VBtQggTLQx8304WHnPTYSF2W65uqQr7PARlnGKE6l1otUEX2ujlnYKiXMnwYaZks9oin1isT0Nnh6o9qETSuNFl00tw1QDnmYS48gWWrddk5fL212CF9opjzCWySxb4xKCK2elxwiIABzvyWCyhksPY6VMOTY2zjSkD3KiqdMym0kSTOj",
+    "price": 45000000,
+    "floorArea": 40.3,
+    "rooms": 2.5,
+    "builtYear": 1995,
+    "floor": 2,
+    "elevator": true,
+    "balcony": false,
+    "plot": 65.75,
+    "description": "Lórum ipse, a furgó bölcsös éhet lesz a pnóma, ma berregő csévélő. A bordakozja renció életének árgája során már csájék volt arról, hogy ez a perszés döntően olyan företeket ártyog, amelyek házása",
+    "active": true,
+    "buildingMaterialType": "BRICK",
+    "advertiseType": "FOR_SALE",
+    "buildingCondition": "RENOVATED",
+    "propertyType": "FLAT",
+    "heating": "WOOD_HEATING",
+    "photos": []
+}

@@ -1,8 +1,0 @@
-{
-    "username": "I3kzVAX3G0VGf",
-    "password": "Asdf1234",
-    "email": "Lane_Crist@gmail.com",
-    "firstName": "Andreanne",
-    "lastName": "McGlynn",
-    "phoneNumber": "+36309998888"
-}

@@ -1,0 +1,1 @@
+{"id":314,"username":"usVCth6aD","email":"Lawrence.Berge34@gmail.com","firstName":null,"lastName":"Yundt","phoneNumber":"+36309998888","usageType":"BUSINESS","roles":["ROLE_GENERAL"],"active":false}

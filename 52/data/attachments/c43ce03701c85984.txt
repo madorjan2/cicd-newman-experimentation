@@ -1,0 +1,9 @@
+{
+    "username" : "bYeX5of81SMa",
+    "email": "Will67@hotmail.com",
+    "password": "ZUrUByxCrgaJi6FvJdouzgKg6Di94XKUcbO5U28mTApXHIbPYPm5qiWKigffZI7HZoAWZ0XaadIbTEvEsP4c0xEoDjP2bia9q1fp7SggfdPQuZRg0WO6A5D1zW4Cp1nEeIa0rv7fe9lC2DGgsMOWr4jgtimFWs93wuJrVON0qztzH923TlMdapwJzI1ePCy0V7brtch6ZvLmnCK5RgFcQDWCs7LnONPst5pUAek2TiT5yr1CG7a2aamdx3Fv1chhnAa1",
+    "firstName": "Robbie",
+    "lastName": "Sawayn",
+    "phoneNumber": "+36303630363",
+    "usageType": "BUSINESS"
+}

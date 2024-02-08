@@ -1,0 +1,1 @@
+{"id":337,"username":"GH0musv","email":"Eda.OConner@hotmail.com","firstName":"Pearl","lastName":"Runolfsson","phoneNumber":"+367010101010101010","usageType":"BUSINESS","roles":["ROLE_GENERAL"],"active":true}

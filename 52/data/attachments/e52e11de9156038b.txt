@@ -1,0 +1,1 @@
+{"id":320,"username":"hMjv55EpCjBk8R","email":"Silas.Kemmer67@gmail.com","firstName":"Erika","lastName":"Wolf","phoneNumber":"+36303630363","usageType":"BUSINESS","roles":["ROLE_GENERAL"],"active":true}

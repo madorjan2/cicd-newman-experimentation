@@ -1,0 +1,10 @@
+{
+    "Authorization": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIzRWNuM3RvUFgySGR1WSIsInJvbGVzIjpbIkdFTkVSQUwiXSwiaXNzIjoiaHR0cDovL2VjMi0xOC0xNTMtNjUtMTQ4LmV1LWNlbnRyYWwtMS5jb21wdXRlLmFtYXpvbmF3cy5jb206ODA4MC9hcGkvdXNlcnMvbG9naW4iLCJleHAiOjE3MDc0MTIzNzB9.n6eUBmZarnsGUj3xEKsQNJCUBQ2NNXk6Nu2n-nJ5gpU",
+    "User-Agent": "PostmanRuntime/7.36.3",
+    "Accept": "*/*",
+    "Cache-Control": "no-cache",
+    "Postman-Token": "916fa049-839e-43e4-a137-b40526de4687",
+    "Host": "ec2-13-60-30-176.eu-north-1.compute.amazonaws.com:8080",
+    "Accept-Encoding": "gzip, deflate, br",
+    "Connection": "keep-alive"
+}

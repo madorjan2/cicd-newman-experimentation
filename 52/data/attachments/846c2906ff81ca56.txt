@@ -1,0 +1,9 @@
+{
+    "username" : "Tu10Akrrn22k8Pa",
+    "email": "Giovanny70@yahoo.com",
+    "password": "Asdf1234",
+    "firstName": "Rita",
+    "lastName": "VMHUvSvijcqwwKzHGODJwQPwOYEWvojutwEPGQARkBsixkckkIzdtHNnddExNVtEdqGVqaQTuwyQoDDRsIPJHMYennMYdyUbhJreeEUIKPVNPeDHyegLSplODpIaCimUpbFhAdkWGHKWlsHSGjZPwKlXbQbkdjiguEwmqKOaxsZRTiktANYenfBlfInMaiEnBryHMouDuUjnMNBAdZFGHkRYtqCGFLvGthsHdyEUnXsBYOhtpnFjZOvMRLKiBFMK",
+    "phoneNumber": "+36303630363",
+    "usageType": "BUSINESS"
+}

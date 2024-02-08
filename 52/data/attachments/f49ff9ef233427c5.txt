@@ -1,0 +1,9 @@
+{
+    "username" : "qe9UJKhJ",
+    "email": "Pearline88@hotmail.com",
+    "password": "0fxdel42fb",
+    "firstName": "Kane",
+    "lastName": "Hahn",
+    "phoneNumber": "+36303630363",
+    "usageType": "BUSINESS"
+}

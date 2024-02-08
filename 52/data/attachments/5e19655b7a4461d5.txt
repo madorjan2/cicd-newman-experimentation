@@ -1,0 +1,1 @@
+{"id":313,"username":"mULVvTf4cFuOGe","email":"Travis17@gmail.com","firstName":"Josefa","lastName":"Parisian","phoneNumber":null,"usageType":"BUSINESS","roles":["ROLE_GENERAL"],"active":false}

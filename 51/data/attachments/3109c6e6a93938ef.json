@@ -1,9 +1,0 @@
-{
-    "User-Agent": "PostmanRuntime/7.36.3",
-    "Accept": "*/*",
-    "Cache-Control": "no-cache",
-    "Postman-Token": "cc6b68e7-d5d5-42a4-881d-20e02f50f497",
-    "Host": "ec2-13-60-30-176.eu-north-1.compute.amazonaws.com:8080",
-    "Accept-Encoding": "gzip, deflate, br",
-    "Connection": "keep-alive"
-}

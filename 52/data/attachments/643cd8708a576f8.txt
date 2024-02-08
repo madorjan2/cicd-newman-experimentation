@@ -1,0 +1,9 @@
+{
+    "username" : "hu5tnwTmFVAK",
+    "email": "Wayne.Cronin@gmail.com",
+    "password": "qoMLgvxo",
+    "firstName": "Kurtis",
+    "lastName": "Willms",
+    "phoneNumber": "+36303630363",
+    "usageType": "BUSINESS"
+}

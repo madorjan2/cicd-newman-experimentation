@@ -1,0 +1,8 @@
+{
+    "username" : "usVCth6aD",
+    "email": "Lawrence.Berge34@gmail.com",
+    "password": "Asdf1234",
+    "lastName": "Yundt",
+    "phoneNumber": "+36309998888",
+    "usageType": "BUSINESS"
+}

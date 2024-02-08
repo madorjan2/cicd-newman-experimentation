@@ -1,1 +1,0 @@
-{"id":303,"username":"xRBfsvwfkFe","email":"Natalia_Upton@gmail.com","firstName":"Bell","lastName":"Dibbert","phoneNumber":"+367","usageType":"BUSINESS","roles":["ROLE_GENERAL"],"active":true}

@@ -1,1 +1,0 @@
-{"id":282,"username":"upamOvE0HHn847","email":"Leatha.Kreiger@hotmail.com","firstName":"Frederique","lastName":null,"phoneNumber":"+36309998888","usageType":"BUSINESS","roles":["ROLE_GENERAL"],"active":false}

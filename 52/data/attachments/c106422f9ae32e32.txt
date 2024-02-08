@@ -1,0 +1,15 @@
+{
+    "id": 2,
+    "username" : DCzYTV,
+    "email": "Missouri.Kohler66@hotmail.com",
+    "password": "Asdf1234",
+    "firstName": "Dayna",
+    "lastName": "O'Reilly",
+    "phoneNumber": "+36303630363",
+    "usageType": "BUSINESS",
+    "roles": [
+        "ROLE_GENERAL"
+    ],
+    "active": true,
+    "whatever": "whatever"
+}

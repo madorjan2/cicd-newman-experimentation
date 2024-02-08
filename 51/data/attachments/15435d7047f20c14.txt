@@ -1,1 +1,0 @@
-{"id":277,"username":"JDDmGoo","email":"Deonte.Ruecker12@hotmail.com","firstName":"Marlin","lastName":"Nicolas","phoneNumber":"+36303630363","usageType":"BUSINESS","roles":["ROLE_GENERAL"],"active":false}

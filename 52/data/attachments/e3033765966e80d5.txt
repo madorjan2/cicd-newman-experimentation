@@ -1,0 +1,9 @@
+{
+    "username" : "madorjan",
+    "email": "Jarrett.Buckridge@gmail.com",
+    "password": "Asdf1234",
+    "firstName": "Oliver",
+    "lastName": "McCullough",
+    "phoneNumber": "+36303630363",
+    "usageType": "BUSINESS"
+}

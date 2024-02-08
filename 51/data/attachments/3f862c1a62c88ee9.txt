@@ -1,1 +1,0 @@
-{"id":286,"username":"ksqyZpw672eoI6","email":"Dolores.Braun23@yahoo.com","firstName":"Genevieve","lastName":"Oberbrunner","phoneNumber":"+36303630363","usageType":"BUSINESS","roles":["ROLE_GENERAL"],"active":true}

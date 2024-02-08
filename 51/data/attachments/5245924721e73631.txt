@@ -1,9 +1,0 @@
-{
-    "username" : "gQi0Fq",
-    "email": "Nakia55@hotmail.com",
-    "password": "Asdf1234",
-    "firstName": "Nedra",
-    "lastName": "Rolfson",
-    "phoneNumber": "+363036303123",
-    "usageType": "BUSINESS"
-}

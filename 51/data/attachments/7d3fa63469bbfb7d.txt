@@ -1,1 +1,0 @@
-{"id":302,"username":"EOvYfSE","email":"Darren.Wiegand99@gmail.com","firstName":"Ella","lastName":"        ","phoneNumber":"+36303630363","usageType":"BUSINESS","roles":["ROLE_GENERAL"],"active":true}

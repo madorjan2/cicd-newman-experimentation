@@ -1,0 +1,9 @@
+{
+    "username" : "C9TKxjim8FsFNr1",
+    "email": "Roberta.Gleason24@yahoo.com",
+    "password": "Asdf1234",
+    "firstName": "WiAMqJYdtclBDUzIDiLkBXBtfKLVzSeOMenEFUpNRgwvWrlLSJuBTFknGWkXXFRefBzvDVJJTntIYjzxpXGenGfOAtjLWxihLFEcWYhOfohTqOvYqFIwUGKjSMMNKGpFvpivHKaXYQPvWrVFABSnIIgzClNuZlalvrfSoYHdROaAahfDwUkFZEhHwtPMRtgtmJaSdOpOtrhMjlyUTGtYnVZOhpHlIXPLYPKPAfHzyjpJaxqjMXDrkGJVThfOVTsO",
+    "lastName": "Altenwerth",
+    "phoneNumber": "+36303630363",
+    "usageType": "BUSINESS"
+}

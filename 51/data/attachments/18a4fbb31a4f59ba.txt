@@ -1,9 +1,0 @@
-{
-    "username" : "Abe_Hickle",
-    "email": "Curt26@gmail.com",
-    "password": "Asdf1234",
-    "firstName": "Xzavier",
-    "lastName": "Herman",
-    "phoneNumber": "+36303630363",
-    "usageType": "BUSINESS"
-}

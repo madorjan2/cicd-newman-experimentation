@@ -1,9 +1,0 @@
-{
-    "username" : "madorjan",
-    "email": "Yessenia.Bechtelar@yahoo.com",
-    "password": "Asdf1234",
-    "firstName": "Buford",
-    "lastName": "Volkman",
-    "phoneNumber": "+36303630363",
-    "usageType": "BUSINESS"
-}

@@ -1,4 +1,0 @@
-{
-    "lastName": Walker,
-    "phoneNumber": "+36707070707"
-}

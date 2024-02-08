@@ -1,1 +1,0 @@
-{"id":288,"username":"qDSwb6qoKUDXQyP","email":"Mariano.Kutch@yahoo.com","firstName":"Alessia","lastName":"Dare","phoneNumber":"+36707070707","usageType":"BUSINESS","roles":["ROLE_GENERAL"],"active":true}

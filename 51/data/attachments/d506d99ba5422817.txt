@@ -1,9 +1,0 @@
-{
-    "username" : "3H2I379Bg",
-    "email": "Rico48@hotmail.com",
-    "password": "zrx5b48o8",
-    "firstName": "Luciano",
-    "lastName": "Jerde",
-    "phoneNumber": "+36303630363",
-    "usageType": "BUSINESS"
-}

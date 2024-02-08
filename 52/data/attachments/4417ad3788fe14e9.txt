@@ -1,0 +1,9 @@
+{
+    "username" : "pgxS7DwcWV4S",
+    "email": "Aubrey67@yahoo.com",
+    "password": "Asdf1234",
+    "firstName": "Dennis",
+    "lastName": "",
+    "phoneNumber": "+36303630363",
+    "usageType": "BUSINESS"
+}

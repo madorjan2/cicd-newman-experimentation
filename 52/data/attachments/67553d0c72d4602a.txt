@@ -1,0 +1,9 @@
+{
+    "username" : "こµ¥£ñµに�ñ",
+    "email": "Anabelle_Walsh@gmail.com",
+    "password": "Asdf1234",
+    "firstName": "Brenda",
+    "lastName": "Bayer",
+    "phoneNumber": "+36303630363",
+    "usageType": "BUSINESS"
+}

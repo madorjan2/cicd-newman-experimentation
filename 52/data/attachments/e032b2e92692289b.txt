@@ -1,0 +1,1 @@
+{"id":336,"username":"Iz7fOSPmfS9","email":"Arlene.Kemmer@hotmail.com","firstName":"Adolfo","lastName":"Kuhic","phoneNumber":"+367","usageType":"BUSINESS","roles":["ROLE_GENERAL"],"active":true}

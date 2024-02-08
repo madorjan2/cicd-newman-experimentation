@@ -1,0 +1,1 @@
+{"id":323,"username":"3Ecn3toPX2HduY","email":"madorjan@gmail.com","firstName":"Heidi","lastName":"Mraz","phoneNumber":"+36303630363","usageType":"BUSINESS","roles":["ROLE_GENERAL"],"active":true}

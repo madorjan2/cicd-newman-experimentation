@@ -1,1 +1,0 @@
-{"timestamp":"2024-02-07T15:41:03.393+00:00","status":400,"error":"Bad Request","path":"/api/users/registration"}

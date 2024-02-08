@@ -1,0 +1,9 @@
+{
+    "username" : "VvEX2f7K0P",
+    "email": "Robbie.Lakin@gmail.com",
+    "password": "Asdf1234",
+    "firstName": "Beatrice",
+    "lastName": "      ",
+    "phoneNumber": "+36303630363",
+    "usageType": "BUSINESS"
+}

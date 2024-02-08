@@ -1,0 +1,9 @@
+{
+    "username" : "hSjviqARvqrn",
+    "email": "Toney.Keeling32@yahoo.com",
+    "password": "asd123",
+    "firstName": "Saul",
+    "lastName": "Bergstrom",
+    "phoneNumber": "+36303630363",
+    "usageType": "BUSINESS"
+}

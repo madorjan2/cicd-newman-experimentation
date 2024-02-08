@@ -1,0 +1,8 @@
+{
+    "username" : "2cMYjEHV",
+    "email": "Cordelia_Wolf78@hotmail.com",
+    "password": "Asdf1234",
+    "firstName": "Grayce",
+    "phoneNumber": "+36309998888",
+    "usageType": "BUSINESS"
+}

@@ -1,9 +1,0 @@
-{
-    "username" : "cL0OpqGAwKd",
-    "email": "Antonio_Bode93@yahoo.com",
-    "password": "cEMGWfcePp",
-    "firstName": "Kiley",
-    "lastName": "Friesen",
-    "phoneNumber": "+36303630363",
-    "usageType": "BUSINESS"
-}

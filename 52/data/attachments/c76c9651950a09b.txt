@@ -1,0 +1,1 @@
+{"id":316,"username":"QEGq0eGR4","email":"Vern7@hotmail.com","firstName":"Rebekah","lastName":"Goodwin","phoneNumber":"+36309998888","usageType":null,"roles":["ROLE_GENERAL"],"active":false}

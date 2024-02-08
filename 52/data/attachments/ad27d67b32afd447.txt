@@ -1,0 +1,1 @@
+{"id":321,"username":"UdUkSHW4Tk","email":"Jovan_Murray74@yahoo.com","firstName":"Leonora","lastName":"Sporer","phoneNumber":"+36707070707","usageType":"BUSINESS","roles":["ROLE_GENERAL"],"active":true}

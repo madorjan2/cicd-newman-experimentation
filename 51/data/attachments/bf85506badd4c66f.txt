@@ -1,8 +1,0 @@
-{
-    "email": "Marc.Johns@yahoo.com",
-    "password": "Asdf1234",
-    "firstName": "Ezequiel",
-    "lastName": "Lynch",
-    "phoneNumber": "+36309998888",
-    "usageType": "BUSINESS"
-}

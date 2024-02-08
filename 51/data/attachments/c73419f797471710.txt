@@ -1,1 +1,0 @@
-{"id":287,"username":"cccp2zLaghjBhk","email":"Vaughn.Ratke12@yahoo.com","firstName":"Norwood","lastName":"Thiel","phoneNumber":"+36303630363","usageType":"BUSINESS","roles":["ROLE_GENERAL"],"active":true}

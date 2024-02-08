@@ -1,0 +1,8 @@
+{
+    "username": "QEGq0eGR4",
+    "password": "Asdf1234",
+    "email": "Vern7@hotmail.com",
+    "firstName": "Rebekah",
+    "lastName": "Goodwin",
+    "phoneNumber": "+36309998888"
+}

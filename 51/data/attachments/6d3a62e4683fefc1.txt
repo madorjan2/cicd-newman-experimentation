@@ -1,9 +1,0 @@
-{
-    "username" : "F2k2sCUQQZG9tZ",
-    "email": "Karen19@yahoo.com",
-    "password": "Asdf1234",
-    "firstName": "Eleonore",
-    "lastName": "      ",
-    "phoneNumber": "+36303630363",
-    "usageType": "BUSINESS"
-}

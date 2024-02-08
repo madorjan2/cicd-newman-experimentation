@@ -1,0 +1,9 @@
+{
+    "username" : ".,+([/,&#-@-]#}",
+    "email": "Trudie_Reynolds@yahoo.com",
+    "password": "Asdf1234",
+    "firstName": "Nolan",
+    "lastName": "Lebsack",
+    "phoneNumber": "+36303630363",
+    "usageType": "BUSINESS"
+}

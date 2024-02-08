@@ -1,9 +1,0 @@
-{
-    "username" : "🞉££�にµ�àµ",
-    "email": "Arlie.Schuster66@gmail.com",
-    "password": "Asdf1234",
-    "firstName": "Quentin",
-    "lastName": "Maggio",
-    "phoneNumber": "+36303630363",
-    "usageType": "BUSINESS"
-}

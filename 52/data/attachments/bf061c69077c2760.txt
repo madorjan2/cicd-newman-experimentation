@@ -1,0 +1,1 @@
+{"id":319,"username":"Spfv2i2MH7id","email":"Nedra.Ebert@yahoo.com","firstName":"Stewart","lastName":"Haag","phoneNumber":"+36303630363","usageType":"BUSINESS","roles":["ROLE_GENERAL"],"active":true}

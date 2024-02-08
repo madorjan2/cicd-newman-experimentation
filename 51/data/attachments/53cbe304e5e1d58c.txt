@@ -1,9 +1,0 @@
-{
-    "username" : "YsCpbw6TI4MC3",
-    "email": "Cecile.Kunde65@hotmail.com",
-    "password": "Asdf1234",
-    "firstName": "Shania",
-    "lastName": "Lehner",
-    "phoneNumber": "+36303630363",
-    "usageType": ""
-}

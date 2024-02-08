@@ -1,9 +1,0 @@
-{
-    "username" : "m20OKyegxeozsA",
-    "email": "Grant.Jacobs@yahoo.com",
-    "password": "Asdf1234",
-    "firstName": "      ",
-    "lastName": "Aufderhar",
-    "phoneNumber": "+36303630363",
-    "usageType": "BUSINESS"
-}

@@ -1,0 +1,9 @@
+{
+    "username" : "Candelario.Denesik50",
+    "email": "halib75567@grassdev.com",
+    "password": "Asdf1234",
+    "firstName": "Berta",
+    "lastName": "Friesen",
+    "phoneNumber": "+36303630363",
+    "usageType": "BUSINESS"
+}

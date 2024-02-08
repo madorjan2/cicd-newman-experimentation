@@ -1,9 +1,0 @@
-{
-    "username" : "2WkKVJhH1GGp0jUW",
-    "email": "Dianna_Deckow@yahoo.com",
-    "password": "Asdf1234",
-    "firstName": "Chris",
-    "lastName": "Gulgowski",
-    "phoneNumber": "+36303630363",
-    "usageType": "BUSINESS"
-}

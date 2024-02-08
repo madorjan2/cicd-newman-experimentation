@@ -1,9 +1,0 @@
-{
-    "username" : "xyTthaTLO6",
-    "email": "Zetta.Morissette@gmail.com",
-    "password": "Asdf1234",
-    "firstName": "Electa",
-    "lastName": "Ondricka",
-    "phoneNumber": "",
-    "usageType": "BUSINESS"
-}

@@ -1,0 +1,9 @@
+{
+    "username" : "Z96l xWz3tN",
+    "email": "Erwin.Marks40@hotmail.com",
+    "password": "Asdf1234",
+    "firstName": "Cierra",
+    "lastName": "Roberts",
+    "phoneNumber": "+36303630363",
+    "usageType": "BUSINESS"
+}
